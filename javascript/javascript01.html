@@ -52,10 +52,10 @@
                 <li><a href="#">10. 객체 : 데이터 저장(키와값): 표현방법2</a></li>
                 <li><a href="#">11. 객체 : 데이터 저장(키와값): 표현방법3</a></li>
                 <li><a href="#">12. 객체 : 데이터 저장(키와값): 표현방법4</a></li>
-                <li><a href="#">00. 객체 : 데이터 저장(키와값): 표현방법5</a></li>
-                <li><a href="#">00. 객체 : 데이터 저장(키와값): 표현방법6</a></li>
-                <li><a href="#">00. 객체 : 데이터 저장(키와값): 표현방법7</a></li>
-                <li><a href="#">00. 객체 : 데이터 저장(키와값): 표현방법8</a></li>
+                <li><a href="#">13. 객체 : 데이터 저장(키와값): 표현방법5</a></li>
+                <li><a href="#">14. 객체 : 데이터 저장(키와값): 표현방법6</a></li>
+                <li><a href="#">15. 객체 : 데이터 저장(키와값): 표현방법7</a></li>
+                <li><a href="#">16. 객체 : 데이터 저장(키와값): 표현방법8</a></li>
             </ul>
         </div>
         
@@ -385,17 +385,20 @@
             </div>
             <!-- //sample11 -->
 
-            <div id="sample12" class="sample">
-                <h3>12. 객체 : 데이터 저장(키와 값) : 표현방법4</h3>
+            <div id="sample13" class="sample">
+                <h3>13. 객체 : 데이터 저장(키와 값) : 표현방법5</h3>
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
-                <p>특정 변수 선언코드를 생략하고 객체안에 요소를 적어 코드를 줄일 수 있다.</p>
+                <p>배열안에 객체를 넣어 값을 불러올 수 있다.</p>
                 <div class="script">
  <pre><code>{
-    const obj = {a:100, b:200, c:"javascript"};
+    const obj = [
+    {a:100, b:200,}, 
+    {c:"javascript"}
+];
 
-    console.log(obj.a);
-    console.log(obj.b);
-    console.log(obj.c);
+    console.log(obj[0].a);
+    console.log(obj[0].b);
+    console.log(obj[1].c);
 }
  </code></pre>
                 </div>
@@ -403,15 +406,135 @@
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            400<br>
-                            600<br>
+                            100<br>
+                            200<br>
                             javascrip
                         </div>
                     </details>
                 </div>
             </div>
-            <!-- //sample12 -->
+            <!-- //sample13 -->
 
+            <div id="sample13" class="sample">
+                <h3>14. 객체 : 데이터 저장(키와 값) : 표현방법6</h3>
+                <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
+                <p>객체 안에 배열을 넣어 값을 불러올 수 있다.</p>
+                <div class="script">
+ <pre><code>{
+    const obj = {
+    a: 100,
+    b: [200, 300],
+    c: {x: 400, y: 500},
+    d: "javascript"
+}
+
+    console.log(obj.a);
+    console.log(obj.b[0]);
+    console.log(obj.b[1]);
+    console.log(obj.c.x);
+    console.log(obj.c.y);
+    console.log(obj.d);
+}
+ </code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            300<br>
+                            400<br>
+                            500<br>
+                            javascrip
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample14 -->
+
+            <div id="sample13" class="sample">
+                <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법7</h3>
+                <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
+                <p>객체안에 키값에 변수를 저장한다.</p>
+                <div class="script">
+ <pre><code>{
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
+
+    const obj = {a, b, c};
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    
+    // console.log(obj.a);
+    // console.log(obj.b);
+    // console.log(obj.c);
+    // ( ) 안에 obj. 를 붙여도 정상작동
+
+}
+ </code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascrip
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample15 -->
+
+            <div id="sample13" class="sample">
+                <h3>16. 객체 : 데이터 저장(키와 값) : 표현방법8</h3>
+                <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
+                <p>객체 안에 함수를 넣을 수 있다.</p>
+                <div class="script">
+ <pre><code>{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: "javascript",
+        d: function(){
+            console.log("javascript가 실행되었습니다.");
+        } 
+    }
+
+    console.log(obj.a);
+    console.log(obj.b[0]);
+    console.log(obj.b[1]);
+    console.log(obj.b[2]);  //undefined
+    console.log(obj.c);
+    console.log(obj.d); //(X) 문자열 그대로 나옴
+    obj.d();  //실행문은 이렇게 출력
+
+}
+ </code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            300<br>
+                            undefined<br>
+                            javascrip<br>
+                            f ( ) {<br>
+                                            console.log("javascript가 실행되었습니다.");<br>
+                                        }<br>
+                            javascrip가 실행되었습니다.<br>
+                            200               
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample16 -->
      
         
             <div id="sample01" class="sample"></div>
@@ -548,13 +671,13 @@
             } 
         }
 
-        // console.log(obj.a);
-        // console.log(obj.b[0]);
-        // console.log(obj.b[1]);
-        // console.log(obj.b[2]);  //undefined
-        // console.log(obj.c);
-        // console.log(obj.d); //(X) 문자열 그대로 나옴
-        // obj.d();  //실행문은 이렇게 출력
+        console.log(obj.a);
+        console.log(obj.b[0]);
+        console.log(obj.b[1]);
+        console.log(obj.b[2]);  //undefined
+        console.log(obj.c);
+        console.log(obj.d); //(X) 문자열 그대로 나옴
+        obj.d();  //실행문은 이렇게 출력
     }
 
     {
