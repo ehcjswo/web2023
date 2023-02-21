@@ -101,8 +101,20 @@ body {
     margin-top: 10px;
     background-color: #F3F3F3;
     padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
-
+.main__sample .notice {
+    border-left: 3px solid #0243F1;
+    padding: 13px 10px 10px 15px;
+    background-color: #F6F6F6;
+}
+.main__sample .notice h4 {
+    margin-bottom: 5px;
+}
+.main__sample .notice p {
+    margin-bottom: 0;
+}
 
 /* footer영역 */
 #footer {

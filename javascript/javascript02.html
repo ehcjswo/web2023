@@ -30,6 +30,15 @@
             <li><a href="javascript10.html">요소 객체</a></li>
             <li><a href="javascript11.html">이벤트 객체</a></li>
         </ul>
+        <ul class="last">
+            <li><a href="javascript12.html">데이터 효과</a></li>
+            <li><a href="javascript13.html">검색 효과</a></li>
+            <li><a href="javascript14.html">퀴즈 효과</a></li>
+            <li><a href="javascript15.html">마우스 효과</a></li>
+            <li><a href="javascript16.html">슬라이드 효과</a></li>
+            <li><a href="javascript17.html">패럴랙스 효과</a></li>
+            <li><a href="javascript18.html">게임 효과</a></li>
+        </ul>
     </nav>
     </header>
     <!-- //header -->
@@ -38,10 +47,33 @@
     <div class="container">
             <div class="main__menu">
                 <ul>
-                    <li><a href="#">01. 변수 : 데이터 저장</a></li>
-                    <li><a href="#">01. 상수 : 데이터 저장</a></li>
-                    <li><a href="#">01. 배열 : 데이터 저장</a></li>
-                    <li><a href="#">01. 객체 : 데이터 저장</a></li>
+                    <li><a href="#">01. 변수 : 데이터 불러오기</a></li>
+                    <li><a href="#">02. 상수 : 데이터 불러오기</a></li>
+                    <li><a href="#">03. 배열 : 데이터 불러오기</a></li>
+
+                    <li><a href="#">04. 배열 : 데이터 불러오기 : 2차 배열</a></li>
+                    <li><a href="#">05. 배열 : 데이터 불러오기 : 갯수 구하기</a></li>
+                    <li><a href="#">06. 배열 : 데이터 불러오기 : for()문</a></li>
+                    <li><a href="#">07. 배열 : 데이터 불러오기 : 중첩 for()문</a></li>
+                    <li><a href="#">01. 배열 : 데이터 불러오기 : forEach()</a></li>
+                    <li><a href="#">01. 배열 : 데이터 불러오기 : for of</a></li>
+                    <li><a href="#">01. 배열 : 데이터 불러오기 : for in</a></li>
+                    <li><a href="#">01. 배열 : 데이터 불러오기 : map()</a></li>
+                    <li><a href="#">01. 배열 : 데이터 불러오기 : 펼침 연산자</a></li>
+                    <li><a href="#">01. 배열 : 데이터 불러오기 : 배열구조분해할당</a></li>
+
+
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : 기본</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : Object</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : 변수</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : for in</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : map()</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : hasOwnProperty()</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : 펼침연산자 - 복사</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : 펼침연산자 - 추가</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : 펼침연산자 - 결함</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : 비구조화 할당</a></li>
+                    <li><a href="#">01. 객체 : 데이터 불러오기 : 객체구조분해할당</a></li>
                 </ul>
             </div>
     </div>
@@ -54,7 +86,80 @@
 <!-- //footer -->
 
     <script>
-        
+        // 01. 변수 : 데이터 불러오기
+        // 변수안에 저장된 데이터를 불러오는 방법입니다.
+        {
+            let x = 100, y = 200, z = "javascript";
+
+            // console.log(x, y, z);
+        }
+
+        // 02. 상수 : 데이터 불러오기
+        // 상수안에 저장된 데이터를 불러오는 방법입니다.
+        {
+            const x = 100, y = 200, z = "javascript";
+
+            // console.log(x, y, z);
+        }
+
+        // 03. 배열 : 데이터 불러오기
+        // 배열안에 저장된 데이터를 불러오는 방법입니다.
+        {
+            const arr = [100, 200, "javascript"]
+
+            // console.log(arr[0], arr[1], arr[2]);
+        }
+
+        // 04. 배열 : 데이터 불러오기 : 2차 배열
+        // 배열안에 배열이 저장된 데이터를 불러오는 방법입니다.
+        {
+            const arr = [100, 200, ["javascript", "react"]];
+
+            // console.log(arr[0]);
+            // console.log(arr[1]);
+            // console.log(arr[2][0]);
+            // console.log(arr[2][1]);
+            // console.log(arr);
+        }
+
+        // 05. 배열 : 데이터 불러오기 : 갯수 구하기
+        // 배열에 저장된 값의 갯수를 불러오는 방법입니다.
+        {
+            const arr = [100, 200, "javascript"];
+
+            // console.log(arr.length);
+        }
+
+        // 06. 배열 : 데이터 불러오기 : for()문
+        // 값이 조건에 맞을때까지 계속 실행하는 방법입니다.
+        // for문을 사용하여 불필요한 변수의 사용을 줄여 코드를 줄일 수 있다.
+        // 부등호를 잘 생각하고 적어야 오류가 안뜬다.
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            // console.log(arr[0]);
+            // console.log(arr[1]);
+            // console.log(arr[2]);
+            // console.log(arr[3]);
+            // console.log(arr[4]);
+            // console.log(arr[5]);
+            // console.log(arr[6]);
+            // console.log(arr[7]);
+            // console.log(arr[8]);
+
+            // for(초기값; 조건식; 증감식) {
+            //     실행문
+            // }
+            for(let i = 0; i<9; i++){
+               console.log(arr[i]);
+            }
+            for(let o = 8; o>=0; o--){
+                console.log(arr[o]);
+            }
+        }
+
+        // 07
+
     </script>
 
 </body>
