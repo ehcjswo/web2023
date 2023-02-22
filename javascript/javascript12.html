@@ -124,15 +124,14 @@
                     <h3>04. 데이터 이펙트 : 1부터 100까지 특정 수 출력하기</h3>
                     <p>for문을 이용해서 0부터 100까지의 5의배수,짝수만 출력하는 예제입니다.</p>
                     <p>if문을 활용하여 특정 수만 출력할 수 있습니다.</p>
-<pre data-line="" class="line-numbers" ><code class="language-js">for ( let i=0; i&lt;=100; i+=5 ){     //i = i + 5
-    console.log(i);     //i에 5를 계속 더해 5배수만 나오도록 출력합니다.
+<pre data-line="" class="line-numbers" ><code class="language-js">//예시 1번
+for ( let i=0; i&lt;=100; i+=5 ){     //i = i + 5
+    console.log(i);              //i에 5를 계속 더해 5배수만 나오도록 출력합니다.
 }
-
-// 0,5,10,15 ~~ 100
 
 //예시2번
 for ( let i=1; i&lt;=100; i++ ){    
-    if(i % 2 == 0){     // if(조건문) ( i 나누기 2 = 몫이 0일시 출력 )
+    if(i % 2 == 0){             // if(조건문) ( i 나누기 2 = 몫이 0일시 출력 )
         console.log(i); 
     }
 }
