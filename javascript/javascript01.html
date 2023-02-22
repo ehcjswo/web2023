@@ -99,7 +99,7 @@
                 <h3>02. 변수 : 데이터 저장 + 데이터 변경</h3>
                 <p>변수는 데이터를 저장 할수도 있지만 변경도 가능하다.</p>
                 <div class="script">
-<pre><code>{
+<pre class="line-numbers"><code>{
     let x = 100;    
     let y = 200;
     let z = "javascript";
@@ -131,7 +131,7 @@
                 <h3>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터추가</h3>
                 <p>변수는 데이터를 저장 할수도 있지만 변경도 가능하다.</p>
                 <div class="script">
-<pre><code>{
+<pre class="line-numbers"><code>{
     let x = 100;
     let y = 200;
     let z = "javascript";
@@ -167,7 +167,7 @@
                <h3>04. 상수 : 데이터 저장 + 데이터 변경X</h3>
                <p>상수는 데이터 저장이 가능하지만 변경은 불가능하다.</p>
                <div class="script">
-<pre><code>{
+<pre class="line-numbers"><code>{
     const x = 100;
     const y = 200;
     const z = "javascript";
@@ -198,7 +198,7 @@
                <h3>05. 배열 : 데이터 저장(여러개): 표현방법1</h3>
                <p>배열은 데이터 저장을 여러개 할 수 있다.</p>
                <div class="script">
-<pre><code>{
+<pre class="line-numbers"><code>{
     const arr = new Array();    
     arr[0] = 100;              //배열 값을 따로 저장해줍니다.
     arr[1] = 200;
@@ -228,7 +228,7 @@
                <p>배열은 데이터 저장을 여러개 할 수 있다.</p>
                <p>배열안에 요소를 적어 불필요한 코드를 줄일 수 있다.</p>
                <div class="script">
-<pre><code>{
+<pre class="line-numbers"><code>{
     const arr = new Array(100, 200, "javascript");  //배열코드안에 직접 여러개의 값을 저장합니다.
 
     console.log(arr[0]);    
@@ -255,7 +255,7 @@
                 <p>배열은 데이터 저장을 여러개 할 수 있다.</p>
                 <p>특정 변수 선언코드를 생략해 코드를 줄일 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const arr = [ ];        //특정 선언코드를 생략했습니다.
     arr[0] = 100;
     arr[1] = 200;
@@ -285,7 +285,7 @@
                 <p>배열은 데이터 저장을 여러개 할 수 있다.</p>
                 <p>특정 변수 선언코드를 생략하고 배열안에 요소를 적어 코드를 줄일 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const arr = [100, 200, "javascrip"];   //특정 선언코드를 생략하고 배열 안에 직접 값을 여러개 저장합니다.
 
     console.log(arr[0]);
@@ -311,7 +311,7 @@
                 <h3>09. 객체 : 데이터 저장(키와 값) : 표현방법1</h3>
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const obj = new Object();       //객체 키와 값을 따로 저장해줍니다.
     obj[0] = 100;
     obj[1] = 200;
@@ -341,7 +341,7 @@
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <p>숫자대신 변수명을 직접 선언 할 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const obj = new Object();       
     obj.a = 100;                //객체 변수에 변수명을 직접 선언해서 저장할 수 있습니다.
     obj.b = 200;
@@ -371,7 +371,7 @@
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <p>특정 변수 선언코드를 생략해 코드를 줄일 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const obj = { };        //특정 선언코드를 생략
     obj.a = 100;
     obj.b = 200;
@@ -401,7 +401,7 @@
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <p>배열안에 객체를 넣어 값을 불러올 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const obj = [           //[ ] 안에 여러 배열,객체값을 넣을 수 있습니다.
     {a:100, b:200},         //obj[0] 줄입니다.
     {c:"javascript"}        //obj[1] 줄입니다. 
@@ -431,7 +431,7 @@
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <p>객체 안에 배열을 넣어 값을 불러올 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const obj = {
     a: 100,                 //다음 배열값을 넣을때 쉼표를 붙여줍니다.
     b: [200, 300],          
@@ -469,7 +469,7 @@
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <p>객체안 키값에 변수를 저장한다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const a = 100;
     const b = 200;
     const c = "javascript";
@@ -504,7 +504,7 @@
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <p>객체 안에 함수를 넣을 수 있다.</p>
                 <div class="script">
- <pre><code>{
+ <pre class="line-numbers"><code>{
     const obj = {
         a: 100,
         b: [200, 300],
