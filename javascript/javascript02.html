@@ -76,7 +76,6 @@
                     <li><a href="#">01. 객체 : 데이터 불러오기 : 비구조화 할당</a></li>
                     <li><a href="#">01. 객체 : 데이터 불러오기 : 객체구조분해할당</a></li>
                 </ul>
-<<<<<<< Updated upstream
             </div>
             <div class="main__sample">
                 <div id="sample01" class="sample">
@@ -99,8 +98,8 @@
                     </details>
                 </div>
                 <div class="notice">
-                    <h4>반복문 : 변수를 이용해 반복적으로 값을 낼수있다.</h4>
-                    <p>for문에 사용되는 변수가 적은 것이 더 효율적이고 간단하므로 변수들의 관계를 잘 파악하여 불필요한 변수의 사용을 줄이는 것이 좋다.</p>
+                    <h4>변수 : 변수는 데이터를 저장하는 장소를 의미합니다.</h4>
+                    <p>변수는 var와 let이 있습니다.</p>
                 </div>
                 <!-- //sample01번 -->   
                 
@@ -108,7 +107,6 @@
                 <div id="sample02" class="sample">
                     <h3>02. 상수 : 데이터 불러오기</h3>
                     <p>상수안에 저장된 데이터를 불러오는 방법입니다.</p>
-                    <p></p>
         <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
 <pre data-line="" class="line-numbers" ><code class="language-js">{
     const x = 100, y = 200, z = "javascript";
@@ -126,13 +124,127 @@
                     </details>
                 </div>
                 <div class="notice">
+                    <h4>상수 : 상수는 데이터가 변경되지 않습니다.</h4>
+                    <p>var, let 은 값이 변경되지만 const는 값이 변경되지 않습니다.</p>
+                </div>
+                <!-- //sample02번 --> 
+
+                <div class="main__sample">
+                <div id="sample03" class="sample">
+                    <h3>03. 배열 : 데이터 불러오기</h3>
+                    <p>배열안에 저장된 데이터를 불러오는 방법입니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const arr = [100, 200, "javascript"]
+
+    // console.log(arr[0], arr[1], arr[2]);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100, 200, javascript
+                        </div>
+                    </details>
+                </div>
+                <div class="notice">
                     <h4>반복문 : 변수를 이용해 반복적으로 값을 낼수있다.</h4>
                     <p>for문에 사용되는 변수가 적은 것이 더 효율적이고 간단하므로 변수들의 관계를 잘 파악하여 불필요한 변수의 사용을 줄이는 것이 좋다.</p>
                 </div>
-                <!-- //sample02번 --> 
-=======
+                <!-- //sample03번 --> 
+
+                <div class="main__sample">
+                <div id="sample04" class="sample">
+                    <h3>04. 배열 : 데이터 불러오기 : 2차 배열</h3>
+                    <p>배열안에 저장된 배열을 데이터를 불러오는 방법입니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const arr = [100, 200, ["javascript", "react"]];
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2][0]);
+    console.log(arr[2][1]);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>200<br>javascript<br>react
+                        </div>
+                    </details>
+                </div>
+                <div class="notice">
+                </div>
+                <!-- //sample04번 -->
+
+                <div class="main__sample">
+                <div id="sample05" class="sample">
+                    <h3>05. 배열 : 데이터 불러오기 : 갯수 구하기</h3>
+                    <p>배열에 저장된 값의 갯수를 불러오는 방법입니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    console.log(arr.length);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            3
+                        </div>
+                    </details>
+                </div>
+                <div class="notice">
+                </div>
+                <!-- //sample05번 -->
+
+                <div class="main__sample">
+                <div id="sample06" class="sample">
+                    <h3>06. 배열 : 데이터 불러오기 : for()문</h3>
+                    <p>배열에 저장된 값의 갯수를 불러오는 방법입니다.</p>
+                    <p>값이 조건에 맞을때까지 계속 실행하는 방법입니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+    console.log(arr[3]);
+    console.log(arr[4]);
+    console.log(arr[5]);
+    console.log(arr[6]);
+    console.log(arr[7]);
+    console.log(arr[8]);
+    }
+
+    for(let i = 0; i<9; i++){
+       console.log(arr[i]);
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>200<br>300<br>400<br>500<br>600<br>700<br>700<br>800<br>900
+                            <br>//1~13줄코드와 15~17 코드의 값은 똑같다.
+                        </div>
+                    </details>
+                </div>
+                <div class="notice">
+                </div>
+                <!-- //sample06번 -->
             </div>     
->>>>>>> Stashed changes
     </div>
     </main>
     
@@ -180,7 +292,6 @@
             // console.log(arr[1]);
             // console.log(arr[2][0]);
             // console.log(arr[2][1]);
-            // console.log(arr);
         }
 
         // 05. 배열 : 데이터 불러오기 : 갯수 구하기
@@ -214,9 +325,9 @@
             for(let i = 0; i<9; i++){
                console.log(arr[i]);
             }
-            for(let o = 8; o>=0; o--){
-                console.log(arr[o]);
-            }
+            // for(let o = 8; o>=0; o--){
+            //     console.log(arr[o]);
+            // }
         }
 
         // 07

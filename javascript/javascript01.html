@@ -74,8 +74,8 @@
                 <p>변수는 데이터를 담는 그릇입니다.</p>
                 <div class="script">
 <pre><code class="languege-js">{
-    var x = 100;            //변수 x에 숫자 100을 저장함
-    var y = "200";          //변수 y에 문자 200을 저장함
+    var x = 100;             //변수 x에 숫자 100을 저장함
+    var y = "200";           //변수 y에 문자 200을 저장함
     var z = "javascript";    //변수 z에 문자 "javascript"를 저장함
     
     console.log(x);
@@ -102,11 +102,11 @@
                 <p>변수는 데이터를 저장 할수도 있지만 변경도 가능하다.</p>
                 <div class="script">
 <pre><code>{
-    let x = 100;
+    let x = 100;    
     let y = 200;
     let z = "javascript";
 
-    x = 300;
+    x = 300;            //변수를 중간에 변경해도 정상 작동됩니다.
     y = 200;
     z = "react";
 
@@ -139,7 +139,7 @@
     let z = "javascript";
     
     x += 300;        // x = x + 300 
-    y += 400;
+    y += 400;        // y = y + 400 
     z += "react";
     
     console.log(x);
@@ -175,7 +175,7 @@
     const y = 200;
     const z = "javascript";
     
-    x = 300;        
+    x = 300;        //const(상수)는 변경이 불가능합니다.
     y = 400;
     z = "react";               
     
@@ -202,12 +202,12 @@
                <p>배열은 데이터 저장을 여러개 할 수 있다.</p>
                <div class="script">
 <pre><code>{
-    const arr = new Array();
-    arr[0] = 100;
+    const arr = new Array();    
+    arr[0] = 100;              //배열 값을 따로 저장해줍니다.
     arr[1] = 200;
     arr[2] = "javascript";
 
-    console.log(arr[0]);
+    console.log(arr[0]);       //배열 [0]첫번째 값을 불러옵니다.
     console.log(arr[1]);
     console.log(arr[2]);
 }
@@ -232,9 +232,9 @@
                <p>배열안에 요소를 적어 불필요한 코드를 줄일 수 있다.</p>
                <div class="script">
 <pre><code>{
-    const arr = new Array(100,200,"javascript");
+    const arr = new Array(100,200,"javascript");  //배열코드안에 직접 여러개의 값을 저장합니다.
 
-    console.log(arr[0]);
+    console.log(arr[0]);    
     console.log(arr[1]);
     console.log(arr[2]);
 }
@@ -244,8 +244,8 @@
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            400<br>
-                            600<br>
+                            100<br>
+                            200<br>
                             javascrip
                         </div>
                     </details>
@@ -259,7 +259,7 @@
                 <p>특정 변수 선언코드를 생략해 코드를 줄일 수 있다.</p>
                 <div class="script">
  <pre><code>{
-    const arr = [];
+    const arr = [ ];        //특정 선언코드를 생략했습니다.
     arr[0] = 100;
     arr[1] = 200;
     arr[2] = "javascrip";
@@ -268,14 +268,14 @@
     console.log(arr[1]);
     console.log(arr[2]);
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            400<br>
-                            600<br>
+                            100<br>
+                            200<br>
                             javascrip
                         </div>
                     </details>
@@ -289,13 +289,13 @@
                 <p>특정 변수 선언코드를 생략하고 배열안에 요소를 적어 코드를 줄일 수 있다.</p>
                 <div class="script">
  <pre><code>{
-    const arr = [100, 200, "javascrip"];
+    const arr = [100, 200, "javascrip"];   //특정 선언코드를 생략하고 배열 안에 직접 값을 여러개 저장합니다.
 
     console.log(arr[0]);
     console.log(arr[1]);
     console.log(arr[2]);
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -315,7 +315,7 @@
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
                 <div class="script">
  <pre><code>{
-    const obj = new Object();
+    const obj = new Object();       //객체 키와 값을 따로 저장해줍니다.
     obj[0] = 100;
     obj[1] = 200;
     obj[2] = "javascript";
@@ -324,7 +324,7 @@
     console.log(obj[1]);
     console.log(obj[2]);
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -345,8 +345,8 @@
                 <p>숫자대신 변수명을 직접 선언 할 수 있다.</p>
                 <div class="script">
  <pre><code>{
-    const obj = new Object();
-    obj.a = 100;
+    const obj = new Object();       
+    obj.a = 100;                //객체 변수에 변수명을 직접 선언해서 저장할 수 있습니다.
     obj.b = 200;
     obj.c = "javascrip";
 
@@ -354,7 +354,7 @@
     console.log(obj.b);
     console.log(obj.c);
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -375,7 +375,7 @@
                 <p>특정 변수 선언코드를 생략해 코드를 줄일 수 있다.</p>
                 <div class="script">
  <pre><code>{
-    const obj = { };
+    const obj = { };        //특정 선언코드를 생략
     obj.a = 100;
     obj.b = 200;
     obj.c = "javascrip";
@@ -384,7 +384,7 @@
     console.log(obj.b);
     console.log(obj.c);
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -405,16 +405,16 @@
                 <p>배열안에 객체를 넣어 값을 불러올 수 있다.</p>
                 <div class="script">
  <pre><code>{
-    const obj = [
-    {a:100, b:200,}, 
+    const obj = [           //{ }안에 여러 배열값을 넣을 수 있습니다.
+    {a:100, b:200},        //다음 객체값 쓰기전 쉼표를 붙여줍니다.
     {c:"javascript"}
     ];
 
-    console.log(obj[0].a);
+    console.log(obj[0].a);  //[배열].(객체) 를 사용하여 값을 출력합니다.
     console.log(obj[0].b);
     console.log(obj[1].c);
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -436,20 +436,20 @@
                 <div class="script">
  <pre><code>{
     const obj = {
-    a: 100,
-    b: [200, 300],
+    a: 100,                 //배열값을 넣을때 쉼표를 붙여줍니다.
+    b: [200, 300],          
     c: {x: 400, y: 500},
     d: "javascript"
     };
 
-    console.log(obj.a);
-    console.log(obj.b[0]);
+    console.log(obj.a);     
+    console.log(obj.b[0]);  //(객체).변수명[배열] 을 사용하여 값을 출력합니다.
     console.log(obj.b[1]);
-    console.log(obj.c.x);
+    console.log(obj.c.x);   //객체안에 객체값도 불러올 수 있습니다.
     console.log(obj.c.y);
     console.log(obj.d);
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -470,26 +470,24 @@
             <div id="sample15" class="sample">
                 <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법7</h3>
                 <p>객체는 키와 값에 데이터 저장을 할 수 있다.</p>
-                <p>객체안에 키값에 변수를 저장한다.</p>
+                <p>객체안 키값에 변수를 저장한다.</p>
                 <div class="script">
  <pre><code>{
     const a = 100;
     const b = 200;
     const c = "javascript";
 
-    const obj = {a, b, c};
+    const obj = {a, b, c};  //위 상수값을 객체에 넣는 작업입니다.
 
     console.log(a);
     console.log(b);
     console.log(c);
     
-    // console.log(obj.a);
+    // console.log(obj.a);   ( ) 안에 obj. 를 붙여도 정상작동됩니다.
     // console.log(obj.b);
     // console.log(obj.c);
-    // ( ) 안에 obj. 를 붙여도 정상작동
-
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -517,18 +515,16 @@
         d: function(){
             console.log("javascript가 실행되었습니다.")
             };
-    }
-
+}
     console.log(obj.a);
     console.log(obj.b[0]);
     console.log(obj.b[1]);
-    console.log(obj.b[2]);  //undefined
+    console.log(obj.b[2]);  //b배열의 2번은 존재하지않아 undefined 가 뜹니다.
     console.log(obj.c);
-    console.log(obj.d); //(X) 문자열 그대로 나옴
-    obj.d();  //실행문은 이렇게 출력
-
+    console.log(obj.d);     //(X) 문자열 그대로 나옵니다.
+    obj.d();                //함수 실행문은 이렇게 출력합니다.
 }
- </code></pre>
+</code></pre>
                 </div>
                 <div class="result">
                     <details>
@@ -561,6 +557,12 @@
             <div id="sample08" class="sample"></div>
             <div id="sample09" class="sample"></div>
             <div id="sample10" class="sample"></div>
+            <div id="sample11" class="sample"></div>
+            <div id="sample12" class="sample"></div>
+            <div id="sample13" class="sample"></div>
+            <div id="sample14" class="sample"></div>
+            <div id="sample15" class="sample"></div>
+            <div id="sample16" class="sample"></div>
         </div>
     </div>
 </main>
@@ -682,7 +684,8 @@
             c: "javascript",
             d: function(){
                 console.log("javascript가 실행되었습니다.");
-            } 
+            }
+            
         }
 
         console.log(obj.a);
@@ -692,15 +695,40 @@
         console.log(obj.c);
         console.log(obj.d); //(X) 문자열 그대로 나옴
         obj.d();  //실행문은 이렇게 출력
+        
     }
 
+    //객체 안에 함수를 넣어 출력할 수 있다.
     {
-        const obj = {a:100, b:200};
+        const j = "javascript";
 
-        obj.a = 200;
+        const obj = {
+            a: 100,
+            b: [200, 300],
+            c: "javascript",
+            d: function(){
+                console.log("javascript가 실행되었습니다.");
+            },
+            e: function(){
+                console.log(j + "가 실행되었습니다.");
+            },
+            f: function(){
+                console.log(this.c + "가 실행되었습니다"); // this 자기자신을 표현한다. (중요)
+            }
+        }
 
         console.log(obj.a);
+        console.log(obj.b[0]);
+        console.log(obj.b[1]);
+        console.log(obj.b[2]);  //undefined
+        console.log(obj.c);
+        console.log(obj.d); //(X) 문자열 그대로 나옴
+        obj.d();  //실행문은 이렇게 출력
+        obj.e();
+        obj.f();
     }
+
+
 
 
 
