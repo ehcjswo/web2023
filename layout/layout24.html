@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 - grid</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            width: 1800px;
+            display: grid;
+            grid-template-areas: 
+            "header contaner header"
+            "nav nav"
+            "section section"
+            "footer footer"
+            ;
+            grid-template-columns: 300px 1200px 300px;
+            grid-template-rows: 100px 300px 500px 100px;
+        }
+        #header {
+            background-color: #E0F2F1;
+            grid-area: header;
+        }
+        #nav {
+            background-color: #80CBC4;
+            grid-area: nav;
+        }
+        #section {
+            background-color: #26A69A;
+            grid-area: section;
+        }
+        #footer {
+            background-color: #00897B;
+            grid-area: footer;
+        }
+        .contaner {
+            height:inherit;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="contaner"></div>
+        </header>
+        <nav id="nav">
+            <div class="contaner"></div>
+        <section id="section">
+            <div class="contaner"></div>
+        </section>
+        <footer id="footer">
+            <div class="contaner"></div>
+        </footer>
+    </div>
+</body>
+</html>
