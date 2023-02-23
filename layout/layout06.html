@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃6 - float 반응형 </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clreafix:after {
+            clear: both;
+        } */
+        body {
+            background-color: #FFF3E0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #FFE0B2;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #FFCC80;
+        }
+        #aside {
+            width: 30%;
+            height: 780px;
+            background-color: #FFB74D;
+            float: left;
+        }
+        #contents {
+            width: 70%;
+            height: 780px;
+            background-color: #FFA726;
+            float: left;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #FF9800;
+            clear: both;
+        }
+        /* 
+            float으로 인한 깨짐 현상 방지법
+            1. clear: both
+            2. 부모 박스 overlow: hidden
+            3. clearfix (이게 제일 완벽)    
+        */
+
+        @media (max-width: 1220px){
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width: 768px){
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width: 600px){
+            #aside {
+                width: 100%;
+                height: 300px;
+            }
+            #contents {
+                width: 100%;
+                height: 480px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <aside id="aside"></aside>
+        <contents id="contents"></contents>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

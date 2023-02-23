@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+            line-height: 0;
+            clear: both;
+        }
+    
+        body {
+            background-color: #E1F5FE;
+        }
+        #warp {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #main {
+            width: 100%;      
+        }
+        #section1 {
+            width: 30%;
+            height: 780px;
+            background-color: #4FC3F7;
+            float: left;
+        } 
+        #section2 {
+            width: 70%;
+            height: 260px;
+            background-color: #29B6F6;
+            float: left;
+        }
+        #section3 {
+            width: 70%;
+            height: 260px;
+            background-color: #03A9F4;
+            float: left;
+        }
+        #section4 {
+            width: 70%;
+            height: 260px;
+            background-color: #039BE5;
+            float: left;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #0288D1;
+        }
+        @media (max-width: 1200px){
+            #warp {
+            width: 96%;
+            }
+            #section1 {
+                width: 30%;
+                height: 780px;
+            }
+            #section2 {
+                width: 70%;
+                height: 260px;
+            }   
+            #section3 {
+                width: 35%;
+                height: 520px;
+            }
+            #section4 {
+                width: 35%;
+                height: 520px;
+            }
+        }
+        @media (max-width: 908px){
+            #warp {
+            width: 100%;
+            }   
+            #section1 {
+                width: 30%;
+                height: 780px;
+            }
+            #section2 {
+                width: 70%;
+                height: 390px;
+            }
+            #section3 {
+                width: 70%;
+                height: 390px;
+            }
+            #section4 {
+                display: none;
+            }
+            }
+            @media (max-width: 620px){  
+            #warp {
+            width: 620px;
+            }             
+            #section1 {
+            width: 100%;
+            height: 200px;
+            }
+            #section2 {
+            width: 100%;
+            height: 430px;
+            }
+            #section3 {
+            width: 100%;
+            height: 150px;
+            }
+            #section4 {
+            display: none;
+            }
+             }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="main" class="clearfix">
+            <div id="section1"></div>
+            <div id="section2"></div>
+            <div id="section3"></div>
+            <div id="section4"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
