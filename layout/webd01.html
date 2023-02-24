@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+        }
+        .clearfix::before,
+        .clearfix::after
+        {
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clearfix::after {
+            clear: both;
+        }
+        body {
+            background-color: #ded5f0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #aside {
+            width: 300px;
+            float: left;
+        }
+        #aside .logo {
+            width: 100%;
+            height: 300px;
+            background-color: #eca0ff;
+        }
+        #aside .menu {
+            width: 100%;
+            height: 700px;
+            background-color: #ff78f8;
+        }
+        #section {
+            width: 900px;
+            float: left;
+        }
+        #section .banner {
+            width: 100%;
+            height: 500px;
+            background-color: #c648f8;
+        }
+        #section .contants {
+            width: 100%;
+            height: 300px;
+        }
+        #section .contants .notice {
+            width: 33.3333%;
+            height: 300px;
+            background-color: #f01818;
+            float: left;
+        }
+        #section .contants .gellery {
+            width: 33.3333%;
+            height: 300px;
+            background-color: #fc4b4b;
+            float: left;
+        }
+        #section .contants .popup {
+            width: 33.3333%;
+            height: 300px;
+            background-color: #ff8686;
+            float: left;
+        }
+        #section .footer {
+            width: 100%;
+            height: 200px;
+        }
+        #section .footer .footer1 {
+            width: 20%;
+            height: 200px;
+            background-color: #5121ff;
+            float: left;
+        }
+        #section .footer .footer2 {
+            width: 80%;
+            height: 100px;
+            background-color: #5847f3;
+            float: left;
+        }
+        #section .footer .footer3 {
+            width: 80%;
+            height: 100px;
+            background-color: #9984f8;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <div class="logo">로고</div>
+            <div class="menu">메뉴</div>
+        </aside>
+        <section id="section">
+            <div class="banner">배너</div>
+            <div class="contants clearfix">
+                <div class="notice">공지사항</div>
+                <div class="gellery">갤러리</div>
+                <div class="popup">팝업</div>
+            </div>
+            <div class="footer clearfix">
+                <div class="footer1">로고</div>
+                <div class="footer2">하단메뉴</div>
+                <div class="footer3">카피라이터</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
