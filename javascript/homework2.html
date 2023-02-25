@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            let user = prompt("2이상 숫자를 입력해주세요.");
+            let start = 0;
+            let num = 0;
+
+            start = (user > 1) ? start=2 : document.write("1보다 큰 숫자를 입력해주세요.");
+
+            if(start==2){
+                for(let i=1; i<=user; i++){
+                    if(i % 2 == 0){
+                        num += i;
+                    } if(i % 2 == 0){
+                    document.write(i + "----" + num + "<br>");
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
