@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript : 데이터 실행하기</title>
+    <title>Javascript : 데이터 불러오기</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
     <link rel="shortcut icon" href="/assets/ico/javascript.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/ico/javascript192x192.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../assets/ico/javascript192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
 </head>
 <body>
     <header id="header">
@@ -17,8 +18,8 @@
     <nav>
         <ul>
             <li><a href="javascript01.html">데이터 저장하기</a></li>
-            <li><a href="javascript02.html">데이터 불러오기</a></li>
-            <li class="active"><a href="javascript03.html">데이터 실행하기</a></li>
+            <li class="active"><a href="javascript02.html">데이터 불러오기</a></li>
+            <li><a href="javascript03.html">데이터 실행하기</a></li>
             <li><a href="javascript04.html">데이터 제어하기</a></li>
         </ul>
         <ul>
@@ -44,56 +45,253 @@
     <!-- //header -->
     
     <main id="main">
-    <div class="container">
-            <div class="main__menu">
-                <ul>
-                    <li><a href="#">01. 선언적 함수</a></li>
-                    <li><a href="#">01. 익명 함수</a></li>
-                    <li><a href="#">01. 매개변수 함수</a></li>
-                    <li><a href="#">01. 리턴값 함수</a></li>
+        <div class="container">
+                <div class="main__menu">
+                    <ul>
+                        <li><a href="#">01. 선언적 함수</a></li>
+                        <li><a href="#">02. 익명 함수</a></li>
+                        <li><a href="#">03. 매개변수 함수</a></li>
+                        <li><a href="#">04. 리턴값 함수</a></li>
+                        <li><a href="#">05. 화살표 함수 : 선언적 함수</a></li>
+                        <li><a href="#">06. 화살표 함수 : 익명 함수</a></li>
+                        <li><a href="#">07. 화살표 함수 : 매개변수 함수</a></li>
+                        <li><a href="#">08. 화살표 함수 : 리턴값 함수</a></li>
+    
+                        <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값</a></li>
+                        <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략</a></li>
+                        <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
+                        <li><a href="#">01. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
+    
+                        <li><a href="#">01. 함수 유형 : 함수와 매개변수를 이용한 형태</a></li>
+                        <li><a href="#">01. 함수 유형 : 함수와 변수를 이용한 형태</a></li>
+                        <li><a href="#">01. 함수 유형 : 함수와 배열, 객체를 이용한 형태</a></li>
+                        <li><a href="#">01. 함수 유형 : 객체 안에 변수와 함수를 이용한 형태</a></li>
+                        <li><a href="#">01. 함수 유형 : 객체생성자 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 프로토타입 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 객체리터럴 함수</a></li>
+    
+                        <li><a href="#">01. 함수 유형 : 즉시 실행 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 파라미터 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 아규먼트 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 재귀 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 콜백 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : Promise 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 내부 함수</a></li>
+                        <li><a href="#">01. 함수 유형 : 내부 함수 : 스코프, 클로저</a></li>
+                        
+                        <li><a href="#">01. 클래스</a></li>
+                        <li><a href="#">01. 클래스 상속</a></li>
+    
+                    </ul>
+                </div>
+            <div class="main__sample">
+            <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>01. 선언적 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    function func( ){
+        document.write("실행하기<br>");
+    }
+    func( );
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            실행하기
+                        </div>
+                    </details>
+                </div>
+                <div class="notice">
+                    <h4>함수 : 함수는 매개변수를 통해 입력값을 전달 받고, 반환값을 통해 출력값을 전달할 수 있습니다.</h4>
+                    <p>함수는 function 키워드를 사용하여 정의하며, 함수 이름, 매개변수, 함수 몸체로 구성됩니다.</p>
+                </div>
+                <!-- //sample01번 -->   
+                
 
-                    <li><a href="#">01. 화살표 함수 : 선언적 함수</a></li>
-                    <li><a href="#">01. 화살표 함수 : 익명 함수</a></li>
-                    <li><a href="#">01. 화살표 함수 : 매개변수 함수</a></li>
-                    <li><a href="#">01. 화살표 함수 : 리턴값 함수</a></li>
-                    <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값</a></li>
-                    <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략</a></li>
-                    <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
-                    <li><a href="#">01. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
+                <div id="sample02" class="sample">
+                    <h3>02. 익명 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const func = function( ){
+        document.write("실행하기<br>");
+    }
+    func( );
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            실행하기
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample02번 --> 
 
-                    <li><a href="#">01. 함수 유형 : 함수와 매개변수를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 함수와 변수를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 함수와 배열, 객체를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 객체 안에 변수와 함수를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 객체생성자 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 프로토타입 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 객체리터럴 함수</a></li>
+                <div id="sample03" class="sample">
+                    <h3>03. 매개변수 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    function func (str){
+        document.write(str);
+    }
+    func("실행하기<br>");
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            실행하기
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample03번 --> 
 
-                    <li><a href="#">01. 함수 유형 : 즉시 실행 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 파라미터 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 아규먼트 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 재귀 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 콜백 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : Promise 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 내부 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 내부 함수 : 스코프, 클로저</a></li>
-                    
-                    <li><a href="#">01. 클래스</a></li>
-                    <li><a href="#">01. 클래스 상속</a></li>
+                <div id="sample04" class="sample">
+                    <h3>04. 리턴값 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    function func( ){
+        const str = "함수가 실행되었습니다.<br>";
+        return str;
+    }
+    document.write(func( ));
+}
+document.write("<br><br>")
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample04번 -->
 
-                </ul>
-            </div>
+                <div id="sample05" class="sample">
+                    <h3>05. 화살표 함수 : 선언적 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    func = ( ) => {
+        document.write("실행<br>");
+    }
+    func( );
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            실행
+                        </div>
+                    </details>
+                </div>
+
+                <!-- //sample05번 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. 화살표 함수 : 익명 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const func = ( ) => {
+        document.write("실행<br>")
+    }
+    func( )
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            실행
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample06번 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. 화살표 함수 : 매개변수 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    func = (str) => {
+        document.write(str);
+    }
+    func("실행<br>");
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            실행
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample07번 -->
+
+                <div id="sample08" class="sample">
+                    <h3>08. 화살표 함수 : 리턴값 함수</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    func = ( ) => {
+        const str = "실행<br>";
+        return str;
+    }
+    document.write(func( ));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                           실행
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample08번 -->
+            </div>     
     </div>
     </main>
+    
     <!-- //main -->
+
+    
 
 <footer id="footer">
     <a href="mailto:ehcjswo1@gmail.com">ehcjswo1@gmail.com</a>
+</footer>
 <!-- //footer -->
 
-    
+<script src="assets/js/prism.js"></script>
+
     <script>
         
+
     </script>
 
 </body>
