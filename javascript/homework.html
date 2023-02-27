@@ -39,7 +39,7 @@
                     for(let j=1; j<=5; j++){
                         if (num % 2 == 1)
                         table += "<td>"+num+"</td>";
-                        if (num % 2 == 0)
+                        else
                         table += "<td>"+"<span style='color:blue'>"+num+"</span>"+"</td>";
                         num++
                 }
@@ -62,7 +62,7 @@
                     for(let j=1; j<=5; j++){
                         if (num % 2 == 0)
                         table += "<td>"+num+"</td>";
-                        if (num % 2 == 1)
+                        else
                         table += "<td>"+"<span style='color:red'>"+num+"</span>"+"</td>";
                         num++
                 }
@@ -85,7 +85,7 @@
                     for(let j=1; j<=5; j++){
                         if (num % 2 == 0)
                         table += "<td>"+"<span style='color:blue'>"+num+"</span>"+"</td>";
-                        if (num % 2 == 1)
+                        else
                         table += "<td>"+"<span style='color:red'>"+num+"</span>"+"</td>";
                         num++
                 }
@@ -96,6 +96,7 @@
             document.write(table);
         }
         document.write("5x5 짝수파랑, 홀수빨강 테이블<br><br>");
+
 
     </script>
 </body>
