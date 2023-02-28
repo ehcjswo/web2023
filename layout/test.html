@@ -10,111 +10,92 @@
             padding: 0;
             margin: 0;
         }
-        .clearfix::before,
-        .clearfix::after{
-            display: block;
-            content: '';
-            line-height: 0;
-        }
-        .clearfix::after{
-            clear: both;
-        }
         #wrap {
-            width: 1200px;
-            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
         }
-        #aside {
-            width: 300px;
-            height: 1000px;
-            background-color: #111;
-            float: left;
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #ff0000;
         }
-        .header1 {
-            height: 200px;
-            background-color: #111;
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #fd531f;
         }
-        .header2 {
-            height: 200px;
-            background-color: #222;
-        }
-        .header3 {
-            height: 600px;
-            background-color: #333;
-        }
-        #contants {
-            width: 900px;
+        #main {
+            width: 100%;
             height: 900px;
-            float: left;
+            background-color: #d0ff00;
+            
         }
-        .banner {
-            height: 500px;
-            background-color: #252;
+        .section1 {
+            width: 100%;
+            height: 100px;
+            background-color: #19d1ff;
         }
-        .article {
-            height: 200px;
-            background-color: #444;
+        .section2 {
+            width: 100%;
+            height: 800px;
+            display: flex;
         }
         .art1 {
-            width: 300px;
+            width: 50%;
+            height: 900px;
+            
+        }
+        .m1 {
+            width: 100%;
             height: 200px;
-            background-color: #6664;
-            float: left;
+            background-color: #2b00e9;
+        }
+        .m2 {
+            width: 100%;
+            height: 700px;
+            background-color: #f52f2f;
         }
         .art2 {
-            width: 300px;
-            height: 200px;
-            background-color: rgba(122, 122, 52, 0.267);
-            float: left;
+            width: 50%;
+            height: 900px;
+            background-color: #cb5ee0;
         }
-        .art3 {
-            width: 300px;
-            height: 200px;
-            background-color: #757575;
-            float: left;
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #97007e;
         }
-        .footer {
-            height: 300px;
-            background-color: #555;
-        }
-        .foo1 {
-            width: 200px;
-            height: 300px;
-            background-color: #f73d3d;
-            float: left;
-        }
-        .foo2 {
-            width: 700px;
-            height: 150px;
-            background-color: #2e0e0e;
-            float: left;
-        }
-        .foo3 {
-            width: 700px;
-            height: 150px;
-            background-color: #6d0202;
-            float: left;
+        .container {
+            width: 1200px;
+            height:inherit;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div id="aside" class="clearfix">
-            <div class="header1"></div>
-            <div class="header2"></div>
-            <div class="header3"></div>
+        <div id="header">
+            <div class="container"></div>
         </div>
-        <div id="contants" class="clearfix">
-            <div class="banner"></div>
-            <div class="article">
-                <div class="art1"></div>
-                <div class="art2"></div>
-                <div class="art3"></div>
+        <div id="nav">
+            <div class="container"></div>
+        </div>
+        <div id="main">
+            <div class="container">
+                <div class="section1"></div>
+                <div class="section2">
+                    <div class="art1">
+                        <div class="m1"></div>
+                        <div class="m2"></div>
+                    </div>
+                    <div class="art2"></div>
+                </div>
             </div>
-            <div class="footer">
-                <div class="foo1"></div>
-                <div class="foo2"></div>
-                <div class="foo3"></div>
-            </div>
+        </div>
+        <div id="footer">
+            <div class="container"></div>
         </div>
     </div>
 </body>
