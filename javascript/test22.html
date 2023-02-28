@@ -8,182 +8,70 @@
 </head>
 <body>
     <script>
-        // 함수 : 데이터 실행
-        // 선언적 함수
         // {
-        //     function func(){
-        //         document.write("실행하기<br>");
+        //     a = () => {
+        //         document.write("실행1<br>");
         //     }
-        //     func();
+        //     a();
         // }
 
-        // //익명 함수
-        // {
-        //     const func = function(){
-        //         document.write("실행하기<br>");
+        // {   
+        //     const b = () => {
+        //         document.write("실행2<br>");
         //     }
-        //     func();
+        //     b();
         // }
 
-        // //매개변수 함수
         // {
-        //     function func (str){
-        //         document.write(str);
+        //     //가독성을 위해 익명함수를 많이사용.
+        //     const c = (str1, str2, str3) => {
+        //         document.write(str1, str2, str3);
         //     }
-        //     func("실행하기<br>");
+        //     c("실행3","실행4","실행5<br>");
         // }
 
-        // // 리턴값(결과/끝) 함수
         // {
-        //     function func(){
-        //         const str = "함수가 실행되었습니다.<br>";
-        //         return str;
+        //     const d = (x, y, z) => {
+                
+        //         return (x + y) * z;
         //     }
-        //     document.write(func());
+        //     document.write(d(2,3,10));
         // }
-        // document.write("<br><br>")
-       
-        // // 05. 화살표 함수 : 선언적 함수
-        // {
-        //     func = () => {
-        //         document.write("실행<br>");
-        //     }
-        //     func();
-        // }
-
-        // // 06. 화살표 함수 : 익명 함수
-        // {
-        //     const func = () => {
-        //         document.write("실행<br>")
-        //     }
-        //     func()
-        // }
-
-        // // 07. 화살표 함수 : 매개변수 함수
-        // {
-        //     func = (str) => {
-        //         document.write(str);
-        //     }
-        //     func("실행<br>");
-        // }
-
-        // // 08. 화살표 함수 : 리턴값 함수
-        // {
-        //     func = () => {
-        //         const str = "실행<br>";
-        //         return str;
-        //     }
-        //     document.write(func());
-        // }
-
-
-        // 10~88까지 짝수만 출력하세요
+        //09. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값
         {
-            // for(let i=10; i<=88; i+=2){
-            //     document.write(i+" ");
-            // }
+            const func = (str) => {
+                return str;
+            }
+            document.write(func("실행되었습니다1."));
         }
 
-        // {
-        //     for(let i=1; i<=9; i++){
-        //         document.write(i + "단<br>")
-        //         for(let j=1; j<=9; j++){
-        //             document.write(i + "*" + j + "=" + i*j + "<br>");
-        //         } document.write("<br>")
-        //     } 
-        // }
-
-        // {
-        //     let table = "<table border='1'>";
-
-        //     for(let i=1; i<=10; i++){
-        //         table += "<tr>";
-                    
-        //         for(let j=1; j<=10; j++){
-        //             table += "<td>" + j + "</td>";
-        //         }
-        //         table += "</tr>";
-        //     }
-        //     table += "</table>";
-        //     document.write(table);
-        // }
-
-        //선언적함수
+        //10. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략
         {
-            function func(){
-                document.write("안녕1<br>");
+            //변수값이 하나일때 괄호를 생략이 가능합니다.
+            const func = str => {
+                return str;
             }
-            func();
+            document.write(func("실행되었습니다2."));
         }
 
-        //익명함수
+        //11. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴생략
         {
-            const func = function(){
-                document.write("안녕2<br>");
-            }
-            func();
+            const func = str => str;
+
+            document.write(func("실행되었습니다3."));
         }
 
-        //매개변수 함수
+        //12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략
         {
-            function func(str){
-                document.write(str)
-            }
-            func("안녕3<br>");
-        }
+            func = str => str;
 
-        //리턴값 함수
-        {
-            function func(){
-                const a = "안녕4<br>";
-                return a;
-            }
-            document.write(func());
+            document.write(func("실행되었습니다4."));
         }
     </script>
 </body>
 </html>
 
 <main id="main">
-    <div class="container">
-            <div class="main__menu">
-                <ul>
-                    <li><a href="#">01. 선언적 함수</a></li>
-                    <li><a href="#">02. 익명 함수</a></li>
-                    <li><a href="#">03. 매개변수 함수</a></li>
-                    <li><a href="#">04. 리턴값 함수</a></li>
-                    <li><a href="#">05. 화살표 함수 : 선언적 함수</a></li>
-                    <li><a href="#">06. 화살표 함수 : 익명 함수</a></li>
-                    <li><a href="#">07. 화살표 함수 : 매개변수 함수</a></li>
-                    <li><a href="#">08. 화살표 함수 : 리턴값 함수</a></li>
-
-                    <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값</a></li>
-                    <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략</a></li>
-                    <li><a href="#">01. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
-                    <li><a href="#">01. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
-
-                    <li><a href="#">01. 함수 유형 : 함수와 매개변수를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 함수와 변수를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 함수와 배열, 객체를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 객체 안에 변수와 함수를 이용한 형태</a></li>
-                    <li><a href="#">01. 함수 유형 : 객체생성자 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 프로토타입 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 객체리터럴 함수</a></li>
-
-                    <li><a href="#">01. 함수 유형 : 즉시 실행 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 파라미터 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 아규먼트 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 재귀 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 콜백 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : Promise 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 내부 함수</a></li>
-                    <li><a href="#">01. 함수 유형 : 내부 함수 : 스코프, 클로저</a></li>
-                    
-                    <li><a href="#">01. 클래스</a></li>
-                    <li><a href="#">01. 클래스 상속</a></li>
-
-                </ul>
-            </div>
-    </div>
+    
     </main>
     <!-- //main -->
