@@ -97,7 +97,27 @@
         }
         document.write("5x5 짝수파랑, 홀수빨강 테이블<br><br>");
 
+        //3배수 빨강, 5배수 파랑
+        {
+            let table = "<table border='1'>";
+            let num = 3;
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                
+                    for(let j=1; j<=5; j++){
+                        if (num % 5 == 0)
+                        table += "<td>"+"<span style='color:red'>"+num+"</span>"+"</td>";
+                        else
+                        table += "<td>"+"<span style='color:blue'>"+num+"</span>"+"</td>";
+                        num+=3;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
 
+            document.write(table);
+        }
+        document.write("5x5 3의배수 파랑, 5의배수 빨강 테이블<br><br>");
     </script>
 </body>
 </html>
