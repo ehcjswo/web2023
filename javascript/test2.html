@@ -8,66 +8,117 @@
 </head>
 <body>
     <script>
-        //선언적 함수
-        {
-            function func(){
-                document.write("안녕1<br>");
-            }
-            func();
-        }
+        // //선언적 함수
+        // {
+        //     function func(){
+        //         document.write("안녕1<br>");
+        //     }
+        //     func();
+        // }
 
-        //익명 함수
-        {
-            const func = function(){
-                document.write("안녕2<br>");
-            }
-            func();
-        }
+        // //익명 함수
+        // {
+        //     const func = function(){
+        //         document.write("안녕2<br>");
+        //     }
+        //     func();
+        // }
 
-        //매개변수 함수
-        {
-            function func(a){
-                document.write(a);
-            }
-            func("안녕3<br>");
-        }
+        // //매개변수 함수
+        // {
+        //     function func(a){
+        //         document.write(a);
+        //     }
+        //     func("안녕3<br>");
+        // }
 
-        //리턴값 함수
-        {
-            function func(){
-                const x = "안녕4<br>";
-                return x;
-            }
-            document.write(func());
-        }
+        // //리턴값 함수
+        // {
+        //     function func(){
+        //         const x = "안녕4<br>";
+        //         return x;
+        //     }
+        //     document.write(func());
+        // }
 
-        //3배수파랑 5배수파랑
-        {
-            for(let i=1; i<=50; i++){
-                if(i % 3 == 0){
-                    document.write("<span style='color:red'>"+i+"</span>");
-                } else if(i % 5 == 0){
-                    document.write("<span style='color:blue'>"+i+"</span>");
-                } else {
-                    document.write(i);
-                }
-            }
-        }
-        document.write("<br>");
-        //5x10 테이블
-        {
-            let table = ("<table border='1'>");
+        // //3배수파랑 5배수파랑
+        // {
+        //     for(let i=1; i<=50; i++){
+        //         if(i % 3 == 0){
+        //             document.write("<span style='color:red'>"+i+"</span>");
+        //         } else if(i % 5 == 0){
+        //             document.write("<span style='color:blue'>"+i+"</span>");
+        //         } else {
+        //             document.write(i);
+        //         }
+        //     }
+        // }
+        // document.write("<br>");
+        // //5x10 테이블
+        // {
+        //     let table = ("<table border='1'>");
 
-            for(let i=0; i<=5; i++){
-                table += "<tr>";
+        //     for(let i=0; i<=5; i++){
+        //         table += "<tr>";
                 
-                for(let j=0; j<=10; j++){
-                    table += "<td>"+ j + "</td>";
-                }
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.write(table);
+        //         for(let j=0; j<=10; j++){
+        //             table += "<td>"+ j + "</td>";
+        //         }
+        //         table += "</tr>";
+        //     }
+        //     table += "</table>";
+        //     document.write(table);
+        // }
+        // {
+        //     let num = 1;
+
+        //     while(num<=50){
+        //         document.write(num+" ");
+        //         num++;
+        //     }
+        // }
+
+        
+        // {
+        //     let table = "<table border='1'>";
+        //     num = 1;
+            
+        //     for(let i=1; i<=5; i++){
+        //         table += "<tr>";
+        //         for(let j=1; j<=5; j++){
+        //             table += "<td>"+num+"</td>";
+        //             num++
+        //         }
+        //         table += "</tr>";
+        //     }
+        //     table += "</table>";
+        //     document.write(table);
+        // }
+        // {
+        //     let num=0
+
+        //     for(let i=1; i<=10; i++){
+        //         num += i;
+        //     }
+        //     document.write(num);
+        // }
+        {
+            // const obj = {
+            // a: 100,
+            // b: [200, 300],
+            // c: "javascript"
+            // }
+
+            // document.write(obj.b[0],obj.b[1])
+        }
+        {
+            const obj = [
+            {a:100, b:200},
+            {c:"javascript"}
+            ];
+            
+            document.write(obj[0].a)
+        
         }
     </script>
 </body>
