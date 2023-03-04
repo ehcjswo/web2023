@@ -4,57 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 - grid</title>
+    <title>평가문항 작업 결과1</title>
     <style>
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
+            
         }
         body {
-            background-color: #E1F5FE;
+            background-color: #FFF3E0;
+            
         }
         #wrap {
             width: 1200px;
-            display: grid;
             margin: 0 auto;
+            display: grid;
             grid-template-areas: 
-            "header header"
-            "nav nav"
-            "aside section"
-            "aside article"
-            "aside article2"
-            "footer footer"
+                "header header"
+                "nav nav"
+                "aside section"
+                "aside article"
+                "footer footer"
             ;
-            grid-template-columns: 300px 900px;
-            grid-template-rows: 100px 100px 260px 260px 260px 100px;
+            grid-template-columns: 400px 800px;
+            grid-template-rows: 100px 100px 390px 390px 100px;
         }
         #header {
-            background-color: #B3E5FC;
+            background-color: #FFE0B2;
             grid-area: header;
         }
         #nav {
-            background-color: #81D4FA;
+            background-color: #FFCC80;
             grid-area: nav;
         }
         #aside {
-            background-color: #4FC3F7;
-            
+            background-color: #FFB74D;
             grid-area: aside;
         }
         #section {
-            background-color: #29B6F6;
+            background-color: #ffbe09;
             grid-area: section;
-        } 
+        }
         #article {
-            background-color: #03A9F4;
+            background-color: #FFA726;
+            
             grid-area: article;
         }
-        #article2 {
-            background-color: #039BE5;
-            grid-area: article2;
-        }
         #footer {
-            background-color: #0288D1;
+            background-color: #FF9800;
             grid-area: footer;
         }
     </style>
@@ -63,11 +60,10 @@
     <div id="wrap">
         <header id="header"></header>
         <nav id="nav"></nav>
-        <section id="section"></section>
         <aside id="aside"></aside>
+        <section id="section"></section>
         <article id="article"></article>
-        <article2 id="article2"></article2>
         <footer id="footer"></footer>
-    </div id="wrap">
+    </div>
 </body>
 </html>
