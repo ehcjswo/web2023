@@ -112,13 +112,67 @@
             // document.write(obj.b[0],obj.b[1])
         }
         {
-            const obj = [
-            {a:100, b:200},
-            {c:"javascript"}
-            ];
+            // const obj = [
+            // {a:100, b:200},
+            // {c:"javascript"}
+            // ];
+            // const obj = [
+            // {a:100, b:200},
+            // {c:"javascript"}
+            // ];
             
-            document.write(obj[0].a)
+            // document.write(obj[1].c);
         
+        }
+        {
+            // function chg(as){
+            //     a = '123';
+
+            //     return a;
+            // }
+            // var a = 'abc';
+
+            // document.write(a+"<br>");
+            // document.write(chg(a)+"<br>");
+            // document.write(a+"<br>");
+            // function func(){
+            //     document.write("리턴은 종료이기 때문에"); 
+            //     return ;
+            //     document.write("밑에 값은 안나옵니다.");
+            // }
+            // func();
+            // const user = prompt("나이를 입력해 주세요.");
+            
+            // function checkAge(user) {
+            //     if (user > 19) {
+            //         return '성인입니다.';
+            //     } else {
+            //         return '미성년자입니다.';
+            //     }
+            // }
+
+            // document.write(checkAge(user)); // 성인입니다.
+        }
+        {
+            let user1 = prompt("행(세로)을 몇줄로 하시겠습니까?");
+            let user2 = prompt("열(가로)을 몇줄로 하시겠습니까?");
+            
+            function table(user1,user2){
+                let table = "<table border='1'>";
+                let num = 1;
+                for(let i=0; i<user1; i++){
+                    table += "<tr>";
+                    
+                        for(let j=1; j<=user2; j++){
+                            table += "<td>"+num+"</td>";
+                            num++
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+                return table; 
+            }
+            document.write(table(user1,user2));
         }
     </script>
 </body>
