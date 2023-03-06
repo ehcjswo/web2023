@@ -284,9 +284,9 @@
             table += "&lt;tr>";
             for(let j=1; j&lt;=5; j++){
                 if (num % 2 == 0) //2로 나눴을시 나머지가 0일때
-                table += "&lt;td>"+"&lt;span style='color:blue'>"+num+"&lt;/span>"+"</td>"; //나머지가 0일때 파랑으로 출력
+                table += "&lt;td>"+"&lt;span style='color:blue'>"+num+"&lt;/span>"+"&lt;/td>"; //나머지가 0일때 파랑으로 출력
                 else
-                table += "&lt;td>"+"&lt;span style='color:red'>"+num+"&lt;/span>"+"</td>";  //그 외는 빨간색으로 출력
+                table += "&lt;td>"+"&lt;span style='color:red'>"+num+"&lt;/span>"+"&lt;/td>";  //그 외는 빨간색으로 출력
                 num++
             }
         table += "&lt;/tr>";
@@ -335,9 +335,9 @@
         table += "&lt;tr>";
         for(let j=1; j<=5; j++){
             if (num % 5 == 0) //5로 나눴을시 나머지가 0일때
-            table += "&lt;td>"+"&lt;span style='color:red'>"+num+"&lt;/span>"+"</td>";
+            table += "&lt;td>"+"&lt;span style='color:red'>"+num+"&lt;/span>"+"&lt;/td>";
             else
-            table += "&lt;td>"+"&lt;span style='color:blue'>"+num+"&lt;/span>"+"</td>";
+            table += "&lt;td>"+"&lt;span style='color:blue'>"+num+"&lt;/span>"+"&lt;/td>";
             num+=3; //3의 배수이므로 +=3을 해줍니다.
         }
         table += "&lt;/tr>";
