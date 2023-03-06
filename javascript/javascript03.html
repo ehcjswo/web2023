@@ -254,7 +254,7 @@
                     <h3>08. 화살표 함수 : 리턴값 함수</h3>
                     <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
                     <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
-        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+                <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
 <pre data-line="" class="line-numbers" ><code class="language-js">{
     func = ( ) => {
         const str = "실행<br>";
@@ -273,6 +273,98 @@
                     </details>
                 </div>
                 <!-- //sample08번 -->
+
+                <div id="sample09" class="sample">
+                    <h3>09. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const func = (str) => {
+        return str;
+    }
+    document.write(func("실행되었습니다."));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                           실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample09번 -->
+
+                <div id="sample10" class="sample">
+                    <h3>10. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    //변수값이 하나일때 괄호를 생략이 가능합니다.
+    const func = str => {
+        return str;
+    }
+    document.write(func("실행되었습니다."));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                           실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample10번 -->
+
+                <div id="sample11" class="sample">
+                    <h3>11. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴생략</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    const func = str => str;
+
+    document.write(func("실행되었습니다."));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                           실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample11번 -->
+
+                <div id="sample11" class="sample">
+                    <h3>12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</h3>
+                    <p>함수는 코드 블록을 묶어서 하나의 기능으로 만든 것으로, 필요할 때마다 호출하여 사용할 수 있는 독립적인 기능을 제공합니다.</p>
+                    <p>화살표 함수는 function 키워드 대신 화살표 연산자(=>)를 사용하여 함수를 정의합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    func = str => str;
+
+    document.write(func("실행되었습니다."));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                           실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample11번 -->
+
             </div>     
     </div>
     </main>
