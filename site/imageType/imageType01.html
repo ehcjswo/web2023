@@ -8,12 +8,14 @@
 
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <style>
+        /* reset */
         * {
             margin: 0;
             padding: 0;
         }
         a {
             text-decoration: none;
+            color: #000;
         }
         h1,h2,h3,h4,h5,h6 {
             font-weight: normal;
@@ -21,7 +23,7 @@
         img {
             vertical-align: top;
         }
-
+        /* common */
         .container {
             width: 1160px;
             margin: 0 auto;
@@ -34,6 +36,8 @@
         }
         .section {
             padding: 120px 0;
+        }
+        .section.center {
             text-align: center;
         }
         .section__h2 {
@@ -50,7 +54,7 @@
             font-weight: 300;
         }
 
-        /* image__wrap */
+        /* image__type */
         .imag__inner {
             display: flex;
             justify-content: space-between;
@@ -88,7 +92,7 @@
     </style>
 </head>
 <body>
-    <section class="image__wrap section nexon">
+    <section class="image__wrap section center nexon">
         <div class="container">
             <h2 class="section__h2">어떤 간식이 더 맛있을까</h2>
             <p class="section__desc">어떤 간식이 야무지게 나를 만족시킬수 있을까요?</p>
