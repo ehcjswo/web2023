@@ -53,19 +53,24 @@
                     <li><a href="#">01. 변수 : 데이터 저장</a></li>
                     <li><a href="#">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
                     <li><a href="#">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
-                    <li><a href="#">04. 상수 : 데이터 저장 + 데이터 변경(X)</a></li>
-                    <li><a href="#">05. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
-                    <li><a href="#">06. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
-                    <li><a href="#">07. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
-                    <li><a href="#">08. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
-                    <li><a href="#">09. 객체 : 데이터 저장(키와값) : 표현방법1</a></li>
-                    <li><a href="#">10. 객체 : 데이터 저장(키와값) : 표현방법2</a></li>
-                    <li><a href="#">11. 객체 : 데이터 저장(키와값) : 표현방법3</a></li>
-                    <li><a href="#">12. 객체 : 데이터 저장(키와값) : 표현방법4</a></li>
-                    <li><a href="#">13. 객체 : 데이터 저장(키와값) : 표현방법5</a></li>
-                    <li><a href="#">14. 객체 : 데이터 저장(키와값) : 표현방법6</a></li>
-                    <li><a href="#">15. 객체 : 데이터 저장(키와값) : 표현방법7</a></li>
-                    <li><a href="#">16. 객체 : 데이터 저장(키와값) : 표현방법8</a></li>
+                    <li><a href="#">04. 변수 : 지역 변수 + 전역 변수(스코프)</a></li>
+                    
+                    <li><a href="#">05. 상수 : 데이터 저장 + 데이터 변경(X)</a></li>
+                    <li><a href="#">06. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
+                    <li><a href="#">07. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
+                    <li><a href="#">08. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
+                    <li><a href="#">09. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
+                    <li><a href="#">10. 객체 : 데이터 저장(키와값) : 표현방법1</a></li>
+                    <li><a href="#">11. 객체 : 데이터 저장(키와값) : 표현방법2</a></li>
+                    <li><a href="#">12. 객체 : 데이터 저장(키와값) : 표현방법3</a></li>
+                    <li><a href="#">13. 객체 : 데이터 저장(키와값) : 표현방법4</a></li>
+                    <li><a href="#">14. 객체 : 데이터 저장(키와값) : 표현방법5</a></li>
+                    <li><a href="#">15. 객체 : 데이터 저장(키와값) : 표현방법6</a></li>
+                    <li><a href="#">16. 객체 : 데이터 저장(키와값) : 표현방법7</a></li>
+                    <li><a href="#">17. 객체 : 데이터 저장(키와값) : 표현방법8</a></li>
+                    <li><a href="#">++ 식별자, 예약자</a></li>
+                    <li><a href="#">++ 연산자(전치,후치)</a></li>
+                    <li><a href="#">++ 형변환, typeof</a></li>
                 </ul>
                 <ul>
                     
@@ -595,6 +600,64 @@
     <script src="assets/js/prism.js"></script>
     <script>hljs.highlightAll();</script>
     <script>
+       
+       //전치 후치연산자
+       {
+            // let hap, j, k, l;
+        // j = k = l = 1;
+        // hap = ++j + k++ + ++l;
+
+        // console.log(hap);
+        // console.log(j);
+        // console.log(k);
+        // console.log(l);
+        
+        // let a = 1, b = 2, c = 3, result;
+        // result = ++a + b++ + ++c;
+
+        // console.log(result); //2 2 4
+        // console.log(a); //2
+        // console.log(b); //3
+        // console.log(c); //4
+
+        // let x = 7, y = 7, result;
+
+        // result = x > y ? ++x : y--;
+
+        // console.log(result);
+        // console.log(x);
+        // console.log(y);
+
+
+        // let a, b, c, result;
+        // a=20, b=30, c=40;
+
+        // result = a < b ? b++ : --c;
+
+        // console.log(result);
+        // console.log(a); 
+        // console.log(b + c);
+        // console.log(c);
+    }
+    //04
+    {
+        let x = 100;  // 전역변수
+        let y = 200;
+
+        function func(){    //블록화를 했지만 함수를 사용했기때문에 x,y를 사용이 가능하다.
+            x = 300;        //let을 지우면 지역변수에서 전역변수로 변한다.
+            let y = 400;    //원래 같은변수명으로 에러가 떠야하지만 함수 안쪽이라 안뜬다. 이걸 지역변수라 부른다
+            z = "javascript"//전역변수
+
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+        func();
+
+        console.log(x);
+        console.log(y);
+    }
     </script>
 </body>
 </html>
