@@ -1,6 +1,7 @@
 # web2023
 
-나의 블로그 : https://ehcjswo.tistory.com/
+나의 블로그 : https://ehcjswo.tistory.com/   
+공부 사이트 : https://ehcjswo.github.io/web2023/
 
 
 
@@ -12,6 +13,7 @@
 퀴즈 게임01 : https://ehcjswo.github.io/web2023/javascript/quiz/quizEffect01.html   
 
 # 사이트
+헤더 유형01 : https://ehcjswo.github.io/web2023/site/headerType/headerType01.html  
 텍스트 유형01 : https://ehcjswo.github.io/web2023/site/textType/textType01.html   
 카드 유형01 : https://ehcjswo.github.io/web2023/site/cardType/cardType01.html   
 이미지 유형01 : https://ehcjswo.github.io/web2023/site/imageType/imageType01.html   
