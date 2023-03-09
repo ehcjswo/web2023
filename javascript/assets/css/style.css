@@ -82,6 +82,38 @@ body {
     padding-bottom: 40px;
     border-bottom: 1px dashed #DCDCDC;
 }
+.main__desc h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.main__desc p {
+    margin-bottom: 5px;
+    border-left: 5px solid #0243F1;
+    padding-left: 10px;
+    background-color: #f1f1f1;
+    padding: 12px 10px 10px 20px;
+    
+}
+.main__desc ul {
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+.main__desc li {
+    list-style: square;
+}
+.main__desc a {
+    display: block;
+    border: 1px dotted #ccc;
+    margin: 10px 0;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.main__desc a:hover {
+    border-color: #666;
+    background-color: #ececec;
+    transition: 0.3s;
+}
 .main__sample {
     padding-top: 40px;
 }

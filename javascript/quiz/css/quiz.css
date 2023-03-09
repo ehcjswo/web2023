@@ -11,6 +11,8 @@ body {
     padding: 10px;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
 }
 #header::before {
     content: '';
@@ -23,7 +25,7 @@ body {
 }
 #header h1 {
     font-size: 28px;
-    padding: 0px 5px 5px 10px;
+    padding: 5px 5px 5px 10px;
     font-family: 'DungGeunMo';
     z-index: 10;
     position: relative;
@@ -33,6 +35,32 @@ body {
 }
 #header h1 em {
     font-size: 0.5em;
+}
+#header h1 a {
+    color: #fff;
+}
+#header h1 em {
+    font-size: 0.5em;
+}
+#header ul {
+    padding: 5px;
+}
+#header li {
+    display: inline;
+    z-index: 10;
+    position: relative;
+}
+#header li a {
+    color: #fff;
+    font-family: 'DungGeunMo';
+    border: 1px dashed #fff;
+    display: inline-block;
+    padding: 5px;
+}
+#header li.active a,
+#header li a:hover {
+    background-color: #fff;
+    color: #000;
 }
 
 
@@ -74,7 +102,7 @@ body {
     flex-wrap: wrap;
 }
 .quiz__wrap .quiz {
-    max-width: 500px;
+    width: 500px;
     background-color: #fff;
     border: 8px ridge #cacaca;
     width: 500px;
@@ -132,9 +160,32 @@ body {
     font-size: 22px;
     /* display: none; */
 }
+.quiz__answer .input {
+    background-color: #fff;
+    border: 6px groove #cacaca;
+    width: 100%;
+    font-family: 'JSDongkang';
+    padding: 10px 20px;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
 .quiz__view {
     border-bottom: 6px ridge #cacaca;
     overflow: hidden;
+}
+.quiz__footer {
+    border-top: 6px ridge #cacaca;
+    padding: 20px;
+    font-family: 'JSDongkang';
+    background-color: #e6e6e6;
+}
+.quiz__footer::before {
+    content: "🎁Tip!";
+    color: #ff0400;
+    font-weight: bold;
+}
+.quiz__desc {
+    padding-top: 5px;
 }
 
 /* dog__wrap */
@@ -205,10 +256,10 @@ body {
     top: 0;
     width: 35px;
     height: 70px;
-    background: #CB7A1D;
-    border-top: 11px solid #F7AA2B;
-    border-left: 7px solid #F7AA2B;
-    border-right: 7px solid #F7AA2B;
+    background: #524838;
+    border-top: 11px solid #645337;
+    border-left: 7px solid #645337;
+    border-right: 7px solid #645337;
 }
 .dog .ears::before {
     left: 0;
@@ -220,7 +271,7 @@ body {
 }
 .dog .face {
     position: absolute;
-    background: #F7AA2B;
+    background: #645337;
     width: 100%;
     height: 100%;
     border-radius: 50% 50% 0 0;
@@ -361,7 +412,7 @@ body {
     display: block;
     width: 100%;
     margin: auto;
-    background: #F7AA2B;
+    background: #645337;
 }
 .dog .body::after {
     top: -2px;
@@ -373,7 +424,7 @@ body {
     position: absolute;
     left: -60%;
     bottom: 1px;
-    background: #F7AA2B;
+    background: #645337;
     width: 93px;
     height: 15px;
     transform: rotate(45deg);
@@ -387,14 +438,14 @@ body {
     left: -10%;
     width: 120%;
     height: 15%;
-    background: #F7AA2B;
+    background: #645337;
     border-radius: 10px 10px 0 0;
 }
 .dog .legs::before, .dog .legs::after {
     content: "";
     position: absolute;
     bottom: 1px;
-    background: #CB7A1D;
+    background: #524838;
     z-index: -1;
 }
 .dog .legs::before {
