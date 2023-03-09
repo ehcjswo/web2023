@@ -1,6 +1,6 @@
 # web2023
 
-나의 블로그 : https://ehcjswo.tistory.com/
+나의 블로그 : https://ehcjswo.tistory.com/   
 공부 사이트 : ehcjswo.github.io/web2023/
 
 
