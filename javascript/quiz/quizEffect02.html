@@ -15,6 +15,7 @@
         <ul>
             <li><a href="quizEffect01.html">1</a></li>
             <li class="active"><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
         </ul>
     </header>
     <!--//header-->
@@ -58,8 +59,6 @@
                         <button class="confirm">정답 확인하기</button>
                         <div class="result"></div>
                     </div>
-                </div>
-                <div class="quiz__footer">
                     <div class="quiz__desc">설명</div>
                 </div>
             </div>
@@ -83,7 +82,6 @@
         const quizAnswerResult = quizWrap.querySelector(".quiz__answer .result");
         const quizAnswerInput = quizWrap.querySelector(".quiz__answer .input");
         const quizDesc = quizWrap.querySelector(".quiz__desc");
-        const quizFooter = quizWrap.querySelector(".quiz__footer");
         const dogWrap = quizWrap.querySelector(".dog__wrap");
         
         // 문제 정보
@@ -104,7 +102,7 @@
 
         // 정답 & 해설 숨기기
         quizAnswerResult.style.display = "none";
-        quizFooter.style.display = "none";
+        quizDesc.style.display = "none";
 
         //사용자 정답
         quizAnswerConfirm.addEventListener("click", function(){
@@ -112,9 +110,9 @@
             quizAnswerConfirm.style.display = "none";   //정답 확인버튼 숨김
             quizAnswerInput.style.display = "none";     //인풋 박스 숨김
             quizAnswerResult.style.display = "block";   //정답 보이기
-            quizFooter.style.display = "block";         //설명 보이기
+            quizDesc.style.display = "block";         //설명 보이기
+            
             if(infoAnswer == userAnswer){
-                
                 // dogWrap.classList.remove("dislike");
                 dogWrap.classList.add("like");
             } else {
