@@ -187,6 +187,46 @@ body {
     color: #ff0400;
     font-weight: bold;
 }
+.quiz__choice {
+    border-bottom: 6px ridge #cacaca;
+    padding: 20px;
+}
+.quiz__choice label {
+    display: flex;
+}
+.quiz__choice label input {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.quiz__choice label span {
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 6px;
+    display: flex;
+    cursor: pointer;
+    margin: 2px 0;
+}
+.quiz__choice label span::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: inset 0 0 0 4px #000;
+    margin-right: 15px;
+    transition: all 0.2s;
+    
+}
+.quiz__choice label input:checked + span {
+    background-color: #f5ffe7;
+}
+.quiz__choice label input:checked + span::before {
+    box-shadow: inset 0 0 0 8px #ff1212;
+}
 
 /* dog__wrap */
 .dog .tail, 
