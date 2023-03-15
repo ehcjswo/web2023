@@ -69,13 +69,18 @@
         
         }
         {
-            {
-               const str = [100, 200, 300, 400, 500];
 
-               str.map(function(a, b, c){
-                   console.log(a, b, c);
-               });
+            table = "<table border='1'>";
+            
+            for(let i=1; i<3; i++){
+                table += "<tr>";
+                for(let j=1; j<=3; j++){
+                    table += "<td>"+j+"</td>";
+                }
+                table += "</tr>";
             }
+            table += "</table>";
+            document.write(table);
         }
 
     </script>
