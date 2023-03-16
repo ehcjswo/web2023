@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;   
+        }
+        #left .container {
+            width: 200px;
+            height: 650px;
+            background-color: #aaa;
+        }
+        #slider .container {
+            width: 800px;
+            height: 350px;
+            background-color: #bbb;
+        }
+        #contents .container {
+            display: flex;
+        }
+        #contents .container .cont1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #ffc0c0;
+        }
+        #contents .container .cont2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #ff8080;
+        }
+        #contents .container .cont3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #ff3a3a;
+        }
+        #footer .container {
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap; 
+            flex-direction: column;
+            
+        }
+        #footer .container .foo1{
+            width: 20%;
+            height: 100px;
+            background-color: #a8c3ff;
+        }
+        #footer .container .foo2{
+            width: 80%;
+            height: 50px;
+            background-color: #5154ff;
+        }
+        #footer .container .foo3{
+            width: 80%;
+            height: 50px;
+            background-color: #1c20ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="left">
+            <div class="container">로고</div>
+        </aside>
+
+        
+        <div id="right">
+            <slider id="slider">
+                <div class="container">이미지 슬라이더</div>
+            </slider>
+            <section id="contents">
+                <div class="container">
+                    <div class="cont1">공지사항, 갤러리</div>
+                    <div class="cont2">배너</div>
+                    <div class="cont3">바로가기</div>
+                </div>
+            </section>
+            <footer id="footer">
+                <div class="container">
+                    <div class="foo1">로고</div>
+                    <div class="foo2">하단 메뉴</div>
+                    <div class="foo3">Copyright</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
