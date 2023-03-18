@@ -92,15 +92,15 @@
     <!--//footer-->
 
     <script>
+        //선택자
         const quizWrap = document.querySelector(".quiz__wrap");
-        const quizTitle = quizWrap.querySelector(".quiz__title");                   //시험 종목, 날짜
-        const quizQuestion = quizWrap.querySelector(".quiz__question");          //
-        const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");
+        const quizTitle = quizWrap.querySelector(".quiz__title");                 //시험 종목, 날짜
+        const quizQuestion = quizWrap.querySelector(".quiz__question");          //문제 번호,문제 이름
+        const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");     //객관식 문제
         const quizSelect = quizWrap.querySelectorAll(".quiz__choice input");    //체크박스
         const quizDesc = quizWrap.querySelector(".quiz__desc");                 //문제 해설
         const quizConfirm = quizWrap.querySelector(".quiz__answer .confirm");    //정답버튼
-        const quizAnswer = quizWrap.querySelector(".quiz__answer");
-        const dogWrap = quizWrap.querySelector(".dog__wrap"); 
+        const dogWrap = quizWrap.querySelector(".dog__wrap");                   //강아지 표정변화
 
         const quizInfo = [
             {
@@ -125,7 +125,6 @@
             }
         }
         
-
         //정답 확인
         function anwerQuiz(){
             //사용자가 선택한 인풋박스(checked) == 문제정답(quizInfo[0].infoAnswer)
@@ -134,8 +133,8 @@
                     if(quizSelect[i].value == quizInfo[0].infoAnswer){
                         dogWrap.classList.remove("dislike");
                         dogWrap.classList.add("like");
-                        quizDesc.style.display = "block";
-                        quizAnswer.style.display = "none";
+                        quizDesc.style.display = "block";   //해설보이기
+                        quizAnswer.style.display = "none";  //정답버튼
                     } else {
                         dogWrap.classList.remove("like");
                         dogWrap.classList.add("dislike");
@@ -144,12 +143,13 @@
                 } 
             }
 
-            //해설숨기기
         }
+        //해설숨기기
         quizDesc.style.display = "none";
 
         //정답버튼 클릭
         quizConfirm.addEventListener("click", anwerQuiz);
+        
         
         
         updateQuiz()
