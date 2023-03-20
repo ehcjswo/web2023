@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카드 유형01</title>
+    <title>이미지/텍스트 유형01</title>
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <style>
         /* reset */
@@ -21,6 +21,9 @@
         }
         img {
             border-radius: 10px;
+        }
+        li {
+            list-style: none;
         }
         /* common */
         .container {
@@ -75,6 +78,21 @@
             line-height: 1.5;
             margin-bottom: 15px;
         }
+        .imgtext__body li {
+            position: relative;
+            padding-left: 14px;
+            color: #fff;
+        }
+        .imgtext__body li::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #666;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
         .section__small {
             font-size: 14px;
             border-radius: 50px;
@@ -96,24 +114,22 @@
                         <span class="section__small">NOTICE</span>
                         <h2 class="title">수 많은 간식의 종류</h2>
                         <p class="desc">간식은 다양한 종류가 있습니다. 자신이 좋아하는 종류의 간식을 선택하고, 그 간식을 즐기기 위한 시간을 가져보세요. 간식을 즐기기 위해 충분한 시간을 가지는 것은 행복감을 느끼는 데 큰 도움이 됩니다.</p>
-                        <p class="desc">· 과일 (바나나, 사과, 오렌지, 딸기 등)<br>
-                                        · 초콜릿 (땅콩초콜릿, 밀크 초콜릿 등)<br>
-                                        · 쿠키 (초코칩 쿠키, 버터 쿠키, 오트밀 쿠키 등)<br>
-                                        · 케이크 (초콜릿 케이크, 생크림 케이크 등)<br>
-                                        · 아이스크림 (바닐라, 초콜릿, 딸기, 민트 등)<br>
-                                        · 과자 (스낵과자, 쿠키와퍼, 빼빼로, 참깨빵 등)<br>
-                                        · 캔디 (하드 캔디, 젤리캔디, 머랭캔디 등)</p>
+                        <ul>
+                            <li><a href="#">과일 (바나나, 사과, 오렌지, 딸기 등)</a></li>
+                            <li><a href="#">초콜릿 (땅콩초콜릿, 밀크 초콜릿 등)</a></li>
+                            <li><a href="#">쿠키 (초코칩 쿠키, 버터 쿠키, 오트밀 쿠키 등)</a></li>
+                            <li><a href="#">케이크 (초콜릿 케이크, 생크림 케이크 등)</a></li>
+                            <li><a href="#">아이스크림 (바닐라, 초콜릿, 딸기, 민트 등)</a></li>
+                            <li><a href="#">과자 (스낵과자, 쿠키와퍼, 빼빼로, 참깨빵 등)</a></li>
+                            <li><a href="#">캔디 (하드 캔디, 젤리캔디, 머랭캔디 등)</a></li>
+                        </ul>
                     </div>
                 </article>
                 <article class="imgtext">
-                    <figure class="imgtext__header">
-                        <img src="../asset/img/imatextType01_01.jpg" alt="imatextType01_01">
-                    </figure>
+                    <img src="../asset/img/imatextType01_01.jpg" alt="imatextType01_01">
                 </article>
                 <article class="imgtext">
-                    <figure class="imgtext__header">
-                        <img src="../asset/img/imatextType01_02.jpg" alt="imatextType01_02">
-                    </figure>
+                    <img src="../asset/img/imatextType01_02.jpg" alt="imatextType01_02">
                 </article>
                 </div>
             </div>
