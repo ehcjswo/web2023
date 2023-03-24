@@ -153,27 +153,40 @@
 
             // document.write(checkAge(user)); // 성인입니다.
         }
-        {
-            let user1 = prompt("행(세로)을 몇줄로 하시겠습니까?");
-            let user2 = prompt("열(가로)을 몇줄로 하시겠습니까?");
+        // {
+        //     let user1 = prompt("행(세로)을 몇줄로 하시겠습니까?");
+        //     let user2 = prompt("열(가로)을 몇줄로 하시겠습니까?");
             
-            function table(user1,user2){
-                let table = "<table border='1'>";
-                let num = 1;
-                for(let i=0; i<user1; i++){
-                    table += "<tr>";
+        //     function table(user1,user2){
+        //         let table = "<table border='1'>";
+        //         let num = 1;
+        //         for(let i=0; i<user1; i++){
+        //             table += "<tr>";
                     
-                        for(let j=1; j<=user2; j++){
-                            table += "<td>"+num+"</td>";
-                            num++
-                    }
-                    table += "</tr>";
-                }
-                table += "</table>";
-                return table; 
-            }
-            document.write(table(user1,user2));
-        }
+        //                 for(let j=1; j<=user2; j++){
+        //                     table += "<td>"+num+"</td>";
+        //                     num++
+        //             }
+        //             table += "</tr>";
+        //         }
+        //         table += "</table>";
+        //         return table; 
+        //     }
+        //     document.write(table(user1,user2));
+        // }
+        {
+    const arr = [100, 200, 300, 400, 500];
+
+    const text1 = arr.join("*");
+    arr.push("600");
+    const text3 = arr.join("");
+    arr.pop();
+    const text4 = arr.join(" ");
+
+    console.log(text1);
+    console.log(text3);
+    console.log(text4);
+}
     </script>
 </body>
 </html>
