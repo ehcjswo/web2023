@@ -93,12 +93,11 @@
     <script>
         //선택자
         const quizWrap = document.querySelector(".quiz__wrap");
-        const quizQuestion = quizWrap.querySelectorAll(".quiz__question");
+        // const quizQuestion = quizWrap.querySelectorAll(".quiz__question"); 
         let quizScore = 0;
 
 
         // 문제 정보
-        //<img style='width:px' src=''>
         const quizInfo = [
             {
                 infoType: "정보처리 기능사",
@@ -145,7 +144,7 @@
                 infoNumber : "20100504",
                 infoQuestion: "번지(address)로 지정된 저장위치(storage location)의 내용이 실제 번지가 되는 주소지정번지는?",
                 infoChoice: {
-                    1: "간접지정 방식",
+                    1: "간접지정방식",
                     2: "완전지정방식",
                     3: "절대지정방식",
                     4: "상대지정방식",
@@ -953,8 +952,6 @@
             quizWrap.innerHTML = exam.join('');
 
             //설명 숨기기
-            // querySelector.forEach= () => {
-            // }
             document.querySelectorAll(".quiz__desc").forEach (el => el.style.display = "none"); //설명가리기
         }
         updateQuiz();
@@ -962,6 +959,7 @@
         //정답 확인
         const anwerQuiz = () => {
             const quizChoices = document.querySelectorAll(".quiz__choice");
+            quizScore = 0;
 
             //사용자가 체크가 정답 == 문제 정답
             quizInfo.forEach((question, number) => {
@@ -969,7 +967,7 @@
                 const quizSelectorWrap = quizChoices[number];
                 const userAnswer = (quizSelectorWrap.querySelector(userSelector)||{ }).value;
                 const dogWrap = quizWrap.querySelectorAll(".dog__wrap");
-
+            
                 if(userAnswer == question.infoAnswer){
                     
                     dogWrap[number].classList.remove("dislike");
@@ -982,7 +980,7 @@
                 }
             });
             document.querySelectorAll(".quiz__desc").forEach (el => el.style.display = "block"); //설명보이기
-
+        
             //점수 보이기
             document.querySelector(".quiz__info").innerHTML = Math.ceil((quizScore / quizInfo.length) *100) + "점";
             document.querySelector(".quiz__info").style.display = "block";
@@ -991,9 +989,6 @@
 
         //정답 클릭
         document.querySelector(".quiz__check").addEventListener("click", anwerQuiz);
-
-
-        
 
     </script>
 </body>

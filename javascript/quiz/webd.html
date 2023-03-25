@@ -93,7 +93,6 @@
     <script>
         //선택자
         const quizWrap = document.querySelector(".quiz__wrap");
-        const quizQuestion = quizWrap.querySelectorAll(".quiz__question");
         let quizScore = 0;
 
 
@@ -962,6 +961,7 @@
         //정답 확인
         const anwerQuiz = () => {
             const quizChoices = document.querySelectorAll(".quiz__choice");
+            quizScore = 0;
 
             //사용자가 체크가 정답 == 문제 정답
             quizInfo.forEach((question, number) => {
