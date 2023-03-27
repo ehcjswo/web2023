@@ -158,19 +158,18 @@
         ];
 
         //선택자
-        const quizWrap = document.querySelector(".quiz__wrap");
-        const quizWrapall = document.querySelector(".dog__wrap .all");
-        const quizTitle = quizWrap.querySelector(".quiz__title");
-        const quizChoice = quizWrap.querySelector(".quiz__choice");
-        const quizChoice2 = quizWrap.querySelector(".quiz__choice sapn");
-        const quizQuestion = quizWrap.querySelector(".quiz__question");
-        const quizDesc = quizWrap.querySelector(".quiz__desc");
-        const dogWrap = quizWrap.querySelector(".dog__wrap");
-        const quizAnswer = quizWrap.querySelector(".quiz__answer");
-        const quizNext = quizWrap.querySelector(".quiz__answer .next");
-        const quizInfo2 = quizWrap.querySelector(".quiz__info2");
-        const quizInfo3 = quizWrap.querySelector(".quiz__info3");
-        const quizQuestion2 = quizWrap.querySelector(".quiz__question em")
+        const quizWrap = document.querySelector(".quiz__wrap");         
+        const quizWrapall = document.querySelector(".dog__wrap .all");  //남은 문제수
+        const quizTitle = quizWrap.querySelector(".quiz__title");       //문제출처
+        const quizChoice = quizWrap.querySelector(".quiz__choice");     //문제정보
+        const quizQuestion = quizWrap.querySelector(".quiz__question"); //문제 번호와 제목
+        const quizDesc = quizWrap.querySelector(".quiz__desc");         //문제 설명
+        const dogWrap = quizWrap.querySelector(".dog__wrap");           //강아지
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");     //정답 버튼 (css박스)
+        const quizNext = quizWrap.querySelector(".quiz__answer .next"); //정답 버튼
+        const quizInfo2 = quizWrap.querySelector(".quiz__info2");       //점수말풍선
+        const quizInfo3 = quizWrap.querySelector(".quiz__info3");       //말풍선
+        
         
 
         let quizCount = 0;
@@ -214,18 +213,15 @@
                 ${quizInfo[index].infoDesc}
             `;
             let checkTag = `
-                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / quizInfo.length) *100)} 점!!
+                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / (quizInfo.length-1)) *100)} 점!!
             `;  
               
-            
-
             quizTitle.innerHTML = typeTag;
             quizQuestion.innerHTML = questionTag;
             quizChoice.innerHTML = choiceTag;
             quizDesc.innerHTML = descTag;
             quizWrapall.innerHTML = allTag;
             quizInfo2.innerHTML = checkTag;
-
 
             //보기 선택자
             const quizChoiceSpan = quizWrap.querySelectorAll(".quiz__choice span");
@@ -276,7 +272,6 @@
         
         //정답 확인
         quizNext.addEventListener("click", () => {
-            
             ++quizCount;
             updateQuiz(quizCount);
             dogWrap.classList.remove("like","dislike");
@@ -288,12 +283,8 @@
                 dogWrap.classList.add("like");
                 quizWrapall.style.display = "none";
                 quizTitle.style.display = "none";
-            }
-            
+            }    
         });
-        
-
-
     </script>
 </body>
 </html>
