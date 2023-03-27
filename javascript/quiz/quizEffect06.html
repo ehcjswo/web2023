@@ -169,14 +169,10 @@
         const quizNext = quizWrap.querySelector(".quiz__answer .next"); //정답 버튼
         const quizInfo2 = quizWrap.querySelector(".quiz__info2");       //점수말풍선
         const quizInfo3 = quizWrap.querySelector(".quiz__info3");       //말풍선
-        
-        
 
         let quizCount = 0;
         let quizScore = 0;
 
-
-        
         //문제 출력
         const updateQuiz = (index) => {
             let allTag = `
@@ -213,9 +209,9 @@
                 ${quizInfo[index].infoDesc}
             `;
             let checkTag = `
-                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / (quizInfo.length-1)) *100)} 점!!
+                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / quizInfo.length-1) *100)} 점!!
             `;  
-              
+
             quizTitle.innerHTML = typeTag;
             quizQuestion.innerHTML = questionTag;
             quizChoice.innerHTML = choiceTag;
@@ -228,37 +224,34 @@
             const quizChoiceInput = quizWrap.querySelectorAll(".quiz__choice input");
 
             //forEach문으로
-            // quizChoiceSpan.forEach((span) => {
-            //     span.setAttribute("onclick", "choiceSelected(this)");
-            // });
+            quizChoiceSpan.forEach((span) => {
+                span.setAttribute("onclick", "choiceSelected(this)");
+            });
             //for문으로
-            for(let i=0; i<quizChoiceSpan.length; i++){
-                quizChoiceSpan[i].setAttribute("onclick", "choiceSelected(this)");
-                // quizChoiceInput[i].disabled = "true";
-            };
-            
+            // for(let i=0; i<quizChoiceSpan.length; i++){
+            //     quizChoiceSpan[i].setAttribute("onclick", "choiceSelected(this)");
+            // };
 
             //정답 버튼,해설 숨기기
             quizAnswer.style.display = "none";
             quizDesc.style.display = "none";
             quizInfo2.style.display = "none";
             quizInfo3.style.display = "none";
-            
         };
-        
+
         updateQuiz(quizCount);
-        
+
 
         //객관식 선택
         function choiceSelected(answer){
             let userAnswer = answer.textContent;                //사용자 정답
             let currentAnswer = quizInfo[quizCount].infoAnswer; //문제 정답
-            
+
             if(userAnswer == currentAnswer){
                 dogWrap.classList.remove("dislike");
                 dogWrap.classList.add("like");
                 quizScore++
-                
+
             } else {
                 dogWrap.classList.remove("like");
                 dogWrap.classList.add("dislike");
@@ -266,12 +259,11 @@
             //정답 버튼,해설 나타나기
             quizAnswer.style.display = "block";
             quizDesc.style.display = "block";
-
         };
 
-        
         //정답 확인
         quizNext.addEventListener("click", () => {
+
             ++quizCount;
             updateQuiz(quizCount);
             dogWrap.classList.remove("like","dislike");
@@ -283,7 +275,7 @@
                 dogWrap.classList.add("like");
                 quizWrapall.style.display = "none";
                 quizTitle.style.display = "none";
-            }    
+            }
         });
     </script>
 </body>
