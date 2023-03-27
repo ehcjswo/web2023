@@ -209,7 +209,7 @@
                 ${quizInfo[index].infoDesc}
             `;
             let checkTag = `
-                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / quizInfo.length-1) *100)} 점!!
+                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / (quizInfo.length-1)) *100)} 점!!
             `;  
 
             quizTitle.innerHTML = typeTag;
