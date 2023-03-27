@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트06</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript14.html">Quiz <em>객관식 확인하기 (슬라이드) 유형</em></a></h1>
+        <ul>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
+            <li><a href="quizEffect04.html">4</a></li>
+            <li><a href="quizEffect05.html">5</a></li>
+            <li class="active"><a href="quizEffect06.html">6</a></li>
+        </ul>
+    </header>
+    <!--//header-->
+    
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz__info2">점수!</div>
+            <div class="quiz__info3">수고했개!</div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <h2 class="quiz__title"></h2>
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__question">
+                        <em></em><sapn></sapn>
+                    </div>
+                    <div class="quiz__view"> 
+                        <div class="dog__wrap">
+                            <div class="all"></div>
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다..</div>
+                            <div class="card-container">
+                                <div class="dog">
+                                    <div class="head">
+                                        <div class="ears"></div>
+                                        <div class="face"></div>
+                                        <div class="eyes">
+                                            <div class="teardrop"></div>
+                                        </div>
+                                        <div class="nose"></div>
+                                        <div class="mouth">
+                                            <div class="tongue"></div>
+                                        </div>
+                                        <div class="chin"></div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="tail"></div>
+                                        <div class="legs"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__choice">
+                        <!-- <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span></span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span></span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span></span>
+                        </label> -->
+                    </div>
+                    <div class="quiz__answer">
+                        <button class="next">다음 문제</button>
+                    </div>
+                    <div class="quiz__desc"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--//main-->
+    
+    <footer id="footer">
+        <a href="mailto:ehcjswo1@gmail.com">ehcjswo1@gmail.com</a>
+    </footer>
+    <!--//footer-->
+
+    <script>
+        //문제 정보
+        const quizInfo = [
+            {
+                infoType: "정보처리 기능사",
+                infoTime: "2010년 5회",
+                infoNumber : "20100501",
+                infoQuestion: "다음이 설명하고 있는 데이터 입출력 방식은?<br>- 데이터의 입출력 전송이 CPU를 통하지 않고, 입출력 장치와 기억 장치 간에 직접 데이터를 주고받는다.<br>- CPU와 주변 장치간의 속도차를 줄일 수 있다." ,
+                infoChoice: ["DCA","DMA","Multiplexer","Channel"],
+                infoAnswer: "DMA",
+                infoDesc: "DMA(Direct Memory Access) : CPU 관여 없이 주기억장치와 보조기억장치(주변장치) 사이에 데이터를 전송하는 방식"
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2010년 5회",
+                infoNumber : "20100502",
+                infoQuestion: "컴퓨터 시스템의 중앙처리장치를 구성하는 하나의 회로로써 산술 및 논리 연산을 수행하는 장치는?",
+                infoChoice: ["Arithmetic Logic Uni","Memory Unit","I/O Unit","Associative Memory Unit",],
+                infoAnswer: "Arithmetic Logic Uni",
+                infoDesc: "ALU(Arithmetic Logic Unit) : 산술 논리 연산 장치<br>Memory Unit : 기억 장치<br>I/O Unit : 입출력 장치<br>Associative Memory Unit : 연관메모리(주소가 아닌 내용에 <br>의한 참조를 할수 있으며 캐시 메모리로 주로 사용됨)"
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2010년 5회",
+                infoNumber : "20100503",
+                infoQuestion: "제어논리장치(CLU)와 산술논리연산 장치(ALU)의 실행순서를 제어하기 위해 사용되는 레지스터는?",
+                infoChoice: ["누산기(accumulator)","프로그램 상태 워드(program Status World)","명령 레지스터(instruction register)","플래그 레지스터(flag register)"],
+                infoAnswer: "플래그 레지스터(flag register)",
+                infoDesc: "플래그 레지스터는 플래그 비트에 0 또는 1을 기록하여 각종 상태가 ON, OFF 인지 구별할수 있게 해줍니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2010년 5회",
+                infoNumber : "20100504",
+                infoQuestion: "번지(address)로 지정된 저장위치(storage location)의 내용이 실제 번지가 되는 주소지정번지는?",
+                infoChoice: ["간접지정방식","완전지정방식","절대지정방식","상대지정방식"],
+                infoAnswer: "간접지정방식",
+                infoDesc: "번지의 번지가 실제 주소가 된다고 하니 2번 참조되는 것을 <br>의미 합니다. 즉시주소 지정방식 - 메모리 참조횟수 0<br>직접주소 지정방식 - 메모리 참조횟수 1<br>간접주소 지정방식 - 메모리 참조횟수 2<br>그러므로 간접주소 지정방식."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2010년 5회",
+                infoNumber : "20100505",
+                infoQuestion: "JK플립플롭(flip flop)에서 보수가 출력되기 위한 J, K의 입력상태는??",
+                infoChoice: ["J=1, K=0","J=0, K=1","J=1, K=1","J=0, K=0"],
+                infoAnswer: "J=1, K=1",
+                infoDesc: "J K<br>0 0 - 기존값유지<br>0 1 - 0<br>1 0 - 1<br>1 1 - 반전(=보수)"
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2010년 5회",
+                infoNumber : "20100506",
+                infoQuestion: "2진수 (10001010)를 2의 보수로 옳게 표현한 것은?",
+                infoChoice: ["01110101","01110110","10001011","10000110"],
+                infoAnswer: "01110110",
+                infoDesc: "10001010 을 1의 보수로 바꿉니다 : 0은 1로, 1은 0으로 변경하면됩니다. 01110101 로 바꿔 1보수에 +1을 해주면 2의 보수가 됩니다. 01110110 이 답입니다. 간단하게 바꾸는 방법은 문제의 2진수에서 오른쪽에서 부터 처음 1이 나올때까지는 그대로 적고 나머지는 반대로 바꾸면 됩니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2010년 5회",
+                infoNumber : "20100506",
+                infoQuestion: "수고하셨습니다!",
+                infoChoice: [" ", " ", " ", " "],
+                infoAnswer: "",
+                infoDesc: "10001010 을 1의 보수로 바꿉니다 : 0은 1로, 1은 0으로 변경하면됩니다. 01110101 로 바꿔 1보수에 +1을 해주면 2의 보수가 됩니다. 01110110 이 답입니다. 간단하게 바꾸는 방법은 문제의 2진수에서 오른쪽에서 부터 처음 1이 나올때까지는 그대로 적고 나머지는 반대로 바꾸면 됩니다."
+            }
+        ];
+
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizWrapall = document.querySelector(".dog__wrap .all");
+        const quizTitle = quizWrap.querySelector(".quiz__title");
+        const quizChoice = quizWrap.querySelector(".quiz__choice");
+        const quizChoice2 = quizWrap.querySelector(".quiz__choice sapn");
+        const quizQuestion = quizWrap.querySelector(".quiz__question");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
+        const dogWrap = quizWrap.querySelector(".dog__wrap");
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");
+        const quizNext = quizWrap.querySelector(".quiz__answer .next");
+        const quizInfo2 = quizWrap.querySelector(".quiz__info2");
+        const quizInfo3 = quizWrap.querySelector(".quiz__info3");
+        const quizQuestion2 = quizWrap.querySelector(".quiz__question em")
+        
+
+        let quizCount = 0;
+        let quizScore = 0;
+
+
+        
+        //문제 출력
+        const updateQuiz = (index) => {
+            let allTag = `
+                <div>남은문제 : ${5+(-quizCount)}</div>
+            `;
+            let typeTag = `
+                <span>${quizInfo[index].infoType}</span>
+                <em>2010년 ${quizInfo[index].infoTime}</em>
+            `;
+            let questionTag = `
+                <em>${index+1}</em>.
+                <span>${quizInfo[index].infoQuestion}</span>
+            `;
+            let choiceTag = `
+                <label for="choice1">
+                    <input type="radio" id="choice1" name="choice" value="1">
+                    <span>${quizInfo[index].infoChoice[0]}</span>
+                </label>
+                <label for="choice2">
+                    <input type="radio" id="choice2" name="choice" value="2">
+                    <span>${quizInfo[index].infoChoice[1]}</span>
+                </label>
+                <label for="choice3">
+                    <input type="radio" id="choice3" name="choice" value="3">
+                    <span>${quizInfo[index].infoChoice[2]}</span>
+                </label>
+                <label for="choice4">
+                    <input type="radio" id="choice4" name="choice" value="4">
+                    <span>${quizInfo[index].infoChoice[3]}</span>
+                </label>
+            `;
+            let descTag = `
+                정답은 ${quizInfo[index].infoAnswer}입니다!<br>
+                ${quizInfo[index].infoDesc}
+            `;
+            let checkTag = `
+                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / quizInfo.length) *100)} 점!!
+            `;  
+              
+            
+
+            quizTitle.innerHTML = typeTag;
+            quizQuestion.innerHTML = questionTag;
+            quizChoice.innerHTML = choiceTag;
+            quizDesc.innerHTML = descTag;
+            quizWrapall.innerHTML = allTag;
+            quizInfo2.innerHTML = checkTag;
+
+
+            //보기 선택자
+            const quizChoiceSpan = quizWrap.querySelectorAll(".quiz__choice span");
+            const quizChoiceInput = quizWrap.querySelectorAll(".quiz__choice input");
+
+            //forEach문으로
+            // quizChoiceSpan.forEach((span) => {
+            //     span.setAttribute("onclick", "choiceSelected(this)");
+            // });
+            //for문으로
+            for(let i=0; i<quizChoiceSpan.length; i++){
+                quizChoiceSpan[i].setAttribute("onclick", "choiceSelected(this)");
+                // quizChoiceInput[i].disabled = "true";
+            };
+            
+
+            //정답 버튼,해설 숨기기
+            quizAnswer.style.display = "none";
+            quizDesc.style.display = "none";
+            quizInfo2.style.display = "none";
+            quizInfo3.style.display = "none";
+            
+        };
+        
+        updateQuiz(quizCount);
+        
+
+        //객관식 선택
+        function choiceSelected(answer){
+            let userAnswer = answer.textContent;                //사용자 정답
+            let currentAnswer = quizInfo[quizCount].infoAnswer; //문제 정답
+            
+            if(userAnswer == currentAnswer){
+                dogWrap.classList.remove("dislike");
+                dogWrap.classList.add("like");
+                quizScore++
+                
+            } else {
+                dogWrap.classList.remove("like");
+                dogWrap.classList.add("dislike");
+            }
+            //정답 버튼,해설 나타나기
+            quizAnswer.style.display = "block";
+            quizDesc.style.display = "block";
+
+        };
+
+        
+        //정답 확인
+        quizNext.addEventListener("click", () => {
+            
+            ++quizCount;
+            updateQuiz(quizCount);
+            dogWrap.classList.remove("like","dislike");
+            if(quizCount == 6){
+                quizInfo2.style.display = "block";
+                quizInfo3.style.display = "block";
+                quizChoice.style.display = "none";
+                quizQuestion.style.display = "none";
+                dogWrap.classList.add("like");
+                quizWrapall.style.display = "none";
+                quizTitle.style.display = "none";
+            }
+            
+        });
+        
+
+
+    </script>
+</body>
+</html>
