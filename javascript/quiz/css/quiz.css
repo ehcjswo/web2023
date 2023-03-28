@@ -287,7 +287,7 @@ body {
 .quiz__info2 {
     position: fixed;
     right: 30vw;
-    bottom: 900px;
+    bottom: 600px;
     line-height: 3;
     background-color: #ff008c;
     text-align: center;
@@ -311,7 +311,7 @@ body {
 .quiz__info3 {
     position: fixed;
     left: 30vw;
-    bottom: 950px;
+    bottom: 650px;
     line-height: 3;
     background-color: #131212;
     text-align: center;
@@ -325,7 +325,7 @@ body {
 .quiz__info3::after {
     content: '';
     position: absolute;
-    left: 102%;
+    left: 100%;
     margin-left: -2px;
     bottom: 10px;
     border-left: 15px solid #131212;
