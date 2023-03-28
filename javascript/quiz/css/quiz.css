@@ -1,3 +1,4 @@
+
 body {
     
 }
@@ -92,7 +93,8 @@ body {
 }
 
 #main {
-    padding: 100px;
+    /* padding: 100px; */
+    /* padding-top: 120px; */
 }
 
 /* quiz__wrap */
@@ -331,6 +333,158 @@ body {
     border-left: 15px solid #131212;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
+}
+
+/* cbt 유형 */
+.quiz__wrap__cbt {
+    padding: 0 20px;
+    margin-top: 80px;
+    font-family: 'DungGeunMo';
+}
+.cbt__conts{
+    width: calc(100% - 300px);
+    background-color: #fff;
+}
+.cbt__time {
+    position: relative;
+    padding-left: 40px !important;
+}
+.cbt__time::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 7px;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' /%3E%3C/svg%3E%0A");
+}
+.cbt__submit {
+    position: relative;
+    padding-left: 40px !important;
+}
+.cbt__submit::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 7px;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12' /%3E%3C/svg%3E%0A");
+}
+.cbt__header {
+    width: calc(100% - 300px);
+    background-color: #fff;
+    border: 8px ridge #cacaca;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #effffa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cbt__header > div > div {
+    background-color: #28795f;
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 20px;
+}
+.cbt__aside {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 280px;
+    height: 800px;
+    border: 8px ridge #cacaca;
+}
+.cbt__quiz {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cbt__quiz .cbt {
+    width: 48%;
+    border: 8px ridge #cacaca;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+}
+.cbt__info {
+    background-color: #effffa;
+    border-bottom: 8px ridge #cacaca;
+    padding: 20px;
+    text-align: center;
+}
+.cbt__info .title {
+    text-decoration: underline;
+    text-underline-offset: 3.5px;
+    margin-bottom: 5px;
+}
+.cbt__info span {
+    display: inline-block;
+}
+.cbt__omr {
+    padding: 20px;
+    background-color: #fff;
+}
+.cbt__omr .omr {
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 50px 38px 38px 38px 38px;
+    grid-template-rows: 20px;
+    align-items: center;
+
+}
+.cbt__omr .omr input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+.cbt__omr strong {
+    display: inline-block;
+    text-align: center;
+    /* padding: px; */
+    background-color: #28795f;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-family: 'Helvetica neue';
+}
+.cbt__omr .omr label {
+    box-shadow: 0 0 0 1px #28795f;
+    cursor: pointer;
+    line-height: 0.4;
+    text-align: center;
+    width: 28px;
+    height: 8px;
+    position: relative;
+    font-family: 'Helvetica neue';
+    font-weight: bold;
+}
+.cbt__omr .omr label::after {
+    background-color: #555;
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    transition: width 0.1s linear;
+}
+.cbt__omr .omr input[type=radio]:checked + label::after {
+    width: 100%;
+}
+.cbt__omr .omr .label-inner {
+    background-color: #fff;
+    padding: 0.25em 0.13em;
+    transform: translateY(-0.25em);
+    width: 20px;
+    color: #28795f;
 }
 
 /* dog__wrap */

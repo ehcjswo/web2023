@@ -19,6 +19,7 @@
             <li><a href="quizEffect04.html">4</a></li>
             <li><a href="quizEffect05.html">5</a></li>
             <li class="active"><a href="quizEffect06.html">6</a></li>
+            <li><a href="quizEffect07.html">7</a></li>
         </ul>
     </header>
     <!--//header-->
@@ -156,7 +157,6 @@
                 infoDesc: ""
             }
         ];
-
         //선택자
         const quizWrap = document.querySelector(".quiz__wrap");         
         const quizWrapall = document.querySelector(".dog__wrap .all");  //남은 문제수
@@ -210,7 +210,7 @@
             `;
             //마지막 말풍선
             let checkTag = `    
-                점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / (quizInfo.length-1)) *100)} 점!!
+                점수!<br>${quizInfo.length-2}문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / (quizInfo.length-1)) *100)} 점!!
             `;  
 
             quizTitle.innerHTML = typeTag;
