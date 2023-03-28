@@ -147,13 +147,13 @@
                 infoAnswer: "01110110",
                 infoDesc: "10001010 을 1의 보수로 바꿉니다 : 0은 1로, 1은 0으로 변경하면됩니다. 01110101 로 바꿔 1보수에 +1을 해주면 2의 보수가 됩니다. 01110110 이 답입니다. 간단하게 바꾸는 방법은 문제의 2진수에서 오른쪽에서 부터 처음 1이 나올때까지는 그대로 적고 나머지는 반대로 바꾸면 됩니다."
             },{
-                infoType: "정보처리 기능사",
-                infoTime: "2010년 5회",
-                infoNumber : "20100506",
+                infoType: "",
+                infoTime: "",
+                infoNumber : "",
                 infoQuestion: "수고하셨습니다!",
                 infoChoice: [" ", " ", " ", " "],
                 infoAnswer: "",
-                infoDesc: "10001010 을 1의 보수로 바꿉니다 : 0은 1로, 1은 0으로 변경하면됩니다. 01110101 로 바꿔 1보수에 +1을 해주면 2의 보수가 됩니다. 01110110 이 답입니다. 간단하게 바꾸는 방법은 문제의 2진수에서 오른쪽에서 부터 처음 1이 나올때까지는 그대로 적고 나머지는 반대로 바꾸면 됩니다."
+                infoDesc: ""
             }
         ];
 
@@ -208,7 +208,8 @@
                 정답은 ${quizInfo[index].infoAnswer}입니다!<br>
                 ${quizInfo[index].infoDesc}
             `;
-            let checkTag = `
+            //마지막 말풍선
+            let checkTag = `    
                 점수!<br>6문제중 <br>${quizScore}문제를 맞췄개.<br>${Math.ceil((quizScore / (quizInfo.length-1)) *100)} 점!!
             `;  
 
@@ -232,7 +233,7 @@
             //     quizChoiceSpan[i].setAttribute("onclick", "choiceSelected(this)");
             // };
 
-            //정답 버튼,해설 숨기기
+            //정답 버튼, 해설, 말풍선 숨기기
             quizAnswer.style.display = "none";
             quizDesc.style.display = "none";
             quizInfo2.style.display = "none";
@@ -267,7 +268,7 @@
             ++quizCount;
             updateQuiz(quizCount);
             dogWrap.classList.remove("like","dislike");
-            if(quizCount == 6){
+            if(quizCount == 6){     //마지막 문제 카운트가 될 시
                 quizInfo2.style.display = "block";
                 quizInfo3.style.display = "block";
                 quizChoice.style.display = "none";
