@@ -175,13 +175,16 @@
         //     document.write(table(user1,user2));
         // }
         {
-    let num1 = 3;
-    let num2 = 7;
-    if(++num1 < 5 || ++num2 > 8){
-        console.log(num1);
-    }
-    console.log(num2)
-}
+            function func(index){
+                console.log("함수가 실행되었습니다." + index);
+            }
+            function callback(num){
+                for(let i=0; i<=5; i++){
+                    num(i);
+                }
+            }
+            callback(func);
+                }
     </script>
 </body>
 </html>
