@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마무리문제(javascript 220~221)</title>
+</head>
+<body>
+        <img src="img/2.png">
+</body>
+<script>
+    let imgsrc = document.querySelector("img");
+
+    imgsrc.addEventListener("mouseover",() => {
+        imgsrc.src = "img/1.png";
+    });
+
+    imgsrc.addEventListener("mouseout", () => {
+        imgsrc.src = "img/2.png";
+    });
+</script>
+</html>
