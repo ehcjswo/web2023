@@ -216,7 +216,7 @@ mysql> show databases;
                     <h3 id="intro5" class="page-header">테이블</h3>
                     <h34 id="intro5-1" class="page-header">테이블 만들기</h3>
                     <div class="bs-callout bs-callout-info">create table 테이블이름;</div>
-<pre><code class="Language-js">create table member (
+<pre><code class="Language-js">create table members (
     memberID int(10) unsigned auto_increment,
     youEmail varchar(40) NOT NULL,
     youName varchar(10) NOT NULL,
@@ -227,6 +227,13 @@ mysql> show databases;
     PRIMARY KEY (MemberID)
 ) charset=utf8;
 
+create table reviews (
+    reviewID int(10) unsigned auto_increment,
+    memberID int(10) unsigned,
+    youText tinytext NOT NULL,
+    regTime int(30) NOT NULL,
+    PRIMARY KEY (reviewID)
+) charset=utf8;
 --------------------입력후 cmd----------------------
 
 mysql> create table member (
@@ -299,35 +306,48 @@ Empty set (0.00 sec)
                     <h3 id="intro6" class="page-header">🏙테이블 데이터</h3>
                     <h4 id="intro6-1" class="page-header">데이터 입력하기</h4>
                     <div class="bs-callout bs-callout-info"><code>INSERT</code> <code>INTO</code> 테이블명(필드명) <code>VALUES</code></div>
-<pre><code class="Language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("webstoryboy@naver.com","황상연","1234","19990304","26","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dlscks0930@naver.com","황인찬","1234","19980930","26","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("gp2617@naver.com","천설희","1234","19950313","29","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dsy1943@naver.com","여다슬","1943","20011227","23","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("1346zany@gmail.com","이승연","1234","19991216","25","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("ebmdols@naver.com","장진용","1234","19940401","26","03140316");
-INSERT INTO member(youEmail, youName, youpass, youBirth, youAge, regTime) VALUES("jo0132@naver.com","노지영","1234","19950323","29","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("skadldldl123@gmail.com","안교남","1234","19920923","32","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("ehcjswo1@gmail.com","김도현","123","19951003","29","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("goed0522@gmail.com","변우현","1234","20000629","24","03141516");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("yuna243441@naver.com","이유나","1234","20020508","22","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("im.kebab00@gmail.com","이요셉","1234","19990315","26","03140316");
-INSERT INTO member(youEmail, youName, youpass, youBirth, youAge, regTime) VALUES("ture403@gmail.com","전윤기","1234","19920210","32","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dongjin6539@naver.com","신동진","1234","19960709","28","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("gnsrbdi@naver.com","이훈규","1234","19950227","29","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("jeongyouna_@naver.com","정유나","1234","19950606","29","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("daanbi1345@gmail.com","조은경","1234","19930205","31","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("hunmi961119@gmail.com","진현미","1234","19961119","28","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("getgrovy@gmail.com","정희석","1234","19990101","26","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("kshkmn0929@naver.com","김도현","0929","20020929","22","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("hyejeong3283@gmail.com","이혜정","1234","19940622","30","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("didrn94553@gmail.com","이양구","1234","19941212","30","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("ghkddn132@naver.com","정황우","1234","19970130","25","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("esansi@naver.com","김현빈","1234","19970524","27","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("lee3ll@naver.com","이은지","1234","19930311","31","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dripidea77@gmail.com","김시연","1234","19930313","31","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("itshena01@gmail.com","조한미","1234","19930211","31","03140316");
-INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("aimee00418@gmail.com","권현정","1234","19830211","39","03140316");
+<pre><code class="Language-js">INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("webstoryboy@naver.com","황상연","1234","19990304","26","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dlscks0930@naver.com","황인찬","1234","19980930","26","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("gp2617@naver.com","천설희","1234","19950313","29","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dsy1943@naver.com","여다슬","1943","20011227","23","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("1346zany@gmail.com","이승연","1234","19991216","25","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("ebmdols@naver.com","장진용","1234","19940401","26","03140316");
+INSERT INTO members(youEmail, youName, youpass, youBirth, youAge, regTime) VALUES("jo0132@naver.com","노지영","1234","19950323","29","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("skadldldl123@gmail.com","안교남","1234","19920923","32","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("ehcjswo1@gmail.com","김도현","123","19951003","29","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("goed0522@gmail.com","변우현","1234","20000629","24","03141516");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("yuna243441@naver.com","이유나","1234","20020508","22","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("im.kebab00@gmail.com","이요셉","1234","19990315","26","03140316");
+INSERT INTO members(youEmail, youName, youpass, youBirth, youAge, regTime) VALUES("ture403@gmail.com","전윤기","1234","19920210","32","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dongjin6539@naver.com","신동진","1234","19960709","28","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("gnsrbdi@naver.com","이훈규","1234","19950227","29","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("jeongyouna_@naver.com","정유나","1234","19950606","29","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("daanbi1345@gmail.com","조은경","1234","19930205","31","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("hunmi961119@gmail.com","진현미","1234","19961119","28","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("getgrovy@gmail.com","정희석","1234","19990101","26","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("kshkmn0929@naver.com","김도현","0929","20020929","22","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("hyejeong3283@gmail.com","이혜정","1234","19940622","30","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("didrn94553@gmail.com","이양구","1234","19941212","30","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("ghkddn132@naver.com","정황우","1234","19970130","25","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("esansi@naver.com","김현빈","1234","19970524","27","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("lee3ll@naver.com","이은지","1234","19930311","31","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dripidea77@gmail.com","김시연","1234","19930313","31","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("itshena01@gmail.com","조한미","1234","19930211","31","03140316");
+INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("aimee00418@gmail.com","권현정","1234","19830211","39","03140316");
 
+</code></pre>
+
+<div class="bs-callout bs-callout-info"><code>INSERT</code> <code>INTO</code> 테이블명(필드명) <code>VALUES</code></div>
+<pre><code class="Language-js">INSERT INTO reviews(memberID, youText, regTime) VALUES("4", "정말 감사합니다. 잘봤어요", "1234567");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("14", "짱이에요!", "151124");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("2", "이건 정말 사야해요.", "655434");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("5", "내용이 좋아요~", "7465453");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("7", "잘 봤습니다~", "4123342");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("1", "정리 잘 하셨네요~!", "5342342");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("9", "사진 선택이 탁월합니다!", "3567542");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("4", "잘봤습니다~", "532342");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("2", "너무 좋은 내용이에요!", "324897");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("7", "좀 아쉽네요~", "1439127");
 </code></pre>
 
                     <h4 id="intro6-2" class="page-header">데이터 불러오기</h4>

@@ -80,8 +80,8 @@
                     <li><a href="#sample28">28. <strong>string.prototype.toUpperCase()</strong>    메서드는 문자열을 대문자로 설정하고, 대문자 문자열을 반환합니다.</a></li>
                     <li><a href="#sample29">29. <strong>string.prototype.toString()</strong>       메서드는 데이터를 문자열로 변환하고, 문자열을 반환합니다.</a></li>
                     <li><a href="#sample30">30. <strong>string.prototype.trim()</strong>           메서드는 문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
-                    <li><a href="#sample31">31. <strong>string.prototype.trimEnd()</strong>        메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
-                    <li><a href="#sample32">32. <strong>string.prototype.trimStart()</strong>      메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample31">31. <strong>string.prototype.trimEnd()</strong>        메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample32">32. <strong>string.prototype.trimStart()</strong>      메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
                     <li><a href="#sample33">33. <strong>string.prototype.valueOf()</strong>        메서드는 객체의 원시값을 반환합니다.</a></li>
                 </ul>
             </div>
@@ -232,6 +232,147 @@
             </div>
             <!-- //sample18 -->
 
+            <div class="main__sample">
+                <div id="sample19" class="sample">
+                    <h3>19. slice( )</h3>
+                    <div class="notice">"문자열".slice(시작위치, [끝나는 위치])</div>
+                    <ul>
+                        <li>slice( ) 메서드는 배열 시작 위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="language-js">{
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0); //['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(1); //['a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(2); //['v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 1);  //['j']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(1, 2);  //['a']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 2);  //['j', 'a']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 3);  //['j', 'a', 'v']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, 10);  //['c', 'r', 'i', 'p', 't']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, -1);  //['c', 'r', 'i', 'p']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, -2);  //['c', 'r', 'i']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-1);  //['t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-2);  //['p', 't']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3);  //['i', 'p', 't']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -1);  //['i', 'p']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -2);  //['i']
+
+    "javascript".slice(0);   //javascript
+    "javascript".slice(1);   //avascript
+    "javascript".slice(2);   //vascript
+    "javascript".slice(0, 1);   //j
+    "javascript".slice(1, 2);   //a
+    "javascript".slice(0, 2);   //ja
+    "javascript".slice(0, 3);   //jav
+    "javascript".slice(5, 10);   //cript
+    "javascript".slice(5, -1);   //crip
+    "javascript".slice(5, -2);   //cri
+    "javascript".slice(-1);   //t
+    "javascript".slice(-2);   //pt
+    "javascript".slice(-3);   //ipt
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <!-- //sample19 -->
+
+            <div class="main__sample">
+                <div id="sample22" class="sample">
+                    <h3>22. split()</h3>
+                    <div class="notice">"문자열".split(구분자, [제한])</div>
+                    <ul>
+                        <li>구분자를 이용하여, 여러개의 문자열(배열)을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="language-js">{
+    "javascript".split(""); //['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+    "javascript".split(" "); //['javascript']
+    "java script".split(" "); //['java', 'script']
+    "java scr ipt".split(" "); //['java', 'scr', 'ipt']
+
+    "javascript".split("", 1);  //['j']
+    "javascript".split("", 2);  //['j', 'a']
+    "javascript".split("", 3);  //['j', 'a', 'v']
+
+    "javas cript".split(" ", 1);  //['java']
+    "javas cript".split(" ", 2);  //['java', 'script']
+
+    "javascript".split("j");  //['', 'avascript']
+    "javascript".split("a");  //['j', 'v', 'script']
+    "javascript".split("e");  //['javascript']
+
+    "java/scr/ipt".split("/");  //['java', 'scr', 'ipt']
+    "java&scr!ipt".split("&");  //['java', 'scr!ipt']
+    "java&scr!ipt".split("!");  //['java&scr', 'ipt']
+    "java&scr!ipt".split(/&|\!/);    //['java', 'scr', 'ipt']
+
+    "javascript".split("").join();   //j,a,v,a,s,c,r,i,p,t (join 때문에 문자열로 가져옴)
+    "javascript".split("").join("*");    //j*a*v*a*s*c*r*i*p*t
+    "javascript".split("").reverse().join("");    //tpircsavaj
+    "javascript".split("").reverse().join("*");    //t*p*i*r*c*s*a*v*a*j
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <!-- //sample22 -->
+
+            <div class="main__sample">
+                <div id="sample30" class="sample">
+                    <h3>30. trim()</h3>
+                    <div class="notice">"문자열".trim()</div>
+                    <ul>
+                        <li>문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="language-js">{
+    "javascript".trim("");   //javascript
+    "javascript ".trim("");  //javascript
+    " javascript".trim("");  //javascript
+    "java script".trim("");  //java script
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <!-- //sample30 -->
+
+            <div class="main__sample">
+                <div id="sample31" class="sample">
+                    <h3>31. trimEnd()</h3>
+                    <div class="notice">"문자열".trimEnd()</div>
+                    <ul>
+                        <li>메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="language-js">{
+    " javascript ".trimEnd("");  //java script
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <!-- //sample31 -->
+
+            <div class="main__sample">
+                <div id="sample32" class="sample">
+                    <h3>32. trimStart()</h3>
+                    <div class="notice">"문자열".trimStart()</div>
+                    <ul>
+                        <li>메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="language-js">{
+    " javascript ".trimStart("");  //java script
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <!-- //sample32 -->
+
+
     </div>
     </main>
     <!-- //main -->
@@ -244,18 +385,19 @@
 
     <script>
         
-        console.log("javascript reference".match("javascript"));
-        console.log("javascript reference".match("reference"));
-        console.log("javascript reference".match("r"));
-        console.log("javascript reference".match("R"));
-        console.log("javascript reference".match("ja"));
-        console.log("javascript reference".match(/reference/));
-        console.log("javascript reference".match(/Reference/));
-        console.log("javascript reference".match(/Reference/i));
-        console.log("javascript reference".match(/Reference/g));
-        console.log("javascript reference".match(/r/));
-        console.log("javascript reference".match(/r/g));
-        console.log("javascript reference".match(/w/g));
+       "javascript".trim("");   //javascript
+       "javascript ".trim("");  //javascript
+       " javascript".trim("");  //javascript
+       "java script".trim("");  //java script
+       
+       " javascript ".trimStart("");  //java script
+       " javascript ".trimEnd("");  //java script
+
+
+
+       console.log("javascript".trim(""));
+        
+        
         
     </script>
 
