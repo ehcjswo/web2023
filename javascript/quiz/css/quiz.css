@@ -103,6 +103,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    padding: 120px;
 }
 .quiz__wrap .quiz {
     width: 500px;
