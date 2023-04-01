@@ -137,7 +137,7 @@
       <div class="row">
         <div class="span12" style="text-align:center;">
           <div class="header_tit">
-            <a href="https://ehcjswo.tistory.com/"><img src="assets/img/Chococat.svg" alt="main"></a>
+            <a href="https://ehcjswo.tistory.com/"><img src="assets/img/spcat4.png" alt="main"></a>
             <h1>Professional web publishers</h1>
           </div>
           <div class="header_icon">
@@ -398,6 +398,17 @@
         $(".view").fadeToggle();
       });
 
+    });
+    const bg = document.querySelector('#header ');
+    const windowWidth = window.innerWidth / 5;
+    const windowHeight = window.innerHeight / 5 ;
+
+    bg.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / windowWidth;
+      const mouseY = e.clientY / windowHeight;
+      
+      bg.style.backgroundPositionX = -60+e.clientX/15 + "px";
+      bg.style.backgroundPositionY = -550+e.clientY/15 + "px";
     });
   </script>
 </body>
