@@ -399,17 +399,14 @@
       });
 
     });
-    const bg = document.querySelector('#header ');
-    const windowWidth = window.innerWidth / 5;
-    const windowHeight = window.innerHeight / 5 ;
+    const bg = document.querySelector("#header");
 
-    bg.addEventListener('mousemove', (e) => {
-      const mouseX = e.clientX / windowWidth;
-      const mouseY = e.clientY / windowHeight;
-      
-      bg.style.backgroundPositionX = -60+e.clientX/15 + "px";
-      bg.style.backgroundPositionY = -550+e.clientY/15 + "px";
+    // 배경화면 움직이기
+    window.addEventListener('mousemove', (e) => {
+      bg.style.backgroundPositionX = -60+e.screenX/30 + "px";
+      bg.style.backgroundPositionY = -550+e.screenY/15 + "px";
     });
+
   </script>
 </body>
 
