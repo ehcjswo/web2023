@@ -98,18 +98,18 @@
             </div>
             
             <div class="check">
-                <div class="cbt__time">59분 10초</div>
+                <div class="cbt__time">asd</div>
                 <div class="cbt__submit">제출하기</div>
             </div>
             <div class="cbt__aside">
                 
                 <div class="cbt__info">
                     <div>
-                        <div class="cbt__title">수험자 : <em>김도현</em></div>
-                        <div class="cbt__score">
-                            <span>전체 문제수 : <em>60</em>문항</span>
-                            <span>남은 문제수 : <em>59</em>문항</span>
-                        </div>
+                        <!-- <div class="cbt__title">수험자 : <em>김도현</em></div> -->
+                        <!-- <div class="cbt__score"> -->
+                            <!-- <span>전체 문제수 : <em>60</em>문항</span> -->
+                            <!-- <span>남은 문제수 : <em>59</em>문항</span> -->
+                        <!-- </div> -->
                     </div>                 
                 </div>
                 <div class="cbt__omr">
@@ -147,7 +147,7 @@
         const cbtQuiz = document.querySelector(".cbt__quiz");
         const cbtOmr = document.querySelector(".cbt__omr");
         const cbtSubmit = document.querySelector(".cbt__submit");
-        // const Check = document.querySelector(".check");
+        const cbtInfo = document.querySelector(".cbt__info");
 
         let questionAll = [];   //모든 퀴즈 정보
 
@@ -204,7 +204,7 @@
         const newQuestion = () => {
             const exam = [];
             const omr = [];
-            // const question = [];
+            const que = [];
 
             questionAll.forEach((question, number) => {
                 exam.push(`
@@ -246,20 +246,22 @@
                     </label>
                 </div>
                 `)
-                // question.push(`
-                // <div class="cbt__time">59분 10초</div>
-                // <div class="cbt__submit">제출하기</div>
-                // `)
             });
-            
+            let number = questionAll.length;
+            que.push(`
+            <div class="cbt__score">
+                <div class="cbt__title">수험자 : <em>김도현</em></div>
+                <span>전체 문제수 : <em>${questionAll.length}</em>문항</span>
+            </div>
+            `);
             
 
             cbtQuiz.innerHTML = exam.join('');
             cbtOmr.innerHTML = omr.join('');
-            // Check.innerHTML = question.join('');
+            cbtInfo.innerHTML = que.join('');
 
         }
-
+            
 
         //정답 확인
         const answerQuiz = () => {
@@ -270,6 +272,8 @@
                 const userAnswer = (quizSelectWrap.querySelector(userSelector) || {}).value;
                 const numberAnswer = userAnswer ? userAnswer.slice(-1) : undefined;
                 
+                
+
                 if(numberAnswer == question.Answer){
                     console.log("O");
                     cbtSelect[number].parentElement.classList.add("good");
