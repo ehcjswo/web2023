@@ -205,6 +205,8 @@
         const cbtBtn = document.querySelector(".minimal");
         const cbtStart = document.querySelector(".cbt__start");
 
+
+        //시작하기 누르면 모달창 닫기
         cbtBtn.addEventListener("click", () => {
             cbtStart.style.display = "none";
         });
@@ -224,6 +226,8 @@
         let questionLength = 0; //전체 문제수
         let questionRest = questionLength; //남은 문제수
 
+        
+        //남은 시간
         let minutes = 60;
         let seconds = 0;
 
