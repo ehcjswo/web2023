@@ -372,7 +372,7 @@ body {
 .cbt__aside {
     position: fixed;
     right: 0;
-    top: 150px;
+    top: 180px;
     width: 280px;
     height: calc(100vh - 140px);
     border: 8px ridge #cacaca;
@@ -389,24 +389,51 @@ body {
     /* margin-bottom: 10px; */
 }
 .check {
+    width: 250px;
     position: fixed;
     display: flex;
     top: 100px;
     right: 20px;
     justify-content: space-between;
+
+}
+/* .cbt__time {
+    width: 120px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #28795f;
+    padding: 20px;
+    left: -50px;
     color: #fff;
 }
-.cbt__time {
+.cbt__submit {
+    width: 130px;
+    
     border-radius: 20px;
     background-color: #28795f;
-    padding: 10px;
-    left: -20px;
+    padding: 12px;
+    padding-top: 20px;
+    cursor: pointer;
+    color: #fff;
+} */
+.cbt__time {
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #747928;
+    padding: 20px;
+    color: #fff;
+
 }
 .cbt__submit {
+    width: 120px;
+    text-align: center;
     border-radius: 20px;
-    background-color: #28795f;
-    padding: 10px;
+    background-color: #792847;
+    padding: 12px;
+    padding-top: 20px;
     cursor: pointer;
+    color: #fff;
 }
 .cbt__quiz {
     display: flex;
@@ -451,6 +478,7 @@ body {
     background-color: #effffa;
     border-bottom: 8px ridge #cacaca;
     padding: 20px;
+    position: fixed;
 }
 /* .cbt__info div {
     margin-bottom: 10px;
@@ -468,8 +496,8 @@ body {
 .cbt__time::before {
     content: '';
     position: absolute;
-    left: 1px;
-    top: 8px;
+    left: 5px;
+    top: 18px;
     width: 22px;
     height: 22px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' /%3E%3C/svg%3E%0A");
@@ -482,8 +510,8 @@ body {
 .cbt__submit::before {
     content: '';
     position: absolute;
-    left: 1px;
-    top: 8px;
+    left: 7px;
+    top: 18px;
     width: 22px;
     height: 22px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12' /%3E%3C/svg%3E%0A");
@@ -498,6 +526,7 @@ body {
 }
 .cbt__omr {
     padding: 20px;
+    padding-top: 105px;
     /* background-color: #fff; */
 }
 .cbt__omr .omr {
@@ -628,7 +657,7 @@ body {
 }
 .cbt__selects label.correct span::before {
     border-color: rgb(25, 0, 255);
-    box-shadow: inset 0 0 0 10px red;
+    box-shadow: inset 0 0 0 10px rgb(47, 0, 255);
     color: #fff;
 }
 .cbt__desc {
