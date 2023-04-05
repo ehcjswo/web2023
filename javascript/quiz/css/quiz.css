@@ -719,6 +719,31 @@ body {
     font-weight: bold;
     transition: all 0.5s;
 }
+.cbt__view {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+    line-height: 1.8;
+}
+.cbt__view input {
+    border: 1px solid #d2d2ff;
+    padding: 2px;
+    font-family: 'PyeongChang';
+}
+.cbt__view span {
+    position: relative;
+}
+.cbt__view span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    z-index: -1;
+    border-radius: 20px;
+    background-color: #e0e0fff0;
+}
 
 /* dog__wrap */
 .dog .tail, 
