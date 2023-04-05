@@ -208,20 +208,20 @@
 
     <script>
         //선택자
-        const cbtQuiz = document.querySelector(".cbt__quiz");
-        const cbtOmr = document.querySelector(".cbt__omr");
-        const cbtSubmit = document.querySelector(".cbt__submit");
-        const cbtInfo = document.querySelector(".cbt__info");
-        const cbtRest = document.querySelector(".cbt__rest");
-        const cbtLength = document.querySelector(".cbt__length");
-        const cbtScore = document.querySelector(".cbt__score");
-        const cbtName = document.querySelector(".cbt__name");
-        const cbtViewInput = document.querySelector(".cbt__view input");
-        const cbtViewSubject = document.querySelector(".cbt__view .subject");
-        const cbtHeader = document.querySelector(".cbt__header h2");
-        const cbtTime = document.querySelector(".cbt__time");
-        const cbtBtn = document.querySelector(".ctb__start__btn");
-        const cbtStart = document.querySelector(".cbt__start");
+        const cbtQuiz = document.querySelector(".cbt__quiz");   //문제
+        const cbtOmr = document.querySelector(".cbt__omr"); //omr
+        const cbtSubmit = document.querySelector(".cbt__submit");   //답안지 제출
+        const cbtInfo = document.querySelector(".cbt__info");   //타이머,이름칸
+        const cbtRest = document.querySelector(".cbt__rest");   //남은 문제수
+        const cbtLength = document.querySelector(".cbt__length");   //전체 문제수
+        const cbtScore = document.querySelector(".cbt__score"); //점수
+        const cbtName = document.querySelector(".cbt__name"); //이름
+        const cbtViewInput = document.querySelector(".cbt__view input"); //이름입력
+        const cbtViewSubject = document.querySelector(".cbt__view .subject"); //기능사 종류
+        const cbtHeader = document.querySelector(".cbt__header h2"); //제목
+        const cbtTime = document.querySelector(".cbt__time"); //타이머
+        const cbtBtn = document.querySelector(".ctb__start__btn"); //모달창 시작버튼
+        const cbtStart = document.querySelector(".cbt__start"); //모달창
 
         let quizScore = 0;
         let questionAll = [];   //모든 퀴즈 정보
@@ -373,14 +373,12 @@
                 const userSelector = `input[name=select${number}]:checked`;
                 const userAnswer = (quizSelectWrap.querySelector(userSelector) || {}).value;
                 const numberAnswer = userAnswer ? userAnswer.slice(-1) : undefined;
-                const score = Math.ceil(quizScore / questionAll.length) * 100;
+                
             
                 if(numberAnswer == question.Answer){
-                    console.log("O");
                     cbtSelect[number].parentElement.classList.add("good");
                     quizScore++
                 } else {
-                    console.log("X")
                     cbtSelect[number].parentElement.classList.add("bad");
 
                     //오답일 경우 정답 표시
@@ -397,6 +395,10 @@
                     quizDesc[number].classList.remove("hide");
                 }
                 //점수 표시
+                const score = Math.ceil((quizScore/questionAll.length) * 100);
+                console.log(questionAll.length+"questionAll.length")
+                console.log(quizScore+"quizScore");
+                console.log(score+"score");
                 if(score >=60){
                 document.querySelector(".score").innerHTML = `총 점수: ${score}점! <br>잘하셨어요!`;
                 clearInterval(questionTime);
