@@ -98,6 +98,9 @@ body {
 }
 
 /* quiz__wrap */
+.hide {
+    display: none !important;
+}
 .quiz__wrap {
     display: flex;
     justify-content: center;

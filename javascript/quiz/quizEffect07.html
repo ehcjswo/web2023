@@ -138,7 +138,7 @@
                 <div class="cbt__modal1">
                 <h2>기능사 시험</h2>
                     <div class="cbt__choice">
-                        <select name="cbtTime" id="cbtTime" class="cbt__index" onchange="changeSelect(this)">
+                        <select name="cbtTime" id="cbtTime" onchange="changeSelect(this)">
                             <option value="gineungsaJC2005_02">정보처리기능사 2005년 2회</option>
                             <option value="gineungsaJC2005_04">정보처리기능사 2005년 4회</option>
                             <option value="gineungsaJC2005_05">정보처리기능사 2005년 5회</option>
@@ -162,13 +162,13 @@
                             <option value="gineungsaJC2011_04">정보처리기능사 2011년 4회</option>
                             <option value="gineungsaJC2011_05">정보처리기능사 2011년 5회</option>
                         </select>
-                        <select name="cbtTime" id="cbtTime" class="cbt__index2" onchange="changeSelect(this)">
+                        <select name="cbtTime" id="cbtTime" onchange="changeSelect(this)">
                             <option value="gineungsaWD2009_05">웹디자인기능사 2009년 5회</option>
-                            <option value="gineungsaWD2010_02">웹디자인기능사 2010년 1회</option>
+                            <option value="gineungsaWD2010_01">웹디자인기능사 2010년 1회</option>
                             <option value="gineungsaWD2010_02">웹디자인기능사 2010년 2회</option>
                             <option value="gineungsaWD2010_04">웹디자인기능사 2010년 4회</option>
                             <option value="gineungsaWD2010_05">웹디자인기능사 2010년 5회</option>
-                            <option value="gineungsaWD2011_04">웹디자인기능사 2011년 1회</option>
+                            <option value="gineungsaWD2011_01">웹디자인기능사 2011년 1회</option>
                             <option value="gineungsaWD2011_02">웹디자인기능사 2011년 2회</option>
                             <option value="gineungsaWD2011_04">웹디자인기능사 2011년 4회</option>
                             <option value="gineungsaWD2011_05">웹디자인기능사 2011년 5회</option>
@@ -223,42 +223,48 @@
         const cbtLength = document.querySelector(".cbt__length");
         const cbtScore = document.querySelector(".cbt__score");
         const cbtName = document.querySelector(".cbt__name");
-        const cbtIndex = document.querySelector(".cbt__index");
         const cbtViewSubject = document.querySelector(".cbt__view .subject");
         const cbtHeader = document.querySelector(".cbt__header h2");
+        const cbtTime = document.querySelector(".cbt__time");
 
         let quizScore = 0;
 
         let questionAll = [];   //모든 퀴즈 정보
         let questionLength = 0; //전체 문제수
         let questionRest = questionLength; //남은 문제수
+        let questionTime = "";
+        let questionTimeRemain = "1000";
 
-        
-        //남은 시간
-        let minutes = 60;
-        let seconds = 0;
-
-        function countdown() {
-            const timerElement = document.querySelector(".cbt__time");
-            timerElement.innerHTML = `남은 시간 : ${minutes}분 ${seconds.toString().padStart(2, '0')}초`;
-            
-            if(seconds === 0){
-                seconds = 59;
-                minutes--;
-            } else {
-                seconds--;
-            }
-            if(minutes < 0){
-                clearInterval(timer);
-                alert("시험시간이 끝났습니다. 답안을 제출해주세요.");
-            }
+        const sTartQuiz = () => {
+            questionTime = setInterval(reduceTime, 1000);
         }
 
-        const timer = setInterval(countdown, 1000);
+        
+        // //남은 시간
+        // let minutes = 60;
+        // let seconds = 0;
+
+        // function countdown() {
+        //     const timerElement = document.querySelector(".cbt__time");
+        //     timerElement.innerHTML = `남은 시간 : ${minutes}분 ${seconds.toString().padStart(2, '0')}초`;
+            
+        //     if(seconds === 0){
+        //         seconds = 59;
+        //         minutes--;
+        //     } else {
+        //         seconds--;
+        //     }
+        //     if(minutes < 0){
+        //         clearInterval(timer);
+        //         alert("시험시간이 끝났습니다. 답안을 제출해주세요.");
+        //     }
+        // }
+
+        // const timer = setInterval(countdown, 1000);
 
         //데이터 불러오기
         const dataQuestion = (value) => {
-            fetch("json/gineungsaWD2010_05.json")
+            fetch(`https://kebab000.github.io/web2023/gineungsaJSON/${value}.json`)
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index) => {
@@ -320,7 +326,7 @@
                 exam.push(`
                 <div class="cbt">
                         <div class="cbt__question"><span>${question.Number}</span>. ${question.question}</div>
-                        <div class="cbt__question__img"><img src="img/${question.question_img}.jpg" alt=""></div>
+                        <div class="cbt__question__img"><img src="https://kebab000.github.io/web2023/gineungsaJPG/${question.question_img}.jpg" alt="시험이미지"></div>
                         <div class="cbt__question__desc">${question.question_desc}</div>
                         <div class="cbt__selects">
                                 <input type="radio" name="select${number}" id="select${number}_1" value="${number}_1" onclick="answerSelect2(this)">
@@ -364,24 +370,39 @@
             cbtOmr.innerHTML = omr.join('');
 
 
-            //문제설명 숨기기
-            const questionDesc = document.querySelectorAll(".cbt__question__desc");
+            // //문제설명 숨기기
+            // const questionDesc = document.querySelectorAll(".cbt__question__desc");
 
-            questionDesc.forEach(el => {
-                if(el.innerHTML == "undefined" | ""){
-                    el.style.display = "none";
+            // questionDesc.forEach(el => {
+            //     if(el.innerHTML == "undefined"){
+            //         el.style.display = "none";
+            //     }
+            // });
+
+
+            // //이미지 숨기기
+            // const questionImg = document.querySelectorAll(".cbt__question__img");
+
+            // questionImg.forEach(el => {
+            //     if(el.innerHTML == "undefined"){
+            //         el.style.display = "none";
+            //     }
+            // }); 
+            
+            //undefined 문제 설명 숨기기
+            document.querySelectorAll(".cbt__question__desc").forEach(desc => {
+                if( desc.innerHTML === "undefined") {
+                    desc.classList.add("hide")
                 }
             });
+            //undefined 이미지 숨기기
+            document.querySelectorAll(".cbt__question__img").forEach(img => {
+                let src = img.querySelector("img").src;
 
-
-            //이미지 숨기기
-            const questionImg = document.querySelectorAll(".cbt__question__img");
-
-            questionImg.forEach(el => {
-                if(el.innerHTML == "undefined"){
-                    el.style.display = "none";
+                if(src.includes("undefined")){
+                    img.classList.add("hide");
                 }
-            }); 
+            });
         }
             
 
@@ -460,18 +481,43 @@
         //문제 선택
         const changeSelect = (e) => {
             let selectValue = e.value;
-            let selectText = e.options[cbtIndex.selectedIndex].text;
+            let selectText = e.options[e.selectedIndex].text;
 
             cbtViewSubject.innerText = selectText;
             cbtHeader.innerText = selectText;
 
             dataQuestion(selectValue);
-
-            console.log(selectValue)
-            console.log(selectText)
         }
+
+        // 시간 설정
+        const reduceTime = () => {
+            questionTimeRemain--;
+
+            if(questionTimeRemain == 0) endQuiz();
+
+            cbtTime.innerText = displayTime();
+        }
+        //시간 표시
+        const displayTime = () => {
+            if(questionTimeRemain <=0){
+                return "0분 00초";
+            } else {
+                let minutes = Math.floor(questionTimeRemain / 60);
+                let seconds = questionTimeRemain % 60;
+
+                return minutes + "분 " + (seconds.toString().padStart(2, '0')) + "초 "; //padStart 초앞에 0뜨게 하기
+                //초의 단위가 한자리 수가 되면 앞에 0을 붙여주기
+                setInterval(countdown, 1000);
+            }
+        }
+
+        //시험 끝
+        const endQuiz = () => {
+            alert("시험이 끝났습니다.")
+        }
+
+        cbtStart.addEventListener("click", sTartQuiz);
         cbtSubmit.addEventListener("click", answerQuiz);
-        dataQuestion();
         
     </script>
 </body>
