@@ -55,7 +55,6 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 	width: 110%;
 	background-image: url(../img/space3.jpg);
 	background-repeat: no-repeat;
-	/* background-position: center center; */
 	background-size: cover;
 	padding: 10px 0 10px 0px;
 	margin-top: 50px;
@@ -64,7 +63,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 }
 
 #header .span12 {
-	background: radial-gradient(rgba(0,0,0,0.2)60%, rgba(0,0,0,0) );
+	background: radial-gradient(rgba(0,0,0,0.5)30%, rgba(0,0,0,0), transparent );
 }
 #header.sub {
 	background:url(../img/header_bg.png) center 7px;
