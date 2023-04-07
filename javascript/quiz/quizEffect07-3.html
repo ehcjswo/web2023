@@ -280,6 +280,11 @@
                         formattedQuestion.desc = item.desc;
                     }
 
+                    //정답 밑에 표시
+                    if(item.hasOwnProperty("correct_answer")){
+                        formattedQuestion.correct_answer = item.correct_answer;
+                    }
+
                     
                     // console.log(formattedQuestion);
                     return formattedQuestion;
@@ -317,7 +322,7 @@
                                 <input type="radio" name="select${number}" id="select${number}_4" value="${number}_4" onclick="answerSelect2(this)">
                                 <label for="select${number}_4"><span>${question.choice4}</span></label> 
                         </div>
-                        <div class="cbt__desc hide">${question.Desc}</div>
+                        <div class="cbt__desc hide">답: ${question.correct_answer}<br><br> ${question.desc}</div>
                     </div>
                 `);
                 
