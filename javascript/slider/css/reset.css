@@ -1,0 +1,146 @@
+@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+@import url('https://webfontworld.github.io/earlyfont/EF_Hyunygothic.css');
+@import url('https://webfontworld.github.io/Montserrat/Montserrat.css');
+@import url('https://webfontworld.github.io/sunn/SUIT.css');
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+@import url('https://webfontworld.github.io/zess/BlackHanSans.css');
+@import url('https://webfontworld.github.io/jikji/JHaebaragi.css');
+@import url('https://webfontworld.github.io/elice/EliceDigitalBaeum.css');
+@import url('https://webfontworld.github.io/Jalpullineun/JalpullineunHaru.css');
+@import url('https://webfontworld.github.io/goodchoice/Jalnan.css');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    counter-reset: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+li, ul, ol {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+    width: 100%;
+}
+em {
+    font-style: normal;
+}
+.font01 {
+    font-family: 'CookieRun';
+    font-weight: 300;
+}
+.font02 {
+    font-family: 'EF_Hyunygothic';
+}
+.font03 {
+    font-family: 'Montserrat';
+}
+.font04 {
+    font-family: 'SUIT';
+}
+.font05 {
+    font-family: 'Pretendard';
+}
+.font06 {
+    font-family: 'BlackHanSans';
+}
+.font07 {
+    font-family: 'JHaebaragi';
+}
+.font08 {
+    font-family: 'MontseEliceDigitalBaeumrrat';
+}
+.font09 {
+    font-family: 'JalpullineunHaru';
+}
+.font10 {
+    font-family: 'Jalnan';
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    /* background-color: #ffbaba; */
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+body.img01 {
+    background-image: url(../img/SliderEffect01-min.jpg);
+}
+body.img02 {
+    background-image: url(../img/SliderEffect02-min.jpg);
+}
+body.img03 {
+    background-image: url(../img/SliderEffect03-min.jpg);
+}
+body.img04 {
+    background-image: url(../img/SliderEffect04-min.jpg);
+}
+body.img05 {
+    background-image: url(../img/SliderEffect05-min.jpg);
+}
+body.img06 {
+    background-image: url(../img/SliderEffect06-min.jpg);
+}
+body.img07 {
+    background-image: url(../img/SliderEffect07-min.jpg);
+}
+body.img08 {
+    background-image: url(../img/SliderEffect08-min.jpg);
+}
+body.img09 {
+    background-image: url(../img/SliderEffect09-min.jpg);
+}
+body.img10 {
+    background-image: url(../img/SliderEffect10-min.jpg);
+}
+body::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 34, 7, 0.87);
+    z-index: -1;
+}
+body.bg01::after {
+    background: rgba(5, 36, 70, 0.87);
+}
+body.bg02::after {
+    background: rgba(8, 29, 36, 0.87);
+}
+body.bg03::after {
+    background: rgba(65, 19, 70, 0.87);
+}
+body.bg04::after {
+    background: rgba(8, 36, 22, 0.87);
+}
+body.bg05::after {
+    background: rgba(30, 36, 8, 0.87);
+}
+body.bg06::after {
+    background: rgba(36, 29, 8, 0.87);
+}
+body.bg07::after {
+    background: rgba(36, 16, 8, 0.87);
+}
+body.bg08::after {
+    background: rgba(36, 8, 16, 0.97);
+}
+body.bg09::after {
+    background: rgba(8, 36, 31, 0.87);
+}
+body.bg09::after {
+    background: rgba(10, 34, 7, 0.87);
+}

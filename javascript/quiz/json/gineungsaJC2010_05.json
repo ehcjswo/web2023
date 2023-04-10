@@ -94,7 +94,7 @@
             [
             "Fetch Cycle",
             "Indirect Cycle",
-            "Interrupt cycle10"]
+            "Interrupt cycle"]
         ,
         "infoAnswer": "1",
         "desc": "인출사이클(Fetch Cycle) : 주기억 장치로부터 CPU로 명령어를 가져오는 사이클(=Load)간접사이클(Indirect Cycle) : 유효번지를 읽기 위해 기억장치를 한번 더 접근하는 사이클실행사이클(Execute Cycle) : 인출된 명령어를 이용하여 직접 명령을 실행하는 사이클인터럽트사이클(Interrupt Cycle) :인터럽트가 발생했을 때 처리하는 사이클"
