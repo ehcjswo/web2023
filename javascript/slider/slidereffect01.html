@@ -123,5 +123,45 @@
         // slider[4].style.opacity = "0";  //다섯번째 이미지를 안보이게
         // slider[0].style.opacity = "1";  //첫번째 이미지를 보이게
     </script>
+
+    <!-- GSAP -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+        setInterval(() => {
+            nextindex = (currentIndex +1) % sliderCount;
+
+            gsap.to(slider[currentIndex], {
+                opacity : "0",
+                duration : "1",
+                ease: "power2.inOut"
+            });
+
+            gsap.to(slider[nextindex], {
+                opacity: "1",
+                duration: "1",
+                ease: "power2.inOut"
+            });
+
+            currentIndex = nextindex;
+        }, sliderInterval);
+    </script> -->
+
+
+
+        <!-- jQuery -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script>
+            setInterval(()=>{
+                nextindex = (currentIndex + 1) % $(".slider").length;
+                
+                $(slider[currentIndex]).css({opacity : 0}), 1000;
+                $(slider[nextindex]).css({opacity : 1}), 1000;
+
+                currentIndex = nextindex;
+            }, sliderInterval);
+        </script> -->
+
+    </script>
 </body>
 </html>
