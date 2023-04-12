@@ -104,14 +104,49 @@
             }
 
         }
-
         setInterval(sliderEfeect, sliderInterval);
-        
-        
-        
+    
     </script>
 
+    <!-- GSAP -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+        sliderInner.appendChild(sliderClone);
+        function sliderEffect(){
+            currentIndex++;
+            gsap.to(sliderInner, {
+                duration: 0.6,
+                y: -sliderHeight * currentIndex
+            });
+            if(currentIndex === sliderCount){
+                setTimeout(() =>{
+                    gsap.set(sliderInner, {y: 0});
+                    currentIndex = 0;
+                },700);
+            }
+        }
+        setInterval(sliderEffect, sliderInterval);
+    </script> -->
 
-        
+
+    <!-- jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        setInterval(()=>{
+            sliderInner.appendChild(sliderClone);
+            currentIndex++
+
+            $(".slider__inner").css("position", "relative");
+            $(".slider__inner").animate({top : -sliderHeight * currentIndex}, 600);
+            if (currentIndex === sliderCount) {
+                setTimeout(() => {
+                    $(".slider__inner").css("position", "relative");
+                    $(".slider__inner").animate({top : 0}, 0);
+                    currentIndex = 0; 
+                }, 700);
+            }
+        }, sliderInterval);
+    </script>  -->
 </body>
 </html>
