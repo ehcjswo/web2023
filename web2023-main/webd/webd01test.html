@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩시험1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            /* font-style: none; */
+            padding: 20px 0;
+            align-items: flex-end;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            font-style: normal;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        #header h1 img {
+            width: 150px;
+        }
+        #header h2 img {}
+        #header nav {
+            /* margin-top: 100px; */
+
+        }
+        #header nav ul li {
+            list-style: none;
+            display: inline-block;
+            
+        }
+        #header nav ul li a {
+            
+            color: #000;
+            padding:10px;
+            font-size: 20px;
+        }
+        #banner img {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        #notice {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        #notice .not1 {
+            display: block;
+            width: 47%;
+            padding: 12px;
+            border: 1px solid #666;
+            position: relative;
+        }
+        #notice .not1 ul li a {
+            display: inline-block;
+            width: 70%;
+        }
+        #notice .not1 li span  {
+            display: inline-block;
+            width: 30%;
+            text-align: right;
+            color: #555;
+        }
+        .not1 .more {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+        }
+        .not1 .more img {
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+        }
+        .not1 ul li {
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        .not1 span {
+            color: #555;
+        }
+        #notice .not2{
+            width: 47%;
+        }
+
+        .card-inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        #card > h2 {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        #card a {
+            background-color: #555;
+        }
+        .card-inner .cardimg {
+            width: 24%;
+        }
+        .card-inner .cardimg strong {
+            display: inline-block;
+            padding-top: 20px;
+        }
+        #footer {
+            border-top: 1px solid #b8b8b8;
+            padding-top: 50px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #666;
+        }
+        #footer address {
+            font-style: normal;
+        }
+        #footer strong {
+            display: block;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1><img src="img/logo.jpg" alt="로고"></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">즐길거리</a></li>
+                    <li><a href="#">요금/우대혜택</a></li>
+                    <li><a href="#">참여프로그램</a> </li>
+                    <li><a href="#">이용가이드</a></li>
+                    <li><a href="#">소통서비스</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="banner">
+            <img src="img/banner.jpg" alt="">
+        </section>
+        <section id="notice">
+            <div class="not1">
+                <strong>롯데월드 소식 | <span>뉴스 공지</span></strong>
+                <ul>
+                    <li><a href="#">그럴싸진관 미라클</a><span>2018.11.19</span></li>
+                    <li><a href="#">드림스테이지'힘내 소중한 너'</a><span>2018.11.30</span></li>
+                    <li><a href="#">'힘내 소중한 너' 음원 발배</a><span>2018.11.19</span></li>
+                    <li><a href="#">이용 요금 조정 안내</a><span>2018.11.19</span></li>
+                </ul>
+                <div class="more">더보기<img src="img/plus.jpg" alt=""></div>
+            </div>
+            <div class="not2">
+                <img src="img/banner02.jpg" alt="">
+            </div>
+        </section>
+        <section id="card">
+            <h2>특별한 경험</h2>
+            <div class="card-inner">
+                <div class="cardimg">
+                    <img src="img/notice01.jpg" alt="">
+                    <strong>연간회원안내</strong>
+                </div>
+                <div class="cardimg">
+                    <img src="img/notice02.jpg" alt="">
+                    <strong>연간회원안내</strong>
+                </div>
+                <div class="cardimg">
+                    <img src="img/notice03.jpg" alt="">
+                    <strong>연간회원안내</strong>
+                </div>
+                <div class="cardimg">
+                    <img src="img/notice04.jpg" alt="">
+                    <strong>연간회원안내</strong>
+                </div>
+            </div> 
+        </section>
+        <footer id="footer">
+            <address>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 | 대표자: 박동기<br>
+            사업자등록번호:219-85-00014 | 통신판매업신고번호: 송파 제 5513호 | 전화:1661-2000
+            <strong>COPYRIGHT 2018 LOTTEWORLD. ALL RIGHTS RESERVED.</strong>
+        </address>
+        </footer>
+    </div>
+</body>
+</html>

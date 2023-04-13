@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형01</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        .mt10 {margin-top: 10px !important;}
+        .mt20 {margin-top: 20px !important;}
+        .mt30 {margin-top: 30px !important;}
+        .mt40 {margin-top: 40px !important;}
+        .mt50 {margin-top: 50px !important;}
+        .mt60 {margin-top: 60px !important;}
+        .mt70 {margin-top: 70px !important;}
+
+        .mb10 {margin-bottom: 10px !important;}
+        .mb20 {margin-bottom: 20px !important;}
+        .mb30 {margin-bottom: 30px !important;}
+        .mb40 {margin-bottom: 40px !important;}
+        .mb50 {margin-bottom: 50px !important;}
+        .mb60 {margin-bottom: 60px !important;}
+        .mb70 {margin-bottom: 70px !important;}
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section.center {
+            text-align: center;
+        }
+        .section__small {
+            font-size: 14px;
+            border-radius: 50px;
+            background-color: #FF8F8F;
+            color: #fff;
+            padding: 1px 23px;
+            text-transform:uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .section__h2 {
+            font-size: 50px;
+            color: #000000ed;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666666;
+            margin-bottom: 70px;
+            font-weight: 300;
+        }
+        /* text__wrap */
+        .text__wrap {
+            background-color: #fff;
+        }
+        .text__inner {
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__inner .text {
+            width: 32.333333%;
+            border: 1px solid #f5f5f5;
+            border-radius: 10px;
+            padding: 90px 20px 20px 20px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        .text__inner .text::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #ccc;
+            /* background-image: url(../asset/img/textType01_01.svg); */
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            left: 20px;
+            top: 20px;
+            border-radius: 50%;
+        }
+        .text__inner .text.t1::before{
+            background-color: rgba(255,51,52,0.2);
+            background-image: url(../asset/img/textType01_01.svg);
+        }
+        .text__inner .text.t2::before{
+            background-color: rgba(72,87,236,0.2);
+            background-image: url(../asset/img/textType01_02.svg);
+        }
+        .text__inner .text.t3::before{
+            background-color: rgba(247,227,109,0.2);
+            background-image: url(../asset/img/textType01_03.svg);
+        }
+        .text__inner .text.t4::before{
+            background-color: rgba(247,109,217,0.2);
+            background-image: url(../asset/img/textType01_04.svg);
+        }
+        .text__inner .text.t5::before{
+            background-color: rgba(51,255,206,0.2);
+            background-image: url(../asset/img/textType01_05.svg);
+        }
+        .text__inner .text.t6::before{
+            background-color: rgba(141,255,51,0.2);
+            background-image: url(../asset/img/textType01_06.svg);
+        }
+        .text__inner .text:hover {
+            background-color: #f5f5f5;
+        }
+        .text__title {
+            font-style: 24px;
+            margin-bottom: 10px;
+        }
+        .text__desc {
+            font-style: 16px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .text__btn {
+            float: right;
+            position: relative;
+            padding-right: 20px;
+        }
+        .text__btn::before {
+            content: '';
+            position: absolute;
+            background-image: url(../asset/img/icon_plus.svg);
+            right: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            transition: all 0.3s;
+        }
+        .text__btn:hover::before {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <section class="text__wrap section center nexon">
+        <div class="container">
+            <span class="section__small">NOTICE</span>
+            <h2 class="section__h2 mb70">간식의 무서운점</h2>
+            <div class="text__inner">
+                <div class="text t1">
+                    <h3 class="text__title">비만</h3>
+                    <p class="text__desc">과다한 간식 섭취는 비만 및 대사 증후군의 위험을 증가시킬 수 있습니다. 신체에 불필요한 에너지를 제공할 뿐만 아니라 체중 증가 및 당뇨병, 고혈압 등의 질병 발생 가능성을 높일 수 있습니다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">소화장애</h3>
+                    <p class="text__desc">과도한 간식 섭취는 소화장애의 원인이 될 수 있습니다. 간식은 대개 지방과 설탕이 많아 소화를 위해 추가적인 소화 효소가 필요할 수 있습니다. 소화장애 증상을 유발할 수 있습니다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">치아 우식</h3>
+                    <p class="text__desc">과도한 간식 섭취는 치아 우식의 위험을 증가시킬 수 있습니다. 많은 간식에는 설탕이 들어가 있으며, 이는 치아 표면을 부식시켜 치아 우식을 유발할 수 있습니다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">영양 결핍</h3>
+                    <p class="text__desc">간식은 대개 고칼로리 및 낮은 영양소 함량을 가지고 있습니다. 과도한 간식 섭취로 인해 식사 대체로 인해 필요한 영양소가 충분하지 않아 영양 결핍 증상이 나타날 수 있습니다. </p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">고혈압</h3>
+                    <p class="text__desc">간식에는 보통 많은 나트륨이 함유되어 있습니다. 너무 많은 나트륨은 고혈압을 유발할 수 있으며, 이는 중대한 건강 문제가 될 수 있습니다. 적당한 양의 간식을 섭취해야 합니다. </p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">콜레스테롤</h3>
+                    <p class="text__desc">과도한 간식 섭취는 콜레스테롤 수치를 높일 수 있습니다. 콜레스테롤이 너무 높으면 동맥경화, 심장 질환 등의 질병을 유발할 수 있습니다. 적당히 조절해야 합니다.</p>
+                    <a class="text__btn" href="#">더보기</a> 
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

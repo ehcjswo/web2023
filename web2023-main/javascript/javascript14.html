@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript : 퀴즈 효과</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/ico/javascript192x192.png">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="last">
+                <li><a href="javascript12.html">데이터 효과</a></li>
+                <li><a href="javascript13.html">검색 효과</a></li>
+                <li class="active"><a href="javascript14.html">퀴즈 효과</a></li>
+                <li><a href="javascript15.html">마우스 효과</a></li>
+                <li><a href="javascript16.html">슬라이드 효과</a></li>
+                <li><a href="javascript17.html">패럴랙스 효과</a></li>
+                <li><a href="javascript18.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main__desc">
+                <h3>01. 퀴즈 이펙트 : 정답 확인하기 유형</h3>
+                <p>정답 확인버튼을 누르면 정답이 나오는 효과입니다. </p>
+                <ul>
+                    <li>데이터 저장하기 : 변수</li>
+                    <li>querySelector() : 문서에서 특정 CSS 선택자로 요소를 찾는 DOM 메서드입니다.</li>
+                    <li>innerText : DOM 요소의 텍스트 내용을 가져오거나 설정하는 데 사용되는 속성입니다.</li>
+                    <li>style.속성 = 속성값 : 자바스크립트에서 CSS 스타일을 표현하는 방법입니다.</li>
+                    <li>classlist : 요소의 클래스를 추가하거나 제거하여 스타일을 설정하는 데 사용됩니다.</li>
+                    <li>addEventListener : 자바스크립트에서 이벤트를 처리하는 함수입니다.</li>
+                </ul>
+                <a href="quiz/quizEffect01.html">확인하기</a>
+                
+                <h3>02. 퀴즈 이펙트 : 주관식 확인하기 유형</h3>
+                <p>정답을 적으면 정답을 확인해주는 효과입니다.</p>
+                <ul>
+                    <li>데이터 저장하기 : 변수</li>
+                    <li>데이터 불러오기 : if문</li>
+                    <li>trim() : 문자열의 양쪽 끝에 있는 공백 문자(스페이스, 탭, 개행 등)를 제거하는 JavaScript 내장 함수입니다.</li>
+                    <li>textContent : HTML 요소의 텍스트 콘텐츠를 나타내는 JavaScript 프로퍼티입니다.</li>
+                    <li>value : HTML 폼(form) 요소의 값(value)을 나타내는 JavaScript 프로퍼티입니다.</li>
+                </ul>
+                <a href="quiz/quizEffect02.html">확인하기</a>
+                
+
+                <h3>03. 퀴즈 이펙트 : 주관식(여러문제) 확인하기 유형</h3>
+                <p>정답을 적으면 정답을 확인해주는 효과입니다.</p>
+                <ul>
+                    <li>데이터 저장하기 : 배열, 객체</li>
+                    <li>데이터 불러오기 : for문, forEach( )문</li>
+                    <li>데이터 제어하기 : if문</li>
+                    <li>querySelectorAll() : JavaScript에서 DOM(Document Object Model)에서 원하는 요소를 선택하기 위한 메서드 중 하나입니다. </li>
+                    <li>innerHTML() : JavaScript에서 DOM(Document Object Model) 요소의 내용을 읽거나 수정하기 위한 속성 중 하나입니다.</li>
+                </ul>
+                <a href="quiz/quizEffect03.html">확인하기</a>
+
+                <h3>04. 퀴즈 이펙트 : 객관식 확인하기 유형</h3>
+                <p>객관식을 선택하면 정답을 확인하는 유형입니다.</p>
+                <ul>
+                    <li>데이터 저장하기 : 배열, 객체</li>
+                    <li>데이터 불러오기 : 배열, 객체, for문, forEach( )</li>
+                    <li>데이터 실행오기 : 함수</li>
+                    <li>데이터 제어하기 : if문, 다중if문</li>
+                </ul>
+                <a href="quiz/quizEffect04.html">확인하기</a>
+
+                <h3>05. 퀴즈 이펙트 : 객관식 확인하기 (여러문제) 유형</h3>
+                <p>객관식을 선택하면 정답을 확인하는 유형입니다.</p>
+                <ul>
+                    <li>데이터 저장하기 : 배열, 객체</li>
+                    <li>데이터 불러오기 : 배열, 객체, for문, forEach( )</li>
+                    <li>데이터 실행오기 : 함수, 익명함수, 화살표 함수</li>
+                    <li>데이터 제어하기 : if문, 다중if문</li>
+                    <li>배열 객체 : push(), join()</li>
+                    <li>수학 개체 : Math.ceil( )</li>
+                </ul>
+                <a href="quiz/quizEffect05.html">확인하기</a>
+
+                <h3>06. 퀴즈 이펙트 : 객관식 확인하기 (슬라이드) 유형</h3>
+                <p>객관식을 선택하면 정답을 확인하는 유형이고 슬라이드 형식으로 확인합니다.</p>
+                <ul>
+                    <li>데이터 저장하기 :</li>
+                    <li>데이터 불러오기 :</li>
+                    <li>데이터 실행오기 :</li>
+                    <li>데이터 제어하기 :</li>
+                    <li>배열 객체 :</li>
+                    <li>수학 개체 :</li>
+                </ul>
+                <a href="quiz/quizEffect06.html">확인하기</a>
+
+                <h3>07. 퀴즈 이펙트 : CBT 유형</h3>
+                <p>객관식을 선택하면 정답을 확인하는 유형이고 슬라이드 형식으로 확인합니다.</p>
+                <ul>
+                    <li>데이터 저장하기 :</li>
+                    <li>데이터 불러오기 :</li>
+                    <li>데이터 실행오기 :</li>
+                    <li>데이터 제어하기 :</li>
+                    <li>배열 객체 :</li>
+                    <li>수학 개체 :</li>
+                </ul>
+                <a href="quiz/quizEffect07-3.html">확인하기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    
+    <footer id="footer">
+        <a href="mailto:ehcjswo1@gmail.com">ehcjswo1@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

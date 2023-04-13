@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            width: 1900px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+        #nav {
+            height: 100px;
+            background-color: #B9AAA5;
+        }
+        #section {
+            height: 780px;
+            background-color: #886F65;
+            
+        }
+        #article {
+            background-color: #74574A;
+            grid-area: article;
+        }
+        #article2 {
+            background-color: #684D43;
+            grid-area: article2;
+        }
+        #article3 {
+            background-color: #594139;
+            grid-area: article3;
+        }
+        #article4 {
+            background-color: #4A352F;
+            grid-area: article4;
+        }
+        #article5 {
+            background-color: #551a1a;
+            grid-area: article5;
+        }
+        #footer {
+            height: 100px;
+            background-color: #4E342E;
+        }
+        .container {
+            width: 70%;
+            height: inherit;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+        }
+        #section .container {
+            display: grid;
+            grid-template-areas: 
+            "article article"
+            "article2 article2"
+            "article3 article4"
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 100px 200px 480px;
+        }
+        @media (max-width: 1220px){
+            #wrap {
+                width: 98%;
+            }
+            .container {
+                width: 94%;
+            }
+            #section .container {
+                width: 94%;
+                grid-template-areas: 
+                "article article2 article2"
+                "article article3 article4"
+                ;
+                grid-template-columns: 33.3333% 33.3333% 33.3333%;
+                grid-template-rows: 300px 480px;
+            }
+        }
+        
+        @media (max-width: 768px){
+            #wrap {
+                width: 100%;
+            }
+            #section .container {
+                width: 94%;
+                grid-template-areas: 
+                "article article2 article2"
+                "article article3 article3"
+                "article article4 article4"
+                ;
+                grid-template-columns: 33.3333% 33.3333% 33.3333%;
+                grid-template-rows: 260px 260px 260px;
+            }
+         } 
+         @media (max-width: 480px){
+            #wrap {
+                width: 100%;
+            }
+            .container {
+                width: 100%;
+            }
+            #section .container {
+                width: 100%;
+                grid-template-areas: 
+                "article"
+                "article2"
+                "article3"
+                "article4"
+                ;
+                grid-template-columns: 100%;
+                grid-template-rows: 180px 200px 200px 200px;
+            }
+         } 
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container"></div>
+        </header>
+        <nav id="nav">
+            <div class="container"></div>
+        </nav>
+        <section id="section">
+            <div class="container">
+                <article id="article"></article>
+                <article2 id="article2"></article2>
+                <article3 id="article3"></article3>
+                <article4 id="article4"></article4>
+                <article5 id="article5"></article5>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>
+</body>
+</html>

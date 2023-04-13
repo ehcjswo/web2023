@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //01. 선언적함수 (함수가 실행되었습니다)
+        {
+            function func(){
+                document.write("01. 함수가 실행되었습니다.");
+            }
+            func();
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+        {
+            const arr= [1,2,3,4,5];
+
+            arr.forEach(function(el){
+                document.write(el);
+            });
+        }
+        document.write("<br>");
+        document.write("<br>");
+        {
+            const arr= [1,2,3,4,5];
+
+            arr.forEach (el => document.write(el));
+        }
+        document.write("<br>");
+        document.write("<br>");
+       
+        //02. 익명함수
+        {
+            const func = function(){
+                document.write("02. 함수가 실행되었습니다.");
+            }
+            func();
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+        //03. for문 함수10번
+        {
+            function func(){
+                for(let i=1; i<=10; i++){
+                    document.write("03. 함수가 실행되었습니다.<br>");
+                }
+            }
+            func();
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+        //04. 리턴값함수
+        {
+            function func(){
+                const a = "04. 함수가 실행되었습니다."
+                return a;
+            }
+            document.write(func());
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+        //05. 매개변수함수
+        {
+            function func(a){
+                document.write(a);
+            }
+            func("05. 함수가 실행되었습니다");
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+        //06. 선언적함수 화살표
+        {
+            func = () => {
+                document.write("06. 함수가 실행되었습니다.");
+            }
+            func();
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+        //07. 10칸테이블
+        {
+            function func(){
+                let table = "<table border='1'>";
+                let num = 1;
+                    
+                for(let i=1; i<=10; i++){
+                    table += "<tr>";
+                    for(let j=1; j<=10; j++){
+                        table += "<td>"+num+"</td>";
+                        num++
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+                document.write(table);
+            }
+            func();
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+    </script>
+</body>
+</html>

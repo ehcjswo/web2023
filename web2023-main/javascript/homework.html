@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 5x5 테이블
+        {
+            let table = "<table border='1'>";
+            let num = 1;
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                
+                    for(let j=1; j<=5; j++){
+                        table += "<td>"+num+"</td>";
+                        num++
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.write(table);
+        }
+        document.write("5x5 테이블<br><br>");
+       
+        
+        // 5x5 짝수 파란색
+        {
+            let table = "<table border='1'>";
+            let num = 1;
+
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                      
+                    for(let j=1; j<=5; j++){
+                        if (num % 2 == 1)
+                        table += "<td>"+num+"</td>";
+                        else
+                        table += "<td>"+"<span style='color:blue'>"+num+"</span>"+"</td>";
+                        num++
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.write(table);
+        }
+        document.write("5x5 짝수번호 파란색 테이블<br><br>");
+
+        
+        // 5x5 홀수 빨간색
+        {
+            let table = "<table border='1'>";
+            let num = 1;
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                
+                    for(let j=1; j<=5; j++){
+                        if (num % 2 == 0)
+                        table += "<td>"+num+"</td>";
+                        else
+                        table += "<td>"+"<span style='color:red'>"+num+"</span>"+"</td>";
+                        num++
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.write(table);
+        }
+        document.write("5x5 홀수번호 빨간색 테이블<br><br>");
+
+        
+        // 짝수파랑, 홀수빨강
+        {
+            let table = "<table border='1'>";
+            let num = 1;
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                
+                    for(let j=1; j<=5; j++){
+                        if (num % 2 == 0)
+                        table += "<td>"+"<span style='color:blue'>"+num+"</span>"+"</td>";
+                        else
+                        table += "<td>"+"<span style='color:red'>"+num+"</span>"+"</td>";
+                        num++
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.write(table);
+        }
+        document.write("5x5 짝수파랑, 홀수빨강 테이블<br><br>");
+
+        //3배수 빨강, 5배수 파랑
+        {
+            let table = "<table border='1'>";
+            let num = 3;
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                
+                    for(let j=1; j<=5; j++){
+                        if (num % 5 == 0)
+                        table += "<td>"+"<span style='color:red'>"+num+"</span>"+"</td>";
+                        else
+                        table += "<td>"+"<span style='color:blue'>"+num+"</span>"+"</td>";
+                        num+=3;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.write(table);
+        }
+        document.write("5x5 3의배수 파랑, 5의배수 빨강 테이블<br><br>");
+    </script>
+</body>
+</html>
