@@ -155,13 +155,8 @@
 
             let dotActive = document.querySelectorAll(".slider__dot .dot");
             dotActive.forEach((active) => active.classList.remove("active"));
-            dotActive[num].classList.add("active");
-
-            
+            dotActive[num].classList.add("active"); 
         }
-
-
-        
 
         //버튼을 클릭했을 때
         sliderBtn.forEach((btn, index) => {
@@ -175,6 +170,16 @@
                 }
             });
         });
+
+
+        //닷 클릭했을때 사진으로 이동
+        let dotClick = sliderWrap.querySelectorAll(".slider__dot .dot");
+       
+        dotClick.forEach((el,i)=>{
+            el.addEventListener("click", ()=>{
+                gotoSlider(i);
+            })
+        })
     </script>
 
 
