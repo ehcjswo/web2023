@@ -120,7 +120,7 @@
             "./img/sliderEffect10-min.jpg",
         ];
 
-        function imageSlider(parent, images){
+        function imageSlider(parent){
             let currentIndex = 0; 
 
             //선택자
@@ -172,9 +172,6 @@
                     imageNodes[currentIndex].classList.add("active");
                 })
             })
-
-
-            
 
             //왼쪽 버튼 클릭
             slider.prevBtn.addEventListener("click", function(){
