@@ -79,13 +79,14 @@
         //     func();
         // }
         {
-            let x = 8, y = 7, result;
+            {
+            let a = Math.ceil((21/4) * 3);
+            let b = Math.round((a * a) / a);
 
-            result = x > y ? ++x : y--;
-
-            console.log(result);    //y = 7, 후치이므로 뺀 값이 적용이 안됐습니다.
-            console.log(x);     //7
-            console.log(y);     //6
+            console.log(a + b)
+            console.log(a)
+            console.log(b)
+}
         }
         
 
