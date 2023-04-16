@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            padding-top: 30px;
+            background-color: #d3fffe;
+        }
+        #wrap h2 {
+            margin-bottom: 20px;
+        }
+        #wrap button {
+            width: 100px;
+            height: 50px;
+            border-radius: 15px;
+            background-color: #e8e8e8;
+            margin-bottom: 40px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        #wrap button:hover {
+            background-color: #919191;
+        }
+        .number {
+            display: flex;
+            justify-content: center;
+        }
+        .number * {
+            width: 40px;
+            font-weight: bold;
+            font-size: 1.2vw;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h2>로또 번호 생성기</h2>
+        <button>생성</button>
+        <div class="number">
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+        </div>
+    </div>
+</body>
+<script>
+    //선택자
+    const num = document.querySelectorAll(".num");
+    const button = document.querySelector("#wrap button");
+    
+    //중복을 없애주는 Set() 함수
+    const number = new Set();   
+    
+    
+    button.addEventListener("click",()=> {
+        number.clear(); //버튼을 누르면 객체를 초기화 시키고 시작(초기화 안할시 버튼을 눌러도 숫자고정)
+
+        while(number.size < 6){     //set() 요소가 6개 꽉찰때까지 중복없이 숫자추가
+            let random = Math.ceil(Math.random() * 45);
+        
+            number.add(random);     //.add (객체에 요소추가)
+        }
+
+        const arrNumber = [...number];  //펼침연산자를 이용해 배열에 넣기
+
+        arrNumber.forEach((values, i)=>{    //forEach를 이용하여 배열의 요소만큼 반복돌리기
+            num[i].innerText = values+", "; //innerText를 이용해 출력하기
+        });
+    });
+
+</script>
+</html>
