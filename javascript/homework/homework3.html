@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +13,18 @@
             padding: 0;
             margin: 0;
         }
-        #wrap {
+        .wrap {
             width: 800px;
             height: 500px;
             background-color: #101010;
             text-align: center;
             color: #fff;
             font-family: "Montserrat";
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("https://source.unsplash.com/random/?cat");
+            z-index: 1;
         }
         .button {
             display: inline;
@@ -33,14 +38,20 @@
             height: 40%;
             font-size: 30px;
             padding: 120px 50px 50px 50px;
+            z-index: 10;
+            background: radial-gradient(rgba(0,0,0,0.5)40%, rgba(0,0,0,0), transparent );
         }
         .name {
             font-weight: bold;
+            z-index: 10;
+            line-height: 4.2;
+            height: 70px;
+            background: radial-gradient(rgba(0,0,0,0.7)5%, rgba(0,0,0,0), transparent );
         }
     </style>
 </head>
 <body>
-    <div id="wrap">
+    <div class="wrap">
         <div class="button">
             <span>click</span>
         </div>
@@ -56,6 +67,7 @@
 <script>
 
     //선택자
+    const wrap = document.querySelector(".wrap");
     const say = document.querySelector(".say span");
     const name = document.querySelector(".name span");
     const button = document.querySelector(".button");
@@ -70,10 +82,13 @@
             name.innerText = "- " + data[random].author;    //처음 보여주기용 이름
             
             button.addEventListener("click",()=>{           //button 함수부여
+                location.reload();                          //리프레쉬
+
                 random = Math.round(Math.random()*30);      //버튼 누를때마다 숫자 재부여
                 
                 say.innerText = data[random].quote;         //새로운 숫자달고 명언
                 name.innerText = "- " + data[random].author;//새로운 숫자달고 이름
+
             })
         });
    
