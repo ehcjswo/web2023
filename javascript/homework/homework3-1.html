@@ -20,10 +20,13 @@
             text-align: center;
             color: #fff;
             font-family: "Montserrat";
+            background-size: cover;
+            background-image: url("https://source.unsplash.com/random/?cat");
             z-index: 1;
-            
+            position: relative;
         }
         .button {
+            position: absolute;
             display: inline;
             padding: 5px;
             background-color: #2f00ff;
@@ -32,27 +35,30 @@
             cursor: pointer;
         }
         .say {
-            width: 800px;
-            height: 30%;
-            text-align: center;
-            align-items: center;
-            font-size: 30px;
-            padding: 170px 120px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0,0,0,0.7);
             z-index: 10;
-            
-            background: radial-gradient(rgba(0,0,0,0.5)40%, rgba(0,0,0,0), transparent );
+            padding: 20px 50px;
+            border-radius: 20px;
         }
         .say span {
-            width: 800px;
-            height: 300px;
-            padding: 50px;
+            font-size: 30px;
         }
         .name {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -100%);
             font-weight: bold;
+            font-size: 24px;
             z-index: 10;
-            line-height: 4.2;
+            line-height: 3;
             height: 70px;
-            background: radial-gradient(rgba(0,0,0,0.8)20%, rgba(0,0,0,0) );
+            background: radial-gradient(rgba(0,0,0,0.8)60%, rgba(0,0,0,0.4) );
         }
     </style>
 </head>
@@ -88,6 +94,8 @@
             name.innerText = "- " + data[random].author;    //처음 보여주기용 이름
             
             button.addEventListener("click",()=>{           //button 함수부여
+                location.reload();                          //리프레쉬
+
                 random = Math.round(Math.random()*30);      //버튼 누를때마다 숫자 재부여
                 
                 say.innerText = data[random].quote;         //새로운 숫자달고 명언
