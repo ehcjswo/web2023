@@ -21,16 +21,21 @@
             font-family: "Montserrat";
             position: relative;
             border-radius: 30px;
+            word-break: keep-all;
         }
         .quotes__button {
             position: absolute;
             display: inline;
-            margin: 10px;
-            padding: 5px;
-            background-color: #fff;
+            margin: 20px;
+            /* background-color: #fff; */
             border-radius: 10px;
             color:#000;
             cursor: pointer;
+        }
+        .quotes__button img {
+            width: 20px;
+            height: 20px;
+            background-size: cover;
         }
         .quotes__say {
             position: absolute;
@@ -61,7 +66,7 @@
 <body>
     <div class="quotes__wrap">
         <div class="quotes__button">
-            <span>click</span>
+            <img src="img/re.png" alt="">
         </div>
         <span class="quotes__say"></span>
         <span class="quotes__name"></span>
