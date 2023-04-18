@@ -195,14 +195,17 @@
             // document.querySelector(".info .offset8").innerText = document.getElementById("section8").offsetTop;
             // document.querySelector(".info .offset9").innerText = document.getElementById("section9").offsetTop;
             
+            // for문
             // for(let i=1; i<=9; i++){
             //     document.querySelector(".info .offset"+i).innerText = document.getElementById("section"+i).offsetTop;
             // };
 
+            //forEach문
             info.forEach((el,i)=> {
                 el.innerText = document.getElementById("section"+(i+1)).offsetTop
             });
-
+            //for in문
+            //for of문
 
         });
 
