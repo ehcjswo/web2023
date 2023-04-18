@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    
+    <style>
+        @import url('https://webfontworld.github.io/Montserrat/Montserrat.css');
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .quotes__wrap {
+            width: 500px;
+            height: 200px;
+            background-color: #101010;
+            color: #fff;
+            font-family: "Montserrat";
+            position: relative;
+            border-radius: 30px;
+        }
+        .quotes__button {
+            position: absolute;
+            display: inline;
+            margin: 10px;
+            padding: 5px;
+            background-color: #fff;
+            border-radius: 10px;
+            color:#000;
+            cursor: pointer;
+        }
+        .quotes__say {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            /* padding: 20px 0px; */
+            border-radius: 20px;
+            text-align: center;
+        }
+        .quotes__say span {
+            font-size: 15px;
+        }
+        .quotes__name {
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -100%);
+            font-weight: bold;
+            font-size: 17px;
+            z-index: 10;
+            line-height: 3;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="quotes__wrap">
+        <div class="quotes__button">
+            <span>click</span>
+        </div>
+        <span class="quotes__say"></span>
+        <span class="quotes__name"></span>
+    </div>
+</body>
+
+<script>
+        //선택자
+        const wrap = document.querySelector(".quotes__wrap");
+        const say = document.querySelector(".quotes__say");
+        const name = document.querySelector(".quotes__name");
+        const button = document.querySelector(".quotes__button");
+        let random = Math.round(Math.random()*30);  //랜덤숫자 0~30
+        
+        
+        fetch("https://ehcjswo.github.io/web2023/javascript/homework/json/dummy01.json")
+        .then((res)=> res.json())   //json파일 읽어오기
+        .then((obj) => {            //읽어온 데이터를 json으로 변환
+            data = obj.quotes;      //json에 있는 quotes만 받아오기
+            
+            say.innerText = data[random].quote;             //처음 보여주기용 명언
+            name.innerText = "- " + data[random].author;    //처음 보여주기용 이름
+            
+            button.addEventListener("click",()=>{           //button 함수부여
+                random = Math.round(Math.random()*30);      //버튼 누를때마다 숫자 재부여
+                
+                say.innerText = data[random].quote;         //새로운 숫자달고 명언
+                name.innerText = "- " + data[random].author;//새로운 숫자달고 이름
+
+            })
+        });
+    
+</script>
+</html>
