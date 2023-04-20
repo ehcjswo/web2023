@@ -340,6 +340,16 @@ body {
 }
 
 /* cbt 유형 */
+.all {
+    padding: 10px 15px;
+    font-family: 'DungGeunMo';
+    display: flex;
+}
+.all div {
+    border: 3px solid #cacaca;
+    padding: 3px;
+    border-radius: 10px;
+}
 .quiz__wrap__cbt {
     padding: 0 20px;
     margin-top: 80px;
@@ -376,7 +386,7 @@ body {
 .cbt__time {
     border-radius: 40px;
     color: #fff;
-    padding: 10px 24px 10px 30px;
+    padding: 10px 24px 10px 47px;
     background-color: #1e52ff;
     font-family: 'PyeongCang';
     display: block;
@@ -388,7 +398,7 @@ body {
 .cbt__time::before {
     content: '';
     position: absolute;
-    left: 8px;
+    left: 25px;
     top: 10px;
     width: 22px;
     height: 22px;

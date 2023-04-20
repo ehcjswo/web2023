@@ -1,13 +1,13 @@
-@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
-@import url('https://webfontworld.github.io/earlyfont/EF_Hyunygothic.css');
-@import url('https://webfontworld.github.io/Montserrat/Montserrat.css');
-@import url('https://webfontworld.github.io/sunn/SUIT.css');
 @import url('https://webfontworld.github.io/pretendard/Pretendard.css');
-@import url('https://webfontworld.github.io/zess/BlackHanSans.css');
-@import url('https://webfontworld.github.io/jikji/JHaebaragi.css');
-@import url('https://webfontworld.github.io/elice/EliceDigitalBaeum.css');
-@import url('https://webfontworld.github.io/Jalpullineun/JalpullineunHaru.css');
 @import url('https://webfontworld.github.io/goodchoice/Jalnan.css');
+@import url('https://webfontworld.github.io/sunn/SUIT.css');
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://webfontworld.github.io/PyeongChang/PyeongChang.css');
+@import url('https://webfontworld.github.io/NexonMaplestory/NexonMaplestory.css');
+@import url('https://webfontworld.github.io/vitro/VitroCore.css');
+@import url('https://webfontworld.github.io/locus/LocusSangsang.css');
+@import url('https://webfontworld.github.io/kohi/KOHIBaeum.css');
 
 /* reset */
 * {
@@ -36,35 +36,35 @@ em {
     font-style: normal;
 }
 .font01 {
-    font-family: 'CookieRun';
+    font-family: 'Pretendard';
     font-weight: 300;
 }
 .font02 {
-    font-family: 'EF_Hyunygothic';
+    font-family: 'Jalnan';
 }
 .font03 {
-    font-family: 'Montserrat';
-}
-.font04 {
     font-family: 'SUIT';
 }
+.font04 {
+    font-family: 'GmarketSans';
+}
 .font05 {
-    font-family: 'Pretendard';
+    font-family: 'NexonLv1Gothic';
 }
 .font06 {
-    font-family: 'BlackHanSans';
+    font-family: 'PyeongChang';
 }
 .font07 {
-    font-family: 'JHaebaragi';
+    font-family: 'NexonMaplestory';
 }
 .font08 {
-    font-family: 'MontseEliceDigitalBaeumrrat';
+    font-family: 'VitroCore';
 }
 .font09 {
-    font-family: 'JalpullineunHaru';
+    font-family: 'LocusSangsang';
 }
 .font10 {
-    font-family: 'Jalnan';
+    font-family: 'KOHIBaeum';
 }
 
 body {
