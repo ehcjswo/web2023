@@ -178,7 +178,7 @@
                     <div class="notice">"문자열".match(검색값, [위치값])</div>
                     <ul>
                         <li>메서드는 문자열을 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</li>
-                        <li>문자열을 검색하여, 주어진 값과 일치하는 것이 없으면 -1을 반환합니다.</li>
+                        <li>문자열을 검색하여, 주어진 값과 일치하는 것이 없으면 -null을 반환합니다.</li>
                         <li>대소문자를 구별합니다.</li>
                         <li>match() 메서드는 문자값(배열)을 반환하고, search() 메서드는 위치값(숫자)을 반환 하는 것이 다릅니다.</li>
                     </ul>
@@ -385,17 +385,12 @@
 
     <script>
         
-       "javascript".trim("");   //javascript
-       "javascript ".trim("");  //javascript
-       " javascript".trim("");  //javascript
-       "java script".trim("");  //java script
        
-       " javascript ".trimStart("");  //java script
-       " javascript ".trimEnd("");  //java script
+        let s1 = "Remember november";
+    let s2 = s1.slice(0, 3) + s1.slice(12, 16);
+    let s3 = "r AND you";
 
-
-
-       console.log("javascript".trim(""));
+    console.log(s2 + s3)
         
         
         
