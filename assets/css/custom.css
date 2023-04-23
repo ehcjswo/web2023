@@ -54,12 +54,12 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 #header{
 	width: 110%;
 	background-image: url(../img/space3.jpg);
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 	background-size: cover;
 	padding: 10px 0 10px 0px;
 	margin-top: 50px;
 	margin-left: -5%;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 
 #header .span12 {
