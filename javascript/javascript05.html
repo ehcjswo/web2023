@@ -349,7 +349,7 @@
                     <div class="notice">"문자열".match(검색값, [위치값])</div>
                     <ul>
                         <li>메서드는 문자열을 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</li>
-                        <li>문자열을 검색하여, 주어진 값과 일치하는 것이 없으면 -null을 반환합니다.</li>
+                        <li>문자열을 검색하여, 주어진 값과 일치하는 것이 없으면 -1을 반환합니다.</li>
                         <li>대소문자를 구별합니다.</li>
                         <li>match() 메서드는 문자값(배열)을 반환하고, search() 메서드는 위치값(숫자)을 반환 하는 것이 다릅니다.</li>
                     </ul>
@@ -658,18 +658,24 @@
 
     <script>
         
-       "javascript".trim("");   //javascript
-       "javascript ".trim("");  //javascript
-       " javascript".trim("");  //javascript
-       "java script".trim("");  //java script
-       
-       " javascript ".trimStart("");  //java script
-       " javascript ".trimEnd("");  //java script
+        // console.log("javascript reference".codePointAt(0))    //106
+        // console.log("javascript reference".codePointAt(1));   //97
+        // console.log("javascript reference".codePointAt(2));   //118
+        // console.log("javascript reference".codePointAt(25));   //undefined
+        // console.log("javascript reference".codePointAt(-1));  //undefined
+        // console.log("javascript reference".codePointAt(-2));  //undefined
+        // console.log("javascript reference".codePointAt("java"));  //106
+        // console.log("javascript reference".codePointAt("Java"));  //106
+        // console.log("javascript reference".codePointAt("refer")); //106
+        // console.log("javascript reference".codePointAt("REfer")); //106
 
+        const str = "hello";
+        const str2 = "world";
 
-
-       console.log("javascript".trim(""));
-        
+        console.log(str.repeat(3)); // "hellohellohello"
+        console.log(str.repeat(0)); // ""
+        console.log(str2.repeat(5)); // "worldworldworldworldworld"
+        console.log(str2.repeat(1)); // "world"
         
         
     </script>
