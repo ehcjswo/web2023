@@ -16,7 +16,7 @@
     </div>
     <header id="header">
         <h1>GAME WORLD</h1>
-        <div class="time">2023년 4월 24일 09시 30분 15초</div>
+        <div class="time">현재 날짜, 시간출력</div>
         
     </header>
 
@@ -47,7 +47,7 @@
     </main>
 
     <footer id="footer">
-        <div class="info">현재 맥을 사용하고 있으며, 화면 크기는 1920 X 760입니다.</div>
+        <div class="info">현재 OS정보 출력</div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
@@ -100,16 +100,12 @@
 
         // 빨간 폴더 이벤트
         $(".icon1").mousedown(()=>{
-            
             info.innerHTML = "빨간 뮤직 듣기 클릭했습니다.";
-            
         });
         $(".icon1").draggable({
-            
             drag:function(e){
                 info.innerHTML = "빨간 뮤직 듣기 드래그중 입니다.";
             },
-            
         }).draggable({
             stop:function(e){
                 info.innerHTML = "빨간 뮤직 듣기 드래그를 놨습니다.";
@@ -117,19 +113,14 @@
             }
         });
 
-
         // 파랑 폴더 이벤트
         $(".icon2").mousedown(()=>{
-            
             info.innerHTML = "파랑 뮤직 듣기 클릭했습니다.";
-            
         });
         $(".icon2").draggable({
-            
             drag:function(e){
                 info.innerHTML = "파랑 뮤직 듣기 드래그중 입니다.";
             },
-            
         }).draggable({
             stop:function(e){
                 info.innerHTML = "파랑 뮤직 듣기 드래그를 놨습니다.";
@@ -139,12 +130,9 @@
 
         // 초록 폴더 이벤트
         $(".icon3").mousedown(()=>{
-            
             info.innerHTML = "초록 뮤직 듣기 클릭했습니다.";
-            
         });
         $(".icon3").draggable({
-            
             drag:function(e){
                 info.innerHTML = "초록 뮤직 듣기 드래그중 입니다.";
             },   
@@ -157,16 +145,12 @@
 
         // 노랑 폴더 이벤트
         $(".icon4").mousedown(()=>{
-            
             info.innerHTML = "노랑 뮤직 듣기 클릭했습니다.";
-            
         });
         $(".icon4").draggable({
-            
             drag:function(e){
                 info.innerHTML = "노랑 뮤직 듣기 드래그중 입니다.";
             },
-            
         }).draggable({
             stop:function(e){
                 info.innerHTML = "노랑 뮤직 듣기 드래그를 놨습니다.";
@@ -189,15 +173,10 @@
             setTimeout("printTime()", 1000);
         }; 
 
-        function headerColor() {
-
-        }
-
         //현재 OS, 크기
         let os = navigator.userAgent.toLowerCase();
         let sw = screen.width;
         let sh = screen.height;
-        
 
         function prinAgent() {
             if (os.indexOf("windows") >= 0) {
@@ -217,8 +196,6 @@
                 prinAgent()
             },5000);
         }
-        
-
 
         //로딩 됐을시 실행
         window.onload = function(){
@@ -230,11 +207,8 @@
                 });
             });      
             
-            
             printTime();    //오른쪽 상단 시간 실행문
             prinAgent();    //현재 OS, 크기 실행문
-            // 아이콘 클릭했을 시 헤더바탕화면 색 바꾸기
-            //현재 뮤직듣기 드래그 시작했습니다, 끝났습니다.
         }
 
         
