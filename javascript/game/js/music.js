@@ -2,52 +2,52 @@ const allMusic = [
     {
         name : "1. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview01",
+        img : "musicView01",
         audio : "music_audio01"
     },{
         name : "2. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview02",
+        img : "musicView02",
         audio : "music_audio02"
     },{
         name : "3. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview03",
+        img : "musicView03",
         audio : "music_audio03"
     },{
         name : "4. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview04",
+        img : "musicView04",
         audio : "music_audio04"
     },{
         name : "5. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview05",
+        img : "musicView05",
         audio : "music_audio05"
     },{
         name : "6. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview06",
+        img : "musicView06",
         audio : "music_audio06"
     },{
         name : "7. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview07",
+        img : "musicView07",
         audio : "music_audio07"
     },{
         name : "8. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview08",
+        img : "musicView08",
         audio : "music_audio08"
     },{
         name : "9. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview09",
+        img : "musicView09",
         audio : "music_audio09"
     },{
         name : "10. Here it Comes",
         artist : "TrackTribe",
-        img : "musicview10",
+        img : "musicView10",
         audio : "music_audio10"
     },
 ];
