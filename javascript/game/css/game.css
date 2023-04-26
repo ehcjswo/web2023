@@ -30,21 +30,6 @@ body {
     justify-content: space-between;
     font-family: 'CrownMychew';
 }
-.moving {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 50px;
-}
-.moving div {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-}
-.moving div span {
-    color: #000;
-
-}
 
 #header h1 {
     font-size: 20px;

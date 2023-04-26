@@ -213,17 +213,17 @@
 ================================================== */
 
 #contents_tit {
-	background-color: #fff;
+	/* background-color: #fff; */
 	text-align: center; 
 	height: 90px;
 	
 }
 #contents_tit p {
 	padding:35px 0; 
-	font-family: 'Gaegu', cursive; font-size: 40px;
+	font-family: 'Fredoka One', cursive; font-size: 40px;
 }
 #contents_tit p a {
-	color:#2c94c4; 
+	color:#fff; 
 }
 
 
