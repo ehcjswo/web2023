@@ -65,7 +65,7 @@ let musicIndex = 5;  // 현재 음악 인덱스
 const loadMusic = (num) => {
     musicName.innerText = allMusic[num-1].name;             //뮤직 이름
     musicArtist.innerText = allMusic[num-1].artist;         //뮤직 아티스트
-    musicView.src = `img/${allMusic[num-1].img}.png`;       //뮤직 이미지
+    musicView.src = `img/${allMusic[num-1].png}.png`;       //뮤직 이미지
     musicView.art = allMusic[num-1].name;                   //뮤직 이미지 alt
     musicAudio.src = `audio/${allMusic[num-1].audio}.mp3`   //뮤직파일
 }
