@@ -5,6 +5,11 @@ body {
     background-position: center 30%;
     background-repeat: no-repeat;
 }
+@media (max-width:1100px){
+    body {
+        background-size:auto ;
+    }
+}
 
 
 .music__inner {
@@ -112,7 +117,7 @@ body {
     height: 40px;
     display: block;
     background-image: url(../img/music_icon3.svg);
-    /* background-size: 500px; */
+    background-size: 500px;
 
 }
 .music__control .control span:active {

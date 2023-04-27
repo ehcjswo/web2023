@@ -138,18 +138,15 @@ musicAudio.addEventListener("timeupdate", e => {
 
 // 진행바 버튼 클릭
 musicProgress.addEventListener("click",(e)=>{
-    let grogressWidth = musicProgress.clientWidth;  //진행바 전체 길이
+    let progressWidth = musicProgress.clientWidth;  //진행바 전체 길이
     let clickedOffsetX = e.offsetX;                 //진행바 기준으로 측정되는 X좌표값
-    console.log(clickedOffsetX);
     let songDuration = musicAudio.duration;         //노래 전체 길이
-    console.log(songDuration);
 
     //백분위 나눈 숫자에 다시 전체 길이를 곱해서 현재 재생값으로 바꿈
-    musicAudio.currentTime = ((clickedOffsetX/grogressWidth) *songDuration);
+    musicAudio.currentTime = (clickedOffsetX/progressWidth) *songDuration;
+
+    // console.log(musicAudio.currentTime)
 })
-
-
-
 
 // 플레이 버튼 클릭
 musicPlay.addEventListener("click", () => {
