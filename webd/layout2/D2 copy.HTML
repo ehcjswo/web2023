@@ -22,27 +22,20 @@
         }
         #aside h1 {}
         #aside nav {}
-        #slider {
+        #main #slider {
             width: calc(100% - 200px);
             height: 400px;
             display: flex;
             /* background-color: #ac0707; */
         }
-        #slider .slider_main {
-            width: calc(100% - 230px);
-            height: 400px;
-            background-color: #4b7eec;
+        #main #slider .slider_main {
         }
-        #slider .slider_fix {
-            width: 230px;
-            height: 400px;
-            background-color: #3d08fd;
+        #main #slider .slider_fix {
+
         }
-        #banner {
+        #main #banner {
             
-            width: calc(100% - 430px);
-            height: 250px;
-            background-color: #ffee00;
+            
         }
         #footer {
             width: 100%;
@@ -57,14 +50,14 @@
             <h1></h1>
             <nav></nav>
         </div>
-        <div id="slider">
-            <div class="slider_main"></div>
-            <div class="slider_fix"></div>
+        <div id="main">
+            <div id="slider">
+                <div class="slider_main"></div>
+                <div class="slider_fix"></div>
+            </div>
+            <div id="banner"></div>
         </div>
-        <div id="banner"></div>
-        <div id="footer">
-            
-        </div>
+        <div id="footer"></div>
     </div>
 </body>
 </html>

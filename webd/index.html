@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디기</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+        }
+        #wrap {
+            display: flex;
+        }
+        #nav {
+            padding: 20px;
+            display: flex;
+        }
+        #nav li a {
+            border: 1px solid #ccc;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin-bottom: 2px;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 2px;
+        }
+        #nav li a:hover,
+        #nav li.active a {
+            border-color: #000;
+            background-color: #000;
+            color: #fff;
+        }
+        #main {
+            margin: 20px;
+            border: 1px solid #ccc;
+            width: calc(100% - 40px);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <nav id="nav">
+            <ul>
+                <li class="active"><a href="layout2/A1.html">A-1</a></li>
+                <li><a href="layout2/A2.html">A-2</a></li>
+                <li><a href="layout2/A3.html">A-3</a></li>
+                <li><a href="layout2/A4.html">A-4</a></li>
+                <li><a href="layout2/B1.html">B-1</a></li>
+                <li><a href="layout2/B2.html">B-2</a></li>
+                <li><a href="layout2/B3.html">B-3</a></li>
+                <li><a href="layout2/B4.html">B-4</a></li>
+                <li><a href="layout2/C1.html">C-1</a></li>
+                <li><a href="layout2/C2.html">C-2</a></li>
+                <li><a href="layout2/C3.html">C-3</a></li>
+                <li><a href="layout2/C4.html">C-4</a></li>
+                <li><a href="layout2/D1.html">D-1</a></li>
+                <li><a href="layout2/D2.html">D-2</a></li>
+                <li><a href="layout2/D3.html">D-3</a></li>
+                <li><a href="layout2/D4.html">D-4</a></li>
+                <li><a href="layout2/E1.html">E-1</a></li>
+                <li><a href="layout2/E2.html">E-2</a></li>
+                <li><a href="layout2/E3.html">E-3</a></li>
+                <li><a href="layout2/E4.html">E-4</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="menu/m1.html">M-1</a></li>
+                <li><a href="menu/m2.html">M-2</a></li>
+                <li><a href="menu/m3.html">M-3</a></li>
+                <li><a href="menu/m4.html">M-4</a></li>
+                <li><a href="menu/m5.html">M-5</a></li>
+                <li><a href="menu/m6.html">M-6</a></li>
+            </ul>
+            <ul>
+                <li><a href="slider/s1.html">S-1</a></li>
+                <li><a href="slider/s2.html">S-2</a></li>
+                <li><a href="slider/s3.html">S-3</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <iframe src="layout2/A1.html" frameborder="0"></iframe>
+        </main>
+    </div>
+    <script>
+        const navs =  document.querySelectorAll("#nav ul li");
+        const iframe =  document.querySelector("#main iframe");
+
+        navs.forEach((li)=>{
+            li.addEventListener("click",(c)=>{
+                c.preventDefault();
+                let href = li.querySelector("a").getAttribute("href");
+                iframe.setAttribute("src",href);
+
+                document.querySelectorAll("li").forEach(el => {
+                    el.classList.remove("active");
+                });
+                li.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
