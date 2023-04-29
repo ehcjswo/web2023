@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인 기능사 실기 C유형 1번 레이아웃</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            display: flex;
+        }
+        #aside {
+            width: 200px;
+            height: 650px;
+            background-color: #fd2020;
+        }
+        #main {
+            width: 800px;
+            height: 650px;
+        }
+        #slider {
+            width: 100%;
+            height: 350px;
+            background-color: #ffae00;
+        }
+        #banner {
+            display: flex;
+            width: 100%;
+            height: 200px;
+            /* background-color: #fff; */
+        }
+        .banner1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #96ff7b;
+        }
+        .banner2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #28fc4f;
+        }
+        .banner3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #00ff91;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #b905f0;
+        }
+        .footer2 {
+            width: 80%;
+            height: 50px;
+            background-color: #ff0055;
+        }
+        .footer3 {
+            width: 80%;
+            height: 50px;
+            background-color: #970636;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="aside">로고</div>
+        <div id="main">
+            <div id="slider">이미지 슬라이드</div>
+            <div id="banner">
+                <div class="banner1">공지사항/갤러리</div>
+                <div class="banner2">배너</div>
+                <div class="banner3">바로가기</div>
+            </div>
+            <div id="footer">
+                <div class="footer1">로고</div>
+                <div class="footer2">하단메뉴</div>
+                <div class="footer3">COPYRIGHT</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

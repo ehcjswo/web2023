@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인 기능사 실기 D유형 4번 레이아웃</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        #aside {
+            width: 200px;
+            height: 800px;
+            background-color: #f81717;
+        }
+        #main {
+            width: calc(100% - 200px);
+            display: flex;
+            flex-wrap: wrap;
+            height: 800px;
+        }
+        #aside h1 {}
+        #aside nav {}
+        #slider {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #4b7eec;
+            /* background-color: #ac0707; */
+        }
+        #banner {
+            
+            width: 100%;
+            height: 150px;
+            background-color: #ffee00;
+        }
+        #notice {
+            width: 100%;
+            height: 250px;
+            background-color: #9ca401;
+        }
+        #footer {
+            width: 100%;
+            height: 120px;
+            display: flex;
+        }
+        .footer1 {
+            width: 200px;
+            height: 120px;
+            background-color: #e100ff;
+        }
+        .footer2 {
+            width: calc(100% - 200px);
+            height: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .footer2-1 {
+            width: 80%;
+            height: 60px;
+            background-color: #ff00c3;
+        }
+        .footer2-2 {
+            width: 80%;
+            height: 60px;
+            background-color: #bf316c;
+        }
+        .footer2-3 {
+            width: 20%;
+            height: 120px;
+            background-color: #85093d;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="aside">
+            <h1>LOGO</h1>
+            <nav></nav>
+        </div>
+        <div id="main">
+            <div id="slider"></div>
+            <div id="banner"></div>
+            <div id="notice"></div>
+        </div>
+        <footer id="footer">
+            <div class="footer1">LOGO</div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+                <div class="footer2-3">Family Site</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

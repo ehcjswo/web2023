@@ -26,6 +26,7 @@
             width: calc(100% - 200px);
             height: 400px;
             display: flex;
+            flex-wrap: wrap;
             /* background-color: #ac0707; */
         }
         #slider .slider_main {
@@ -40,31 +41,48 @@
         }
         #banner {
             
-            width: calc(100% - 430px);
+            width: 100%;
             height: 250px;
             background-color: #ffee00;
         }
         #footer {
             width: 100%;
             height: 100px;
-            background-color: #ff046d;
+            display: flex;
+        }
+        .footer1 {
+            width: 200px;
+            height: 100px;
+            background-color: #e100ff;
+        }
+        .footer2 {
+            width: calc(80% - 200px);
+            height: 100px;
+            background-color: #89009b;
+        }
+        .footer3 {
+            width: 20%;
+            height: 100px;
+            background-color: #ff00c3;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
         <div id="aside">
-            <h1></h1>
+            <h1>LOGO</h1>
             <nav></nav>
         </div>
         <div id="slider">
             <div class="slider_main"></div>
             <div class="slider_fix"></div>
+            <div id="banner"></div>
         </div>
-        <div id="banner"></div>
-        <div id="footer">
-            
-        </div>
+        <footer id="footer">
+            <div class="footer1">LOGO</div>
+            <div class="footer2"></div>
+            <div class="footer3">SNS</div>
+        </footer>
     </div>
 </body>
 </html>

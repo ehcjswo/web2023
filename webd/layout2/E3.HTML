@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인 기능사 실기 E유형 3번 레이아웃</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap {
+            height: 1000px;
+        }
+        #section {
+            display: flex;
+            height: calc(100% - 120px);
+        }
+        #aside {
+            width: 200px;
+        }
+        .aside1 {
+            width: 100%;
+            height: 15%;
+            background-color: #ff0000;
+        }
+        .aside2 {
+            width: 100%;
+            height: 85%;
+            background-color: #ff6200;
+        }
+        #main {
+            width: 400px;
+        }
+        .banner {
+            width: 100%;
+            height: 25%;
+            background-color: #e7fa34;
+        }
+        .notice {
+            width: 100%;
+            height: 25%;
+            background-color: #c8ff01;
+        }
+        .gall {
+            width: 100%;
+            height: 25%;
+            background-color: #00ff00;
+        }
+        .link {
+            width: 100%;
+            height: 25%;
+            background-color: #00ff66;
+        }
+        #slider {
+            width: calc(100% - 600px);
+            background-color: #00aeff;
+        }
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+        .footer1 {
+            width: 200px;
+            height: 120px;
+            background-color: #aa00ff;
+        }
+        .footer2 {
+            width: calc(100% - 200px);
+            display: flex;
+        }
+        .footer2-1 {
+            width: 70%;
+            height: 120px;
+            background-color: #ac0095;
+        }
+        .footer2-2 {
+            width: 30%;
+            height: 120px;
+            background-color: #ff009d;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="section">
+            <div id="aside">
+                <div class="aside1">LOGO</div>
+                <div class="aside2"></div>
+            </div>
+            <div id="main">
+                <div class="banner">배너</div>
+                <div class="notice">공지사항</div>
+                <div class="gall">갤러리</div>
+                <div class="link">링크</div>
+            </div>
+            <div id="slider">이미지 슬라이드</div>
+        </div>
+        <div id="footer">
+            <div class="footer1">LOGO</div>
+            <div class="footer2">
+                <div class="footer2-1">하단메뉴</div>
+                <div class="footer2-2">COPYRIGHT</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
