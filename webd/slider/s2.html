@@ -111,16 +111,11 @@
     const imgSlider = document.querySelectorAll(".slider");
     const sliderInner = document.querySelector(".slider__inner")
     const imgCount = document.querySelectorAll(".slider").length;
-
-    let sliderWidth = imgSlider[0].offsetWidth;
     
     setInterval(()=>{ 
         imgIndex = (imgIndex + 1) % imgCount;
 
-        sliderInner.style.transform = `translateX(${- sliderWidth * imgIndex}px)`;
-
-        console.log("imgIndex: "+imgIndex)
-        
+        sliderInner.style.transform = `translateX(${-1200 * imgIndex}px)`;
 
     }, 1000)
 </script>
