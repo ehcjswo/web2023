@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이더 기능 1번 (같은 자리에서 바뀌기)</title>
+    <title>슬라이더 기능 2번 (좌에서 우로 이동)</title>
     <style>
         *{
             padding: 0;
@@ -28,13 +28,17 @@
             width: 1200px;
             height: 300px;
             overflow: hidden;
+            
         }
+        
         .slider__inner {
-            position: relative;
-        }
-        .slider {
+            display: flex;
+            width: 4800px;
+            height: 300px;
             transition: all 0.3s;
-            position: absolute;
+        }
+        
+        .slider {
             left: 0;
             top: 0;
         }
@@ -74,11 +78,6 @@
             width: 20%;
             background-color: #ff096f;
         }
-        .slider:nth-child(1) {z-index: 5;}
-        .slider:nth-child(2) {z-index: 4;}
-        .slider:nth-child(3) {z-index: 3;}
-        .slider:nth-child(4) {z-index: 2;}
-        .slider:nth-child(5) {z-index: 1;}
     </style>
 </head>
 <body>
@@ -108,20 +107,19 @@
     </div>
 </body>
 <script>
-    let imgIndex = -1;
-    let nextIndex = 0;
-    let imgSlider = document.querySelectorAll(".slider");
-    let imgCount = document.querySelectorAll(".slider").length;
+    let imgIndex = 0;
+    const imgSlider = document.querySelectorAll(".slider");
+    const sliderInner = document.querySelector(".slider__inner")
+    const imgCount = document.querySelectorAll(".slider").length;
+
+    let sliderWidth = imgSlider[0].offsetWidth;
     
     setInterval(()=>{ 
         imgIndex = (imgIndex + 1) % imgCount;
-        nextIndex = (nextIndex + 1) % imgCount;
-        
-        imgSlider[imgIndex].style.opacity = "0";
-        imgSlider[nextIndex].style.opacity = "1";
+
+        sliderInner.style.transform = `translateX(${- sliderWidth * imgIndex}px)`;
 
         console.log("imgIndex: "+imgIndex)
-        console.log("nextIndex: "+nextIndex)
         
 
     }, 1000)
