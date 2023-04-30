@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이더 기능 1번</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            width: 1200px;
+            height: 100px;
+            
+        }
+        .header__1 {
+            width: 20%;
+            background-color: #ad0000;
+        }
+        .header__2 {
+            width: 80%;
+            background-color: #ff2d2d;
+        }
+        .slider__wrap {
+            width: 1200px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .inner__slider {
+            position: relative;
+        }
+        .slider {
+            transition: all 0.3s;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .banner {
+            width: 1200px;
+            height: 200px;
+            background-color: #d16666;
+            display: flex;
+        }
+        .banner__1 {
+            width: 33.3333%;
+            background-color: #d0ff00;
+        }
+        .banner__2 {
+            width: 33.3333%;
+            background-color: #04ff19;
+        }
+        .banner__3 {
+            width: 33.3333%;
+            background-color: #00f195;
+        }
+        .footer {
+            width: 1200px;
+            height: 100px;
+            display: flex;
+        }
+        .footer1 {
+            width: 20%;
+            background-color: #2f00ff;
+
+        }
+        .footer2 {
+            width: 60%;
+            background-color: #ea00ff;
+        }
+        .footer3 {
+            width: 20%;
+            background-color: #ff096f;
+        }
+        .slider:nth-child(1) {z-index: 5;}
+        .slider:nth-child(2) {z-index: 4;}
+        .slider:nth-child(3) {z-index: 3;}
+        .slider:nth-child(4) {z-index: 2;}
+        .slider:nth-child(5) {z-index: 1;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="header__1">로고</div>
+            <div class="header__2"></div>
+        </div>
+        <div class="slider__wrap">
+            <div class="inner__slider">
+                <div class="slider"><img src="../img/slider_img01.jpg" alt="이미지1"></div>
+                <div class="slider"><img src="../img/slider_img02.jpg" alt="이미지2"></div>
+                <div class="slider"><img src="../img/slider_img03.jpg" alt="이미지3"></div>
+                <div class="slider"><img src="../img/slider_img04.jpg" alt="이미지4"></div>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="banner__1">공지사항/갤러리</div>
+            <div class="banner__2">배너</div>
+            <div class="banner__3">바로가기</div>
+        </div>
+        <div class="footer">
+            <div class="footer1">로고</div>
+            <div class="footer2">COPYRIGHT</div>
+            <div class="footer3">SNS</div>
+        </div>
+    </div>
+</body>
+<script>
+    let imgIndex = -1;
+    let nextIndex = 0;
+    let imgSlider = document.querySelectorAll(".slider");
+    let imgCount = document.querySelectorAll(".slider").length;
+    
+    setInterval(()=>{ 
+        imgIndex = (imgIndex + 1) % imgCount;
+        nextIndex = (nextIndex + 1) % imgCount;
+        
+        imgSlider[imgIndex].style.opacity = "0";
+        imgSlider[nextIndex].style.opacity = "1";
+
+        console.log("imgIndex: "+imgIndex)
+        console.log("nextIndex: "+nextIndex)
+        
+
+    }, 1000)
+</script>
+</html>

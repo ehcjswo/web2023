@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메뉴 버튼 기능 1번</title>
+    <title>메뉴 버튼 기능 2번</title>
     <style>
         * {
             margin: 0;
@@ -185,28 +185,28 @@
         // });
         
         //스크립트 메뉴 단일 컨트롤
-        // document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //     li.addEventListener("mouseover", e => {
-        //         li.querySelector("ul").style.display = "block";
-        //     });
-        //     li.addEventListener("mouseout", e => {
-        //         li.querySelector("ul").style.display = "none";
-        //     });
-        // });
-
-        //스크립트 메뉴 전체 컨트롤
         document.querySelectorAll(".nav > ul > li").forEach(li => {
             li.addEventListener("mouseover", e => {
-                document.querySelectorAll(".nav > ul > li > ul").forEach(ul => {
-                    ul.style.display = "block";
-                });
+                li.querySelector("ul").style.display = "block";
             });
             li.addEventListener("mouseout", e => {
-                document.querySelectorAll(".nav > ul > li > ul").forEach(ul => {
-                    ul.style.display = "none";
-                });
+                li.querySelector("ul").style.display = "none";
             });
         });
+
+        //스크립트 메뉴 전체 컨트롤
+        // document.querySelectorAll(".nav > ul > li").forEach(li => {
+        //     li.addEventListener("mouseover", e => {
+        //         document.querySelectorAll(".nav > ul > li > ul").forEach(ul => {
+        //             ul.style.display = "block";
+        //         });
+        //     });
+        //     li.addEventListener("mouseout", e => {
+        //         document.querySelectorAll(".nav > ul > li > ul").forEach(ul => {
+        //             ul.style.display = "none";
+        //         });
+        //     });
+        // });
     </script>
 </body>
 </html>
