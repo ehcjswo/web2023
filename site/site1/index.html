@@ -19,7 +19,14 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/> -->
+
+    <style>
+        
+    </style>
     
 </head>
 <body>
@@ -55,33 +62,58 @@
     </header>
     <!-- headerType -->
     <main id="main">
-        <section id="sliderType" class="nexon" style="display: none;">
+        <section id="sliderType" class="nexon">
             <div class="slider__inner">
-                <h2 class="blind">메인 슬라이드 영역</h2>  
-                <div class="slider">
-                    <div class="slider__info container">
-                        <span class="small">EVENT</span>
-                        <h3 class="title">고민하지 마세요!</h3>
-                        <p class="desc">매일매일 힘든 일상에서, 달콤한 한 입의 쉼을 드세요. 우리의 간식은 당신의 하루를 달달하게 만들어줄 거예요.</p>
-                        <div class="btn">
-                            <a href="#">자세히 보기</a>
-                            <a href="#">상담 요청</a>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slider img1">
+                                <div class="slider__info container">
+                                    <span class="small">event</span>
+                                    <h3 class="title">고민하지 마세요! </h3>
+                                    <p class="desc">매일매일 힘든 일상에서, 달콤한 한 입의 쉼을 드세요. 우리의 간식은 당신의 하루를 달달하게 만들어줄 거예요.</p>
+                                    <div class="btn">
+                                        <a href="#">자세히 보기</a>
+                                        <a href="#">상담 신청</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slider img2">
+                                <div class="slider__info container">
+                                    <span class="small">event</span>
+                                    <h3 class="title">고민하지 마세요! </h3>
+                                    <p class="desc">매일매일 힘든 일상에서, 달콤한 한 입의 쉼을 드세요. 우리의 간식은 당신의 하루를 달달하게 만들어줄 거예요.</p>
+                                    <div class="btn">
+                                        <a href="#">자세히 보기</a>
+                                        <a href="#">상담 신청</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slider img3">
+                                <div class="slider__info container">
+                                    <span class="small">event</span>
+                                    <h3 class="title">고민하지 마세요! </h3>
+                                    <p class="desc">매일매일 힘든 일상에서, 달콤한 한 입의 쉼을 드세요. 우리의 간식은 당신의 하루를 달달하게 만들어줄 거예요.</p>
+                                    <div class="btn">
+                                        <a href="#">자세히 보기</a>
+                                        <a href="#">상담 신청</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="slider__arrow">
-                        <a href="#"><span class="blind">이전 이미지</span></a>
-                        <a href="#"><span class="blind">다음 이미지</span></a>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
                     </div>
-                    <div class="slider__dot">
-                        <a href="#" class="dot active"><span class="blind">첫번째 이미지</span></a>
-                        <a href="#" class="dot"><span class="blind">두번째 이미지</span></a>
-                        <a href="#" class="dot"><span class="blind">세번째 이미지</span></a>
-                        <a href="#" class="play"><span class="blind">플레이</span></a>
-                        <a href="#" class="stop"><span class="blind">정지</span></a>
-                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <!-- <div class="slider"></div>
-                <div class="slider"></div> -->
             </div>
         </section>
         <!-- //sliderType -->
@@ -303,5 +335,46 @@
             </div>
     </footer>
     <!-- //footerType -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: false,
+            },
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnStop = document.querySelector(".swiper-button-stop");
+
+        btnStart.style.display = "none";
+
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+        
+    </script>
 </body>
 </html>
