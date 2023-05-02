@@ -206,15 +206,21 @@ body {
 }
 .music__list ul li {
     width: 230px;
-    /* height: 50px; */
-    padding-right: 10px;
+    height: 80px;
+    /* padding-right: 10px; */
+    padding: 10px;
     background-color: rgba(255,255,255,0.2);
     border: 1px solid rgba(255,255,255,0.6);
     margin-bottom: 3px;
     border-radius: 3px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+}
+.music__list ul li div {
+    width: 30%;
 }
 .music__list ul li.playing {
     background-color: rgba(255,255,255,0.5);
@@ -226,10 +232,11 @@ body {
     /* display: block; */
     color: #fff;
 }
-.music__list ul li span {
-    
-    justify-content: right;
+.music__list ul li div span {
+    text-align: right;
 }
 .music__list ul li img {
-    width: 22%;
+    width: 100%;
+    /* height: 100%; */
+    
 }
