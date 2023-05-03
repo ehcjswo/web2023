@@ -76,7 +76,9 @@
                         <li><a href="#sample23">23. 함수 종류 : 파라미터 함수</a></li>
                         <li><a href="#sample24">24. 함수 종류 : 아규먼트 함수</a></li>
                         <li><a href="#sample25">25. 함수 종류 : 재귀 함수</a></li>
-                        <li><a href="#sample26">26. 함수 종류 : 콜백 함수</a></li>
+                        <li><a href="#sample26">26. 함수 종류 : 콜백 함수(다른 함수에 인수로 넘겨지는 함수) </a></li>
+                        <li><a href="#sample26">27. 함수 종류 : 콜백 함수(반복문)</a></li>
+                        <li><a href="#sample26">28. 함수 종류 : 콜백 함수(동기/비동기)</a></li>
 
                         <li><a href="#sample27">01. 함수 종류 : Promise 함수</a></li>
                         <li><a href="#sample28">01. 함수 종류 : 내부 함수</a></li>
@@ -817,6 +819,32 @@
                 </div>
                 <!-- //sample26번 -->
 
+                <div id="sample26" class="sample">
+                    <h3>26. 함수 종류 : 콜백 함수 : 함수를 두번 실행(다른 함수에 인수로 넘겨지는 함수)</h3>
+                    <p>콜백 함수(Callback Function)는 다른 함수에게 인자로 전달되어 실행되는 함수입니다. <br>즉, 콜백 함수는 함수의 인자로 전달되어 언제든지 호출될 수 있는 함수를 말합니다.</p>
+        <!--data-line 은 줄에 빛,   line-numbers 는 번호표시  -->
+<pre data-line="" class="line-numbers" ><code class="language-js">{
+    function func(){
+        document.write("2.함수 실행");
+    }
+    function callback(str){         //callback함수기 때문에 먼저 실행
+        document.write("1.함수 실행");
+        str();
+    }
+    callback(func);                 //실행문 확인하기
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                           함수실행1함수실행2
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample26번 -->
+
                 
 
             </div>     
@@ -1066,6 +1094,95 @@
         //     }
         //     callback(func);
         // }
+
+        // // 27. 콜백함수 : 반복문
+        // {
+        //     function func(index){
+        //         console.log("함수실행"+index);
+        //     }
+        //     function callback(num){
+                
+        //         for(let i=1; i<=10; i++){
+        //             num(i);
+        //         }
+        //     }
+        //     callback(func);
+        // }
+
+        // 28. 함수종류 : 콜백 함수 (동기/비동기)
+        {
+            //01
+            // function funcA(){
+            //     console.log("funcA가 실행");
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행");
+            // }
+
+            // funcA();
+            // funcB();
+
+            // //02
+            // function funcA(){
+            //     setTimeout(() => {
+            //         console.log("funcA가 실행");
+            //     }, 1000)
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행");
+            // }
+
+            // funcA();
+            // funcB();
+
+            // //03
+            // function funcA(callback){
+            //     setTimeout(() => {
+            //         console.log("funcA가 실행");
+            //         callback();
+            //     }, 1000)
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행");
+            // }
+            
+            // funcA(function(){
+            //     funcB();
+            // });
+
+            //04 : 콜백지옥
+            function funcA(callback){
+                setTimeout(() => {
+                    console.log("funcA가 실행되었습니다.");
+                    callback();
+                },1000);
+            }
+            function funcB(callback){
+                setTimeout(() => {
+                    console.log("funcB가 실행되었습니다.");
+                    callback();
+                },1000);
+            }
+            function funcC(callback){
+                setTimeout(() => {
+                    console.log("funcC가 실행되었습니다.");
+                    callback();
+                },1000);
+            }
+            function funcD(){
+                setTimeout(() => {
+                    console.log("funcD가 실행되었습니다.");
+                },1000);
+            }
+
+            funcA(function(){
+                funcB(function(){
+                    funcC(function(){
+                        funcD();
+                    })
+                })
+            })
+        }
     </script>
 
 </body>
