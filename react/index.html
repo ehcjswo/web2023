@@ -161,14 +161,14 @@ root.render(hello);
 // clock();
     
 function clock(){
-    const element = (
-    <div>
-        <div>hello, KDH</div>
-        <h2>지금은 {new Date().toLocaleDateString()}입니다.</h2>
-    </div>
-    );
+const element = (
+<div>
+    &lt;div>hello, KDH&lt;/div>
+    &lt;h2>지금은 {new Date().toLocaleDateString()}입니다.&lt;/h2>
+</div>
+);
 
-    ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(element, document.getElementById('root'));
 }
 
 export default clock
