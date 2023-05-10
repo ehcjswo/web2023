@@ -162,16 +162,124 @@ root.render(hello);
     
 function clock(){
 const element = (
-<div>
+&lt;div>
     &lt;div>hello, KDH&lt;/div>
     &lt;h2>지금은 {new Date().toLocaleDateString()}입니다.&lt;/h2>
-</div>
+&lt;/div>
 );
 
 ReactDOM.render(element, document.getElementById('root'));
 }
 
 export default clock
+</code></pre>
+
+
+                <h4 id="intro3-4" class="page-header">4. 컴퍼넌트</h4>
+                    <p>객체와 함수를 같이 사용한 경우</p>
+<pre><code class="Language-js">import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Hello(){
+    return &lt;h1>Hello, KDH&lt;/h1>
+}
+const element = &lt;Hello />
+
+ReactDOM.render(element, document.getElementById("root"));
+
+export default Hello    
+
+//Hello, KDH
+</code></pre>
+
+<pre><code class="Language-js">
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Welcome(props){
+  return &lt;h1>Hello, {props.name}&lt;/h1>
+}
+
+function App(){
+  return (
+    &lt;div>
+      &lt;Welcome name = "KDH" />
+      &lt;Welcome name = "kDH!!!" />
+      &lt;Welcome name = " Welcome^^" />
+    &lt;/div>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;App />);
+
+//Hello, KDH
+//Hello, kDH!!!
+//Hello, Welcome^^
+</code></pre>
+
+<pre><code class="Language-js">import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Hello(){
+    return &lt;h1>Hello, KDH&lt;/h1>
+}
+const element = &lt;Hello />
+
+ReactDOM.render(element, document.getElementById("root"));
+
+export default Hello    
+
+//Hello, KDH
+</code></pre>
+
+                <h4 id="intro3-5" class="page-header">5. props</h4>
+                    <p>객체와 함수를 같이 사용한 경우</p>
+<pre><code class="Language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(props){
+    return &lt;h1>Hello, {props.name}&lt;/h1>
+}
+
+const element = &lt;Hello name = "KDH!!!" />
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+    
+//Hello, KDH!!!
+</code></pre>
+
+<pre><code class="Language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(props){
+    return (
+    &lt;div>
+        &lt;div>{props.title}&lt;/div>
+        &lt;div>{props.talk}&lt;/div>
+        &lt;div>{props.who}&lt;/div>
+        &lt;div>{props.link}&lt;/div>
+    &lt;/div>
+    )
+}
+
+const name = {
+    name : "KDH!",
+    text : "hi",
+    author : {
+    name : "babo",
+    ulr : "naver.com"
+    }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;Hello title={name.name} talk={name.text} who={name.author.name} link={name.author.ulr}/>);
+
+//KDH!
+//hi
+//babo
+//naver.com
 </code></pre>
                 </div>
                 <!-- //intro3 -->
@@ -189,6 +297,8 @@ export default clock
                                 <li><a href="#intro3-1">출력하기</a></li>
                                 <li><a href="#intro3-2">JSX</a></li>
                                 <li><a href="#intro3-3">렌더링</a></li>
+                                <li><a href="#intro3-4">컴퍼넌트</a></li>
+                                <li><a href="#intro3-5">props</a></li>
                             </ul>
                         </li>
                         <!-- <li><a href="#intro3">MySQL 실행</a></li>
