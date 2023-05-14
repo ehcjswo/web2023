@@ -234,6 +234,7 @@ img {
 }
 .footer2-1 li a {
     padding: 10px;
+    color: #fff;
 }
 .footer2-1 li a:hover {
     text-decoration: underline;
@@ -245,4 +246,5 @@ img {
     text-align: center;
     padding-top: 15px;
     box-sizing: border-box;
+    color: #fff;
 }

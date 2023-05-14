@@ -1,25 +1,10 @@
 $(function(){
     // 메뉴 : 단일
-    // $(".header__right > ul > li").mouseover(function(){
-    //     $(this).find(".submenu").stop().slideDown(200);
-    // });
-    // $(".header__right > ul > li").mouseout(function(){
-    //     $(this).find(".submenu").stop().slideUp(200);
-    // });
-
-    $(".header__right > ul > li").on({
-        mouseover: function() {
-            $(".header__right > ul > li").find(".submenu").stop().slideDown(200);
-        },
-        focusin: function() {
-            $(this).find(".submenu").stop().slideDown(200);
-        },
-        mouseout: function() {
-            $(".header__right > ul > li").find(".submenu").stop().slideUp(200);
-        },
-        focusout: function() {
-            $(this).find(".submenu").stop().slideUp(200);
-        }
+    $(".header__right > ul > li").mouseover(function(){
+        $(this).find(".submenu").stop().slideDown(200);
+    });
+    $(".header__right > ul > li").mouseout(function(){
+        $(this).find(".submenu").stop().slideUp(200);
     });
 
     // 슬라이드 : 페이드 효과
