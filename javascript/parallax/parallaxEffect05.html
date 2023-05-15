@@ -4,21 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 이펙트03</title>
+    <title>패럴랙스 이펙트05</title>
     <style>
-        #header {
-            padding-top: 50px;
-        }
-        .parallax__nav {
-            top: -100px !important;
-            transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
-        .parallax__nav.show {
-            top: 10px !important;
-        }
-        html, body {
-            scroll-behavior: smooth;
-        }
+
     </style>
 
     <link rel="stylesheet" href="css/reset.css">
@@ -27,32 +15,18 @@
 <body class="bg01 font05">
     <header id="header">
         <h1><a href="https://ehcjswo.github.io/web2023/index.html">Javascript parallax Effect01</a></h1>
-        <p>패럴랙스 이펙트 : 숨김 메뉴 / 탑 버튼</p>
+        <p>패럴랙스 이펙트 : 이질감 효과(3d효과)</p>
         <ul>
             <li><a href="parallaxEffect01.html">1</a></li>
             <li><a href="parallaxEffect02.html">2</a></li>
-            <li class="active"><a href="parallaxEffect03.html">3</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect04.html">4</a></li>
-            <li><a href="parallaxEffect05.html">5</a></li>
+            <li class="active"><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
             <li><a href="parallaxEffect07.html">7</a></li>
         </ul>
     </header>
     <!-- //header-->
-
-    <nav class="parallax__nav">
-        <ul>
-            <li class="active"><a href="#section1">메뉴1</a></li>
-            <li><a href="#section2">메뉴2</a></li>
-            <li><a href="#section3">메뉴3</a></li>
-            <li><a href="#section4">메뉴4</a></li>
-            <li><a href="#section5">메뉴5</a></li>
-            <li><a href="#section6">메뉴6</a></li>
-            <li><a href="#section7">메뉴7</a></li>
-            <li><a href="#section8">메뉴8</a></li>
-            <li><a href="#section9">메뉴9</a></li>
-        </ul>
-    </nav>
 
     <main id="main">
         <div id="parallax__wrap">
@@ -151,90 +125,39 @@
     </main>
     <!-- //main -->
 
-    <aside class="parallax_info">
-        <div class="scroll">scrollTop : <span>0</span>px</div>
-    </aside>
-    <!-- //parallax_info -->
-
-    <div class="parallax__top show">
-        <a href="#header" id="scrollToTopBtn">Top</a>
-    </div>
 
     <footer id="footer">
         <a href="mailto:ehcjswo1@gmail.com">ehcjswo1@gmail.com</a>
     </footer>
     <!-- //footer-->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script>
-        window.addEventListener("scroll", () => {
-            // 1. 상단 메뉴
-            let scrollTop = window.pageYOffset || window.scrollY;
-
-            // if(scrollTop > 0){
-            //     document.querySelector(".parallax__nav").classList.add("show");
-            // } else {
-            //     document.querySelector(".parallax__nav").classList.remove("show");
-            // }
-            
-            // 2. 탑 버튼
-            // 문서의 높이를 구하는 메서드
-            // document.body.scrollHeight,
-            // document.body.offsetHeight,
-            // document.documentElement.clientHeight,
-            // document.documentElement.scrollHeight,
-            // document.documentElement.offsetHeight
-
-            if(scrollTop > document.body.scrollHeight-1000){
-                document.querySelector(".parallax__top a").classList.remove("show");
-            } else {
-                document.querySelector(".parallax__top a").classList.add("show");
-            }
-
-            document.querySelector(".scroll span").innerHTML = Math.round(scrollTop);
-        });
         
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollHeight;
+            let scrollLeft = window.pageXOffset || document.documentElement.scrollWidth;
 
-        // 탑 버튼 애니메이션
-        document.querySelector(".parallax_top a").addEventListener("click", function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+
+            document.querySelectorAll(".parallax__item").forEach(item => {
+                const target1 = item.querySelector(".parallax__item__img");
+                const target2 = item.querySelector(".parallax__item__desc");
+
+                let offset1 = (scrollTop - item.offsetTop) * 0.3;
+                let offset2 = (scrollTop - item.offsetTop) * 0.15;
+                let offset3 = (scrollTop - item.offsetTop) * 0.1;
+
+                // target1.style.transform = `translate(${offset3}px, ${-offset1}px)`;
+                // target1.style.transform = `translateX(${-offset2}px)`;
+                target2.style.transform = `translateX(${offset2}px)`;
+
+                gsap.to(target1, {duration: .3, y: offset1, x: offset3, ease: "power4.out"});
+                gsap.to(target2, {duration: .3, y: offset2, x: offset3, ease: "expo.out"});
             });
-        });
 
-        // 1-2. 메뉴
-        let nowScroll = true;
-        let lastScroll = 0;
-
-        function scrollProgress (){
-            let nowScroll = true;
-            setInterval(() => {
-                if(nowScroll){
-                    nowScroll = false;
-                    hasScroll();
-                }
-            }, 300);
-
+            requestAnimationFrame(scroll);
         }
-
-        function hasScroll (){
-            let scrollTop = window.pageYOffset || window.scrollY;
-
-            if(scrollTop < lastScroll){
-                document.querySelector(".parallax__nav").classList.add("show");
-                
-            } else {
-                document.querySelector(".parallax__nav").classList.remove("shows");
-            }
-            lastScroll = scrollTop;
-        }
-
-        window.addEventListener("scroll", scrollProgress);
-
-        
-
-
+        scroll()
     </script>
 </body>
 </html>
