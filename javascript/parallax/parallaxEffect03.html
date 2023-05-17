@@ -167,35 +167,60 @@
 
     <script>
         window.addEventListener("scroll", () => {
-            // 1. 상단 메뉴
-            let scrollTop = window.pageYOffset || window.scrollY;
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
-            // if(scrollTop > 0){
-            //     document.querySelector(".parallax__nav").classList.add("show");
-            // } else {
-            //     document.querySelector(".parallax__nav").classList.remove("show");
-            // }
+            document.querySelectorAll(".parallax__item").forEach((item, index) => {
+                if(scrollTop >= item.offsetTop - 2){
+                    document.querySelectorAll(".parallax__nav li").forEach((li) => {
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(".parallax__nav li:nth-child(" + (index+1) + ")").classList.add("active");
+                }
+            });
+
+            document.querySelectorAll(".parallax__nav li a").forEach(li => {
+                li.addEventListener("click", e => {
+                    e.preventDefault();
+                    document.querySelector(li.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+        // 01 메뉴
+        // window.addEventListener("scroll", () => {
+        //     let scrollTop = window.pageYOffset || winodw.scrollY; 
             
-            // 2. 탑 버튼
-            // 문서의 높이를 구하는 메서드
-            // document.body.scrollHeight,
-            // document.body.offsetHeight,
-            // document.documentElement.clientHeight,
-            // document.documentElement.scrollHeight,
-            // document.documentElement.offsetHeight
+        //     if(scrollTop > 5){
+        //         document.querySelector(".parallax__nav").classList.add("show");
+        //     } else {
+        //         document.querySelector(".parallax__nav").classList.remove("show");
+        //     }
 
-            if(scrollTop > document.body.scrollHeight-1000){
-                document.querySelector(".parallax__top a").classList.remove("show");
+        //     document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+        // });
+
+        // 문서의 높이
+        // console.log(document.body.scrollHeight);
+        // console.log(document.body.offsetHeight);
+        // console.log(document.documentElement.scrollHeight);
+        // console.log(document.documentElement.offsetHeight);  
+
+        // 탑 버튼
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || winodw.scrollY; 
+
+            if(scrollTop > document.body.scrollHeight - 1000){
+                document.querySelector(".parallax__top").classList.add("show");
             } else {
-                document.querySelector(".parallax__top a").classList.add("show");
+                document.querySelector(".parallax__top").classList.remove("show");
             }
 
-            document.querySelector(".scroll span").innerHTML = Math.round(scrollTop);
+            document.querySelector(".scroll span").innerText = Math.round(scrollTop);
         });
         
-
         // 탑 버튼 애니메이션
-        document.querySelector(".parallax_top a").addEventListener("click", function(e) {
+        document.querySelector(".parallax__top a").addEventListener("click", (e) => {
             e.preventDefault();
             window.scrollTo({
                 top: 0,
@@ -203,38 +228,30 @@
             });
         });
 
-        // 1-2. 메뉴
+        // 02 메뉴
         let nowScroll = true;
         let lastScroll = 0;
-
-        function scrollProgress (){
-            let nowScroll = true;
+        function scrollPress(){
+            nowScroll = true;
             setInterval(() => {
                 if(nowScroll){
                     nowScroll = false;
                     hasScroll();
                 }
             }, 300);
-
-        }
-
-        function hasScroll (){
-            let scrollTop = window.pageYOffset || window.scrollY;
+        };
+        function hasScroll(){
+            let scrollTop = window.pageYoffset || window.scrollY;
 
             if(scrollTop < lastScroll){
                 document.querySelector(".parallax__nav").classList.add("show");
-                
             } else {
-                document.querySelector(".parallax__nav").classList.remove("shows");
+                document.querySelector(".parallax__nav").classList.remove("show");
             }
+
             lastScroll = scrollTop;
-        }
-
-        window.addEventListener("scroll", scrollProgress);
-
-        
-
-
+        };
+        window.addEventListener("scroll", scrollPress);
     </script>
 </body>
 </html>
