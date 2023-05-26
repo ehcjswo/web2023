@@ -1,0 +1,253 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,li,a {
+    text-decoration: none;
+    list-style: none;
+    font-style: none;
+    color: #333;
+
+}
+img {
+    width: 100%;
+    
+    /* object-fit: cover; */
+}
+#wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* aside */
+#aside {
+    width: 200px;
+    height: 650px;
+    background-color: #202020;
+    border-right: 1px solid #666;
+    
+}
+.logo {
+    height: 150px;
+    background-color: #fff;
+    padding: 40px 50px;
+}
+.menu {
+    text-align: center;
+    margin-top: 50px;
+}
+.menu a {
+    color: #fff;
+    
+}
+
+.menu > ul > li {
+    display: block;
+    border: 1px solid #fff;
+    padding: 10px;
+    margin-top: -1px;
+}
+.menu > ul > li:hover {
+    background-color: #2e2e2e;
+}
+.menu > ul > li > ul {
+    display: none;
+    padding: 10px;
+}
+
+.menu > ul > li > ul > li {
+
+}
+.menu > ul > li > ul > li a {
+    display: block;
+    width: 100%;
+}
+.menu > ul > li > ul > li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* main */
+#main {
+    width: calc(100% - 430px);
+}
+.top {
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+#slider {
+    width: 100%;
+    height: 400px;
+    /* overflow: hidden; */
+}
+
+.slider__wrap {
+    width: 100%;
+    height: 300%;
+    transition: all 0.3s;
+    /* overflow: hidden; */
+    /* transform: translateY(-400px); */
+}
+.slider {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+}
+.sl1 {
+    background-image: url(../images/boardimg_01.png);
+}
+.sl2 {
+    background-image: url(../images/boardimg_02.png);
+}
+.sl3 {
+    background-image: url(../images/boardimg_03.png);
+}
+.sl4 {
+    background-image: url(../images/boardimg_04.png);
+}
+.pic {
+    width: 230px;
+    height: 400px;
+    border: 1px solid #666;
+    border-bottom: none;
+}
+.pic__img {
+    width: 230px;
+    height: 300px;
+    background-image: url(../images/herin.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: -2px;
+}
+.pic__desc {
+    background-color: #202020;
+    
+    height: 100px;
+}
+.pic__desc a {
+    color: #fff;
+}
+.pic__desc h3 {
+    padding: 10px 18px;
+    font-weight: 700;
+}
+.pic__desc p {
+    padding: 10px 18px;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.bottom {
+    width: 100%;
+    height: 250px;
+    display: flex;
+}
+.notice {
+    width: 50%;
+    height: 250px;
+    border: 1px solid #666;
+    border-left: none;
+    
+}
+.notice h3 {
+    height: 40px;
+    margin-bottom: 0px;
+    background-color: #202020;
+    color: #fff;
+    font-size: 26px;
+    padding-left: 10px;
+    border-bottom: 1px solid #b3b3b3;
+}
+.notice li {
+    padding: 5px 15px;
+    position: relative;
+}
+.notice li::before {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    top: 12px;
+    left: 5px;
+    border-radius: 50%;
+}
+.notice li:hover {
+    text-decoration: underline;
+}
+.gall {
+    width: 50%;
+    height: 250px;
+    display: flex;
+    border: 1px solid #666;
+    border-left: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.gall h3 {
+    width: 100%;
+    height: 40px;
+    background-color: #202020;
+    color: #fff;
+    font-size: 25px;
+    padding-left: 10px;
+    border-bottom: 1px solid #b3b3b3;
+}
+.gall__img {
+    width: 31%;
+    padding: 3px;
+}
+.gall__img img {
+    border-radius: 2px;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    color: #fff;
+}
+.footer1 {
+    width: 200px;
+    /* min-width: 200px; */
+    height: 100px;
+    background-color: #000;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 25px;
+    border-right: 1px solid #464646;
+}
+.footer2 {
+    width: calc(100% - 430px);
+    height: 100px;
+    display: flex;
+    
+}
+.footer2-1 {
+    width: 80%;
+    height: 100px;
+    background-color: #000;
+    padding-top: 40px;
+    text-align: center;
+}
+.footer2-2 {
+    width: 20%;
+    height: 100px;
+    background-color: #000;
+    text-align: center;
+    padding-top: 40px;
+}
+
+/* #main {
+    width: calc(100% - 430px);
+    height: 400px;
+    background-color: #666;
+} */
