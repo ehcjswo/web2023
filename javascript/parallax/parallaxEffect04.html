@@ -196,23 +196,6 @@
     </footer>
     <!-- //footer-->
 
-    <script>
-        function scroll(){
-            let scrollTop = window.pageYOffset || window.scrollY;
-
-            document.querySelectorAll(".parallax__item").forEach(item => {
-                if(scrollTop > item.offsetTop - window.innerHeight/2){
-                    item.classList.add("show");
-                } else {
-                    item.classList.remove("show");
-
-                }
-            });
-            
-            requestAnimationFrame(scroll);
-        }
-        scroll();
-
-    </script>
+    
 </body>
 </html>

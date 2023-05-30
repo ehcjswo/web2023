@@ -17,7 +17,7 @@ body {
     background: rgba(57, 116, 243, 0.5);
     backdrop-filter: blur(20px);
     position: absolute;
-    left: 50%;
+    left: 80%;
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 20px 22px;

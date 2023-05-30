@@ -1,0 +1,192 @@
+.tetris__wrap {
+    /* display: none; */
+  }
+  .tetris__inner {
+    width: 720px;
+    height: 850px;
+    position: absolute;
+    left: 30%;
+    top: 5%;
+    background: rgba(77, 77, 77, 0.722);
+    border: 3px solid rgb(39, 201, 255);
+    box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 16px #fff, 0 0 42px rgb(39, 201, 255),
+    0 0 82px rgb(39, 201, 255), 0 0 92px rgb(39, 201, 255), 0 0 102px rgb(39, 201, 255), 0 0 151px rgb(39, 201, 255);
+  }
+  .tetris__intro {
+    text-align: center;
+    color: #eee;
+  }
+  .tetris__intro h2 {
+    margin-top: 150px;
+    font-size: 58px;
+    margin-bottom: 40px;
+    animation: flicker 3s infinite alternate;
+  }
+  .tetris__intro li {
+    list-style: none;
+    line-height: 1.6;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  .tetris__card {
+    display: none;
+  }
+  .tetris__header {
+    text-align: center;
+  }
+  .tetris__header h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  }
+  .tetris__info {
+    margin-top: 34px;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+  .tetris__close {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    color: white;
+    font-size: 48px;
+  }
+  .tetris__music {
+    position: relative;
+  }
+  .tetris__music .play {
+    position: absolute;
+    right: 19%;
+    bottom: 30px;
+    display: none;
+  }
+  .tetris__music .stop {
+    position: absolute;
+    right: 19%;
+    bottom: 30px;
+    display: none;
+  }
+  .tetris__start {
+    font-size: 45px;
+    width: 200px;
+    position: absolute;
+    left: 35%;
+    transition: all 0.3s;
+    margin-top: 50px;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  }
+  .tetris__start:hover {
+    scale: 1.25;
+  }
+  .tetris__restart {
+    display: none;
+    text-align: center;
+    background: #000000d5;
+    color: #fff;
+    width: 350px;
+    height: 400px;
+    font-size: 25px;
+    padding: 140px 30px;
+    border-radius: 10px;
+    transform: scale(0);
+    position: absolute;
+    left: 26.5%;
+    top: 28%;
+    line-height: 1.4;
+  }
+  
+  .restart {
+    font-size: 48px;
+    margin-top: 24px;
+    animation: flicker 3s infinite alternate;
+  }
+  @keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #0fa,
+        0 0 80px #0fa,
+        0 0 90px #0fa,
+        0 0 100px #0fa,
+        0 0 150px #0fa;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+  .tetris_play {
+    width: 443px;
+    position: absolute;
+    left: 20%;
+    top: 18%;
+  }
+  .playground {
+  }
+  
+  .playground > ul {
+    border: 5px outset rgb(39, 201, 255, 0.7);
+    filter: drop-shadow(0 0 2px rgb(39, 201, 255, 0.7))
+    drop-shadow(0 0 5px rgb(39, 201, 255, 0.7))
+    drop-shadow(0 0 15px rgb(39, 201, 255, 0.7));
+  }
+  .playground > ul > li {
+    list-style: none;
+    width: 100%;
+    height: 40px;
+  }
+  .playground > ul > li > ul {
+    display: flex;
+  }
+  .playground > ul > li > ul > li {
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(36, 237, 255, 1.0);
+    filter: drop-shadow(0 0 2px rgba(36, 237, 255, 0.4))
+    drop-shadow(0 0 5px rgba(36, 237, 255, 0.4))
+    drop-shadow(0 0 7px rgba(36, 237, 255, 0.4));
+  }
+  .tetris__score2 {
+    font-size: 30px;
+  }
+  
+  .Tmino {
+    border: 10px #a042a2 outset !important;
+    background-color: #952d98;
+  }
+  .Lmino {
+    border: 10px #ff861a outset !important;
+    background-color: #ff7900;
+  }
+  .Jmino {
+    border: 10px #1a74c4 outset !important;
+    background-color: #0065bd;
+  }
+  .Zmino {
+    border: 10px #ef3e4d outset !important;
+    background-color: #ed2939;
+  }
+  .Smino {
+    border: 10px #78c53e outset !important;
+    background-color: #69be28;
+  }
+  .Omino {
+    border: 10px #fed01a outset !important;
+    background-color: #fecb00;
+  }
+  .Imino {
+    border: 10px #1aa9de outset !important;
+    background-color: #009fda;
+  }
