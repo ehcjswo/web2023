@@ -338,6 +338,7 @@
 	overflow: hidden;
 	cursor: pointer;
 	height: 100%;
+	pointer-events: all;
 }
 .gifbox {
 	width: 100%;

@@ -37,6 +37,9 @@
        -o-transition-property:      -o-transform, opacity;
           transition-property:         transform, opacity;
 }
+#middle {
+    pointer-events: none;
+}
 
 /**** disabling Isotope CSS3 transitions ****/
 
