@@ -1,8 +1,9 @@
 'use strict';
 
 const canvas = document.getElementsByTagName('canvas')[0];
-canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
+const customizing = document.querySelector('#customizing');
+canvas.width = customizing.clientWidth;
+canvas.height = customizing.clientHeight;
 
 Array.prototype.getRandom = function() {
     return this[Math.floor(Math.random() * this.length)];
@@ -141,20 +142,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    window.wallpaperRegisterAudioListener((audioArray) => {
-        if (!config.AUDIO_RESPONSIVE) return;
-        if (audioArray[0] > 5) return;
+    // window.wallpaperRegisterAudioListener((audioArray) => {
+    //     if (!config.AUDIO_RESPONSIVE) return;
+    //     if (audioArray[0] > 5) return;
 
-        let bass = 0.0;
-        let half = Math.floor(audioArray.length / 2);
+    //     let bass = 0.0;
+    //     let half = Math.floor(audioArray.length / 2);
 
-        for (let i = 0; i <= config.FREQ_RANGE; i++) {
-            bass += audioArray[i + config.FREQ_RANGE_START];
-            bass += audioArray[half + (i + config.FREQ_RANGE_START)];
-        }
-        bass /= (config.FREQ_RANGE * 2);
-        multipleSplats(Math.floor((bass * config.SOUND_SENSITIVITY) * 10));
-    });
+    //     for (let i = 0; i <= config.FREQ_RANGE; i++) {
+    //         bass += audioArray[i + config.FREQ_RANGE_START];
+    //         bass += audioArray[half + (i + config.FREQ_RANGE_START)];
+    //     }
+    //     bass /= (config.FREQ_RANGE * 2);
+    //     multipleSplats(Math.floor((bass * config.SOUND_SENSITIVITY) * 10));
+    // });
 });
 
 function indexOfMax(arr) {

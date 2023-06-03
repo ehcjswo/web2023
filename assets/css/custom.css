@@ -1,5 +1,5 @@
 body {
-	background:#f1f4fb url(../img/body_bg.gif);
+	background:#f1f4fb;
 	overflow-x: hidden;
 }
 
@@ -78,6 +78,7 @@ body {
 	position: absolute;
 	top:-20%;
 	left:0;
+	z-index: -1;
 }
 
 #header .span12 {
@@ -152,10 +153,12 @@ pre.pre-show{
 	border-radius: 0px 0px 4px 4px;
 	
 }
-.container{
-	z-index: 1000;
-}
 #customizing canvas {
+	width: 100%;
+	height: 200%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -503,9 +506,7 @@ background: url('../img/AjaxLoader.gif') no-repeat center center #aebab6;
 	}
 	#header h1{
 	color: #3692b8;
-	
-	
-
+	}
 }
 
 /*NO MORE TABLES!! ;) 
@@ -528,14 +529,6 @@ background: url('../img/AjaxLoader.gif') no-repeat center center #aebab6;
 	}
 
 	td:nth-of-type(2):before { content: "" ;font-weight: bold;}
-    
-   
+
+	}
 }
-
-
-
-
-
-
-
-
