@@ -1,4 +1,7 @@
-body {background:#f1f4fb url(../img/body_bg.gif)}
+body {
+	background:#f1f4fb url(../img/body_bg.gif);
+	overflow-x: hidden;
+}
 
 
 
@@ -71,14 +74,12 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 	/* position: relative; */
 }
 /* 우주배경화면 */
-canvas {
+#header .canva {
 	position: absolute;
-	/* width: 100%;
-	height: 100%; */
 	top:-20%;
 	left:0;
 	z-index: -1;
-  }
+}
 
 #header .span12 {
 	z-index: 2;
@@ -152,9 +153,15 @@ pre.pre-show{
 	border-radius: 0px 0px 4px 4px;
 	
 }
-#customizing {
-	
+.container{
+	z-index: 1000;
 }
+#customizing canvas {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 
 /* header */
 .header_tit {margin-top:70px; }
@@ -204,10 +211,13 @@ padding: 8px 12px;
 /* Footer */
 
 #footer{
+	/* display: inline-block; */
 	margin-top: 80px;
+	top: 40px;
 	padding: 20px;
-	background: #f3f3f3;
-	text-align: center
+	background: #fff;
+	text-align: center;
+	position: relative;
 }
 .twitter-share-button{
 	top: 4px;
