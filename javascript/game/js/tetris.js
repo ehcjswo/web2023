@@ -248,14 +248,14 @@ function init() {
     prependNewLine(); // 블록 라인 만들기
   }
 
-  tetrisDuration = 1400;
+  tetrisDuration = 1000;
   tetrisSscore = 0;
   clearInterval(tetrisDurationTimeout);
 //   renderBlocks(); // 블록 출력하기
   tetrisDurationTimeout = setInterval(() => {
     tetrisDuration += -100;
     tetrisDuration <= 280 ? clearInterval(tetrisDurationTimeout) : null;
-  }, 15000);
+  }, 10000);
 
     // renderBlocks(); // 블록 출력하기
   generateNewBlock(); // 블록 만들기
