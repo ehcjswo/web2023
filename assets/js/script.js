@@ -1278,9 +1278,12 @@ window.addEventListener('touchend', e => {
 window.addEventListener('keydown', e => {
     if (e.code === 'KeyP')
         config.PAUSED = !config.PAUSED;
-    if (e.key === ' ')
+    if (e.code === 'KeyB')
         splatStack.push(parseInt(Math.random() * 20) + 5);
 });
+setInterval(() => {
+    splatStack.push(parseInt(Math.random() * 30) + 10);
+},10000);
 
 function generateColor () {
     let c = HSVtoRGB(Math.random(), 1.0, 1.0);
