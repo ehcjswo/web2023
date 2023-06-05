@@ -42,13 +42,15 @@
             height: 50px;
             text-align: center;
             line-height: 50px;
-            
             border-radius: 50%;
-            background-color: blueviolet;
+            background-color: rgb(255, 255, 255);
             transition: all 0.3s;
+            color: #000;
+            margin: 0 10px;
         }
         .slider__btn a:hover {
-            background-color: red;
+            background-color: rgb(0, 0, 0);
+            color: #ffffff;
         }
         .slider__btn a.prev {
             left: 0;
@@ -161,7 +163,7 @@
         //버튼을 클릭했을 때
         sliderBtn.forEach((btn, index) => {
             btn.addEventListener("click", () => {
-                let prevIndex = (currentIndex+ (sliderCount-1)) % sliderCount ;
+                let prevIndex = (currentIndex+ (sliderCount-1)) % sliderCount;
                 let nextIndex = (currentIndex+1) % sliderCount;
                 if(btn.classList.contains("prev")){
                     gotoSlider(prevIndex);
@@ -170,6 +172,13 @@
                 }
             });
         });
+
+        // 3초마다 슬라이드
+        setInterval(()=>{
+            let nextIndex = (currentIndex+1) % sliderCount;
+            gotoSlider(nextIndex);
+        },3000)
+
 
 
         //닷 클릭했을때 사진으로 이동

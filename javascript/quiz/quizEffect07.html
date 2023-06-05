@@ -109,6 +109,7 @@
                         <div class="cbt__score">
                             <span>전체 문제수 : <em class="cbt__length">0</em>문항</span>
                             <span>남은 문제수 : <em class="cbt__rest">0</em>문항</span>
+                            <span class="score"></span>
                         </div>
                     </div>                 
                 </div>
@@ -206,61 +207,43 @@
     <!--//footer-->
 
     <script>
-        const cbtBtn = document.querySelector(".ctb__start__btn");
-        const cbtStart = document.querySelector(".cbt__start");
-
-
-        //시작하기 누르면 모달창 닫기
-        cbtBtn.addEventListener("click", () => {
-            cbtStart.style.display = "none";
-        });
-
-        const cbtQuiz = document.querySelector(".cbt__quiz");
-        const cbtOmr = document.querySelector(".cbt__omr");
-        const cbtSubmit = document.querySelector(".cbt__submit");
-        const cbtInfo = document.querySelector(".cbt__info");
-        const cbtRest = document.querySelector(".cbt__rest");
-        const cbtLength = document.querySelector(".cbt__length");
-        const cbtScore = document.querySelector(".cbt__score");
-        const cbtName = document.querySelector(".cbt__name");
-        const cbtViewSubject = document.querySelector(".cbt__view .subject");
-        const cbtHeader = document.querySelector(".cbt__header h2");
-        const cbtTime = document.querySelector(".cbt__time");
+        //선택자
+        const cbtQuiz = document.querySelector(".cbt__quiz");   //문제
+        const cbtOmr = document.querySelector(".cbt__omr"); //omr
+        const cbtSubmit = document.querySelector(".cbt__submit");   //답안지 제출
+        const cbtInfo = document.querySelector(".cbt__info");   //타이머,이름칸
+        const cbtRest = document.querySelector(".cbt__rest");   //남은 문제수
+        const cbtLength = document.querySelector(".cbt__length");   //전체 문제수
+        const cbtScore = document.querySelector(".cbt__score"); //점수
+        const cbtName = document.querySelector(".cbt__name"); //이름
+        const cbtViewInput = document.querySelector(".cbt__view input"); //이름입력
+        const cbtViewSubject = document.querySelector(".cbt__view .subject"); //기능사 종류
+        const cbtHeader = document.querySelector(".cbt__header h2"); //제목
+        const cbtTime = document.querySelector(".cbt__time"); //타이머
+        const cbtBtn = document.querySelector(".ctb__start__btn"); //모달창 시작버튼
+        const cbtStart = document.querySelector(".cbt__start"); //모달창
 
         let quizScore = 0;
-
         let questionAll = [];   //모든 퀴즈 정보
         let questionLength = 0; //전체 문제수
         let questionRest = questionLength; //남은 문제수
         let questionTime = "";
-        let questionTimeRemain = "1000";
+        let questionTimeRemain = "3600";
 
-        const sTartQuiz = () => {
-            questionTime = setInterval(reduceTime, 1000);
-        }
-
-        
-        // //남은 시간
-        // let minutes = 60;
-        // let seconds = 0;
-
-        // function countdown() {
-        //     const timerElement = document.querySelector(".cbt__time");
-        //     timerElement.innerHTML = `남은 시간 : ${minutes}분 ${seconds.toString().padStart(2, '0')}초`;
+        const startQuiz = () => {
+            //모달창 닫기
+            cbtStart.classList.add("hide");
             
-        //     if(seconds === 0){
-        //         seconds = 59;
-        //         minutes--;
-        //     } else {
-        //         seconds--;
-        //     }
-        //     if(minutes < 0){
-        //         clearInterval(timer);
-        //         alert("시험시간이 끝났습니다. 답안을 제출해주세요.");
-        //     }
-        // }
+            //이름적을시 이름표
+            cbtName.innerText = cbtViewInput.value;
+            if(cbtViewInput.value == ""){
+                cbtName.innerText = "바보"
+            }
 
-        // const timer = setInterval(countdown, 1000);
+            //초 세기
+            questionTime = setInterval(reduceTime, 1000);
+            
+        }
 
         //데이터 불러오기
         const dataQuestion = (value) => {
@@ -271,10 +254,6 @@
                     const formattedQuestion = {
                         question: item.question,
                         Number: index +1,
-                        // choice1: "정답",
-                        // choice1: "오답",
-                        // choice1: "오답",
-                        // choice1: "오답",
 
                     }
                     const answerChoices = [...item.incorrect_answers];  //오답 불러오기
@@ -299,6 +278,11 @@
                     //해설이 있으면 출력
                     if(item.hasOwnProperty("desc")){
                         formattedQuestion.desc = item.desc;
+                    }
+
+                    //정답 밑에 표시
+                    if(item.hasOwnProperty("correct_answer")){
+                        formattedQuestion.correct_answer = item.correct_answer;
                     }
 
                     
@@ -338,7 +322,7 @@
                                 <input type="radio" name="select${number}" id="select${number}_4" value="${number}_4" onclick="answerSelect2(this)">
                                 <label for="select${number}_4"><span>${question.choice4}</span></label> 
                         </div>
-                        <div class="cbt__desc hide">${question.Desc}</div>
+                        <div class="cbt__desc hide">답: ${question.correct_answer}<br><br> ${question.desc}</div>
                     </div>
                 `);
                 
@@ -368,26 +352,6 @@
 
             cbtQuiz.innerHTML = exam.join('');
             cbtOmr.innerHTML = omr.join('');
-
-
-            // //문제설명 숨기기
-            // const questionDesc = document.querySelectorAll(".cbt__question__desc");
-
-            // questionDesc.forEach(el => {
-            //     if(el.innerHTML == "undefined"){
-            //         el.style.display = "none";
-            //     }
-            // });
-
-
-            // //이미지 숨기기
-            // const questionImg = document.querySelectorAll(".cbt__question__img");
-
-            // questionImg.forEach(el => {
-            //     if(el.innerHTML == "undefined"){
-            //         el.style.display = "none";
-            //     }
-            // }); 
             
             //undefined 문제 설명 숨기기
             document.querySelectorAll(".cbt__question__desc").forEach(desc => {
@@ -402,8 +366,8 @@
                 if(src.includes("undefined")){
                     img.classList.add("hide");
                 }
-            });
-        }
+            })
+        };
             
 
         //정답 확인
@@ -414,28 +378,41 @@
                 const userSelector = `input[name=select${number}]:checked`;
                 const userAnswer = (quizSelectWrap.querySelector(userSelector) || {}).value;
                 const numberAnswer = userAnswer ? userAnswer.slice(-1) : undefined;
+                
             
                 if(numberAnswer == question.Answer){
-                    console.log("O");
                     cbtSelect[number].parentElement.classList.add("good");
+                    quizScore++
                 } else {
-                    console.log("X")
                     cbtSelect[number].parentElement.classList.add("bad");
 
+                    //오답일 경우 정답 표시
                     const label = cbtSelect[number].querySelectorAll("label");
                     label[question.Answer-1].classList.add("correct");
                 }
 
+                //설명 숨기기
                 const quizDesc = document.querySelectorAll(".cbt__desc");
 
-                //설명 숨기기
                 if(quizDesc[number].innerHTML == "undefined"){
                     quizDesc[number].classList.add("hide");
                 } else {
                     quizDesc[number].classList.remove("hide");
                 }
+                //점수 표시
+                const score = Math.ceil((quizScore/questionAll.length) * 100);
+                console.log(questionAll.length+"questionAll.length")
+                console.log(quizScore+"quizScore");
+                console.log(score+"score");
+                if(score >=60){
+                document.querySelector(".score").innerHTML = `총 점수: ${score}점! <br>잘하셨어요!`;
+                clearInterval(questionTime);
+                } else {
+                    document.querySelector(".score").innerHTML = `총 점수: ${score}점 <br> 공부하세요!!`;
+                    clearInterval(questionTime);
+                }
             });
-            document.querySelector(".score").innerHTML = `총 점수는 ${Math.ceil((quizScore / questionAll.length) * 100)}점입니다.`;
+            
         }
         
         //보기 체크
@@ -464,20 +441,6 @@
             cbtRest.innerHTML = questionLength - answerInputs.length;   //총 문제수 - 보기 체크 수 = 남은 문제 수
         }
 
-
-        // const changeSelect = () => {
-        //     let selectValue = cbtIndex.options[cbtIndex.selectedIndex].value;
-        //     let selectText = cbtIndex.options[cbtIndex.selectedIndex].text;
-
-        //     alert(selectValue)
-        // }
-        // const changeSelect2 = () => {
-        //     let selectValue = cbtIndex2.options[cbtIndex2.selectedIndex].value;
-        //     let selectText = cbtIndex2.options[cbtIndex2.selectedIndex].text;
-
-        //     alert(selectValue)
-        // }
-
         //문제 선택
         const changeSelect = (e) => {
             let selectValue = e.value;
@@ -505,18 +468,19 @@
                 let minutes = Math.floor(questionTimeRemain / 60);
                 let seconds = questionTimeRemain % 60;
 
-                return minutes + "분 " + (seconds.toString().padStart(2, '0')) + "초 "; //padStart 초앞에 0뜨게 하기
+                return minutes + "분 " + seconds.toString().padStart(2, '0') + "초 "; //padStart 초앞에 0뜨게 하기
                 //초의 단위가 한자리 수가 되면 앞에 0을 붙여주기
-                setInterval(countdown, 1000);
+                
             }
         }
 
         //시험 끝
         const endQuiz = () => {
-            alert("시험이 끝났습니다.")
+            alert("시험이 끝났습니다.");
+            clearInterval(questionTime);
         }
 
-        cbtStart.addEventListener("click", sTartQuiz);
+        cbtBtn.addEventListener("click", startQuiz);
         cbtSubmit.addEventListener("click", answerQuiz);
         
     </script>

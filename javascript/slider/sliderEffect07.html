@@ -198,6 +198,19 @@
                 slider.thumnails.querySelector("img.active").classList.remove("active");
                 thumnailNodes[currentIndex].classList.add("active");
             });
+
+            // 3초마다 슬라이드
+            setInterval(()=>{
+                imageNodes[currentIndex].classList.remove("active");
+
+                currentIndex = (currentIndex + 1 ) % images.length;
+
+                imageNodes[currentIndex].classList.add("active");
+
+                //썸네일
+                slider.thumnails.querySelector("img.active").classList.remove("active");
+                thumnailNodes[currentIndex].classList.add("active");
+            },3000);
             
         } 
 

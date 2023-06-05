@@ -642,7 +642,7 @@ body {
     /* background-color: red; */
     box-shadow:inset 1 1 0 1px #000000;
     color: white;
-    background-color: #ff0000;
+    background-color: #000000;
 }
 .cbt__selects label.correct span::before {
     border-color: rgb(25, 0, 255);
