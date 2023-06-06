@@ -221,6 +221,9 @@ img {
     height: 100px;
     background-color: #c4c4c4;
 }
+#footer .container {
+    display: flex;
+}
 #footer .container .footer1 {
     width: 70%;
 }
