@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: #161615;
+            
+        }
+        #lines {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .line1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* background-color: #fff; */
+            transform-origin: top;
+            height: 100%;
+            width: 100%;
+            /* animation: drawLine 2s ease-in-out forwards; */
+        }
+        
+        /* @keyframes drawLine {
+            0% {
+                height: 0%;
+                transform: rotate(0deg);
+            }
+            50% {
+                height: 100%;
+                transform: rotate(180deg);
+            }
+            100% {
+                height: 100%;
+                transform: rotate(360deg);
+            }
+        } */
+        
+        .line1 {
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            top: 50%;
+            background-size: cover;
+            overflow: hidden;
+            background-image: url(img/Line.svg);
+            /* transform: rotate(150deg); */
+        }
+        .moving-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(-90deg) translate(50%, -50%);
+            stroke-dasharray: 500px;    
+            stroke-dashoffset: 500; 
+            animation: ani 0.7s linear forwards;
+        }
+        @keyframes ani {
+            0% {
+                stroke-dashoffset: 500px; 
+
+            }
+            
+            100% {
+                stroke-dashoffset: 0px;
+                
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="lines">
+        <div class="line1"></div>
+        <svg class="moving-circle" width="300" height="300" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="white"/>
+        </svg>
+                
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+
+    <script>
+        const line1 = document.querySelector(".line1");
+        const line2 = document.querySelector(".line2");
+        const ani1 = gsap.timeline();
+        const ani2 = gsap.timeline();
+
+        // 초기 상태 설정
+        ani1.set(line1, { width: 0, backgroundColor: "white", left: 0 });
+
+        // 선 그리기
+        ani1.to(line1, { delay:0.1,duration: 0.5, width: "100%", ease: "power4.in"});
+
+
+
+        // // 초기 상태 설정
+        // ani2.set(line1, {  });
+
+        // // 선 그리기
+        // ani2.to(line1, { delay: 0.5, duration: 0.5, });
+                
+    </script>
+
+</body>
+</html>

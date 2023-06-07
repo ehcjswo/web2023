@@ -116,7 +116,6 @@ main {
     width: 100%;
     padding-bottom: 56.25%;
     position: relative;
-    z-index: -1;
     overflow: hidden;
 }
 .parallax__item__img {
@@ -129,7 +128,13 @@ main {
     background-position: center center;
     background-size: cover;
     filter: saturate(0%);
-    transition: filter 1s;
+    transition: filter 1s, transform 1s;
+    z-index: 50;
+}
+.parallax__item__img:hover {
+    filter: saturate(100%);
+    transform: scale(1.025);
+    cursor: pointer;
 }
 .parallax__item:nth-child(1) .parallax__item__img {
     background-image: url(../img/SliderEffect01-min.jpg);
@@ -164,6 +169,8 @@ main {
     margin-top: -5vw;
     margin-left: -4vw;
     word-break: keep-all;
+    z-index: 100;
+    position: relative;
 }
 .parallax__item:nth-child(even) .parallax__item__desc {
     margin-left: auto;
