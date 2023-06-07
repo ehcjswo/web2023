@@ -135,11 +135,11 @@
             <!-- //section3 -->
             <section id="section4" class="parallaxs__item">
                 <span class="parallaxs__item__num">04</span>
-                <div class="parallaxs__item__img"></div>
-                <div class="parallaxs__item__img"></div>
-                <div class="parallaxs__item__img"></div>
-                <div class="parallaxs__item__img"></div>
-                <div class="parallaxs__item__img"></div>
+                <div class="parallaxs__item__img i1"></div>
+                <div class="parallaxs__item__img i2"></div>
+                <div class="parallaxs__item__img i3"></div>
+                <div class="parallaxs__item__img i4"></div>
+                <div class="parallaxs__item__img i5"></div>
             </section>
             <!-- //section4 -->
             <section id="section5" class="parallaxs__item">
@@ -149,17 +149,26 @@
             <!-- //section5 -->
             <section id="section6" class="parallaxs__item">
                 <span class="parallaxs__item__num">06</span>
-                <div class="parallaxs__item__img"></div>
+                <div class="parallaxs__item__img i1"></div>
+                <div class="parallaxs__item__img i2"></div>
+                <div class="parallaxs__item__img i3"></div>
             </section>
             <!-- //section6 -->
             <section id="section7" class="parallaxs__item">
                 <span class="parallaxs__item__num">07</span>
-                <div class="parallaxs__item__img"></div>
+                <div class="parallaxs__item__img i1"></div>
+                <div class="parallaxs__item__img i2"></div>
+                <div class="parallaxs__item__img i3"></div>
+                <div class="parallaxs__item__img i4"></div>
+                <div class="parallaxs__item__img i5"></div>
+                <div class="parallaxs__item__img i6"></div>
             </section>
             <!-- //section7 -->
             <section id="section8" class="parallaxs__item">
                 <span class="parallaxs__item__num">08</span>
-                <div class="parallaxs__item__img"></div>
+                <div class="parallaxs__item__img i1"></div>
+                <div class="parallaxs__item__img i2"></div>
+                <div class="parallaxs__item__img i3"></div>
             </section>
             <!-- //section8 -->
             <section id="section9" class="parallaxs__item">
@@ -180,11 +189,24 @@
         const box3_1 = document.querySelector("#section3 .parallaxs__item__img.i1");
         const box3_2 = document.querySelector("#section3 .parallaxs__item__img.i2");
         const box3_3 = document.querySelector("#section3 .parallaxs__item__img.i3");
-        const box4 = document.querySelector("#section4 .parallaxs__item__img");
+        const box4_1 = document.querySelector("#section4 .parallaxs__item__img.i1");
+        const box4_2 = document.querySelector("#section4 .parallaxs__item__img.i2");
+        const box4_3 = document.querySelector("#section4 .parallaxs__item__img.i3");
+        const box4_4 = document.querySelector("#section4 .parallaxs__item__img.i4");
+        const box4_5 = document.querySelector("#section4 .parallaxs__item__img.i5");
         const box5 = document.querySelector("#section5 .parallaxs__item__img");
-        const box6 = document.querySelector("#section6 .parallaxs__item__img");
-        const box7 = document.querySelector("#section7 .parallaxs__item__img");
-        const box8 = document.querySelector("#section8 .parallaxs__item__img");
+        const box6_1 = document.querySelector("#section6 .parallaxs__item__img.i1");
+        const box6_2 = document.querySelector("#section6 .parallaxs__item__img.i2");
+        const box6_3 = document.querySelector("#section6 .parallaxs__item__img.i3");
+        const box7_1 = document.querySelector("#section7 .parallaxs__item__img.i1");
+        const box7_2 = document.querySelector("#section7 .parallaxs__item__img.i2");
+        const box7_3 = document.querySelector("#section7 .parallaxs__item__img.i3");
+        const box7_4 = document.querySelector("#section7 .parallaxs__item__img.i4");
+        const box7_5 = document.querySelector("#section7 .parallaxs__item__img.i5");
+        const box7_6 = document.querySelector("#section7 .parallaxs__item__img.i6");
+        const box8_1 = document.querySelector("#section8 .parallaxs__item__img.i1");
+        const box8_2 = document.querySelector("#section8 .parallaxs__item__img.i2");
+        const box8_3 = document.querySelector("#section8 .parallaxs__item__img.i3");
         const box9 = document.querySelector("#section9 .parallaxs__item__img");
 
         // gsap.to("#section1 .parallaxs__item__img", {
@@ -243,18 +265,150 @@
             scrub: true,
             pin: true,
             anticipatePin:1,
-            markers: true,
+            markers: false,
         });
 
         const ani4 = gsap.timeline();
-        ani4.fromTo("#section4", {x:-200,y:100, duration:1})
+        ani4.from(box4_1, {y:100, duration:1}, "a")
+        ani4.from(box4_2, {y:-100, duration:1}, "a")
+        ani4.from(box4_3, {y:100, duration:1}, "a")
+        ani4.from(box4_4, {y:-100, duration:1}, "a")
+        ani4.from(box4_5, {y:100, duration:1}, "a")
         
-
         ScrollTrigger.create({
             animation: ani4,
             trigger: "#section4",
             start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticipatePin:1,
+            markers: true,
+        });
+
+
+        const ani5 = gsap.timeline();
+        ani5.from(box5, {scale:0, opacity:0, duration:1})
+        
+
+        ScrollTrigger.create({
+            animation: ani5,
+            trigger: "#section5",
+            start: "top top",
             end: "+=3000",
+            scrub: true,
+            pin: true,
+            anticipatePin:1,
+            markers: false,
+        });
+
+
+        const ani6 = gsap.timeline();
+        ani6.from(box6_1, {x:-500, y:100, duration:1}, "a")
+            .from(box6_1, {x:500, y:-100, duration:1})
+            .to(box6_1, {x:-50, y:00})
+            
+
+        ani6.from(box6_2, {y:-100, duration:1}, "a")
+        ani6.from(box6_2, {x:-100, y:-500, duration:1})
+        ani6.to(box6_2, {x:0, y:0})
+
+        ani6.from(box6_3, {y:100, duration:1}, "a")
+        ani6.from(box6_3, {x:400, y:300, duration:1})
+        ani6.to(box6_3, {x:50, y:0})
+        
+        ScrollTrigger.create({
+            animation: ani6,
+            trigger: "#section6",
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true,
+            anticipatePin:1,
+            markers: false,
+        });
+
+        const ani7 = gsap.timeline();
+        ani7.from(box7_1, {x:00, y:100, duration:1, rotation:300}, "a")
+        ani7.to(box7_1, {x:0, y:00},"b")
+            
+
+        ani7.from(box7_2, {x:00,y:-100, duration:1, opacity:0}, "a")
+        ani7.to(box7_2, {x:0, y:00},"b")
+
+        ani7.from(box7_3, {x:00,y:100, duration:1, scale:0 }, "a")
+        ani7.to(box7_3, {x:0, y:0},"b")
+
+        ani7.from(box7_4, {x:00, y:-500, duration:1}, "a")
+        ani7.to(box7_4, {x:0, y:00},"b")
+            
+
+        ani7.from(box7_5, {x:00,y:100, duration:1,opacity:0}, "a")
+        ani7.to(box7_5, {x:0, y:0},"b")
+
+        ani7.from(box7_6, {x:000,y:-100, duration:1,rotation:-300}, "a")
+        ani7.to(box7_6, {x:0, y:0},"b")
+        
+        ScrollTrigger.create({
+            animation: ani7,
+            trigger: "#section7",
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true,
+            anticipatePin:1,
+            markers: false,
+        });
+
+        const ani8 = gsap.timeline();
+        ani8.to(box8_1, {x:200, y:000,duration:5}, "a")
+        ani8.to(box8_1, {x:300, y:300,duration:5},"b")
+        ani8.to(box8_1, {x:500, y:000,duration:5},"c")
+        ani8.to(box8_1, {x:200, y:-300,duration:5},"d")
+        ani8.to(box8_1, {x:200, y:00,duration:5},"e")
+        ani8.to(box8_1, {x:0, y:00,duration:5},"f")
+        
+            
+
+        ani8.to(box8_2, {x:00,y:00,duration:5}, "a")
+        ani8.to(box8_2, {x:100, y:300,delay:0.2,duration:5},"b")
+        ani8.to(box8_2, {x:300, y:000,delay:0.2,duration:5},"c")
+        ani8.to(box8_2, {x:00, y:-300,delay:0.2,duration:5},"d")
+        ani8.to(box8_2, {x:00, y:00,delay:0.2,duration:5},"e")
+        ani8.to(box8_2, {x:00, y:00,delay:0.2,duration:5},"f")
+
+        ani8.to(box8_3, {x:-200,y:00,duration:5}, "a")
+        ani8.to(box8_3, {x:-100, y:300,delay:0.4,duration:5},"b")
+        ani8.to(box8_3, {x:100, y:000,delay:0.4,duration:5},"c")
+        ani8.to(box8_3, {x:-200, y:-300,delay:0.4,duration:5},"d")
+        ani8.to(box8_3, {x:-200, y:00,delay:0.4,duration:5},"e")
+        ani8.to(box8_3, {x:00, y:00,delay:0.4,duration:5},"f")
+        
+        ScrollTrigger.create({
+            animation: ani8,
+            trigger: "#section8",
+            start: "top top",
+            end: "+=5000",
+            scrub: true,
+            pin: true,
+            anticipatePin:1,
+            markers: false,
+        });
+
+        const ani9 = gsap.timeline();
+        ani9.from(box9, {x:0,y:0,scale:0,opacity:0,duration:5})
+        ani9.to(box9, {x:1000,y:0,rotation:1300,duration:5})
+        ani9.to(box9, {x:-800,y:700,rotation:-1300,duration:5})
+        ani9.to(box9, {x:0,y:-800,rotation:1300,duration:5})
+        ani9.to(box9, {x:800,y:800,rotation:-1300,duration:5})
+        ani9.to(box9, {x:-800,y:-300,rotation:1300,duration:5})
+        ani9.to(box9, {x:0,y:0,rotation:0,duration:5})
+        
+        ScrollTrigger.create({
+            animation: ani9,
+            trigger: "#section9",
+            start: "top top",
+            end: "+=4500",
             scrub: true,
             pin: true,
             anticipatePin:1,
