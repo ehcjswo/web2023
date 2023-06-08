@@ -31,63 +31,108 @@
             /* animation: drawLine 2s ease-in-out forwards; */
         }
         
-        /* @keyframes drawLine {
-            0% {
-                height: 0%;
-                transform: rotate(0deg);
-            }
-            50% {
-                height: 100%;
-                transform: rotate(180deg);
-            }
-            100% {
-                height: 100%;
-                transform: rotate(360deg);
-            }
-        } */
-        
         .line1 {
             position: absolute;
             width: 0%;
-            height: 1px;
+            height: 0.5%;
             top: 50%;
             background-size: cover;
             overflow: hidden;
             background-image: url(img/Line.svg);
             /* transform: rotate(150deg); */
         }
-        .moving-circle {
-            position: absolute;
+        .center {
+            position: relative;
+            width: 50vw;
+            height: 40vw;
             top: 50%;
             left: 50%;
-            transform: rotate(-90deg) translate(50%, -50%);
-            stroke-dasharray: 500px;    
-            stroke-dashoffset: 500; 
-            animation: ani 0.7s linear forwards;
+            transform: translate(-50%, -50%);
+            /* background-color: #fff; */
         }
-        @keyframes ani {
-            0% {
-                stroke-dashoffset: 500px; 
+        .center::after {
+            content: '';
+            color: #fff;
+            position: absolute;
+            height: 500px;
+            width: 1px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* background-color: red; */
+        }
+        .line2 {
+            position: absolute;
+            width: 1%;
+            max-width: 3px;
+            height: 29vw;
+            top: 14.9%;
+            left: 21.67%;
+            background-position: 30%;
+            /* transform: rotate(150deg); */
+        }
+        .moving-circle {
+            width: 30vw;
+            height: 30vw;
+            position: absolute;
+            top: 50%;
+            left: 21%;
+            transform:  translate(-50%, -50%);
+            /* stroke-dasharray: 252px;    
+            stroke-dashoffset: 200;  */
+            stroke-dasharray: 251.7px;    
+            stroke-dashoffset: 100; 
 
-            }
-            
-            100% {
-                stroke-dashoffset: 0px;
-                
-            }
-            
         }
+        .line_HL {
+            position: absolute;
+            width: 1%;
+            max-width: 3px;
+            height: 28.1vw;
+            /* min-height: 400px; */
+            top: 15%;
+            left: 49.5%;
+        }
+        .line_HR {
+            position: absolute;
+            width: 1%;
+            max-width: 3px;
+            height: 28.1vw;
+            /* min-height: 400px; */
+            top: 15%;
+            left: 76%;
+        }
+        
 
     </style>
 </head>
 <body>
     <div id="lines">
         <div class="line1"></div>
-        <svg class="moving-circle" width="300" height="300" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="white"/>
-        </svg>
-                
+        <div class="center">
+            <svg class="line2" viewBox="0 0 2 552" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 552L1.00002 -4.37113e-08" stroke="white" stroke-width="2"/>
+            </svg>
+            <svg class="moving-circle" width="800" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="white"/>
+            </svg>
+            <svg class="line_HL" viewBox="0 0 2 552" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 552L1.00002 -4.37113e-08" stroke="white" stroke-width="2"/>
+            </svg>
+            <svg class="line_HR" viewBox="0 0 2 552" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 552L1.00002 -4.37113e-08" stroke="white" stroke-width="2"/>
+            </svg>
+        </div>   
     </div>
+    <!-- <div id="lines">
+        <div class="line1"></div>
+        <div class="center">
+            <div class="line2"></div>
+            <svg class="moving-circle" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="white"/>
+            </svg>
+        </div>   
+    </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
@@ -95,22 +140,27 @@
     <script>
         const line1 = document.querySelector(".line1");
         const line2 = document.querySelector(".line2");
-        const ani1 = gsap.timeline();
-        const ani2 = gsap.timeline();
+        const lineHL = document.querySelector(".line_HL");
+        const lineHR = document.querySelector(".line_HR");
+        const movingCircle = document.querySelector(".moving-circle");
+
 
         // 초기 상태 설정
-        ani1.set(line1, { width: 0, backgroundColor: "white", left: 0 });
+        gsap.set(line1, { width: 0, backgroundColor: "white", left: 0 });
+        gsap.set(line2, {  backgroundColor: "white", height:0 });
+        gsap.set(lineHL, {  backgroundColor: "white", height:0 });
+        gsap.set(lineHR, {  backgroundColor: "white", height:0 });
+        gsap.set(movingCircle, {   opacity:0 });
 
         // 선 그리기
-        ani1.to(line1, { delay:0.1,duration: 0.5, width: "100%", ease: "power4.in"});
+        gsap.to(line1, { delay:1.5,duration: 0.5, width: "100%", ease: "power4.in"});
+        gsap.to(line2, { delay:0.2,duration: 1,height:"28.1vw",  ease: "power4.inOut"});
+        gsap.to(lineHL, { delay:0.3,duration: 1,height:"28.1vw",  ease: "power4.inOut"});
+        gsap.to(lineHR, { delay:0.4                                                ,duration: 1,height:"28.1vw",  ease: "power4.inOut"});
+        gsap.to(movingCircle, {delay:1,duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -374})
 
 
-
-        // // 초기 상태 설정
-        // ani2.set(line1, {  });
-
-        // // 선 그리기
-        // ani2.to(line1, { delay: 0.5, duration: 0.5, });
+    
                 
     </script>
 
