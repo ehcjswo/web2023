@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 이펙트02</title>
+    <title>패럴랙스 이펙트10</title>
     <style>
-        
+        #header {
+            padding-top: 50px;
+        }
 
     </style>
 
@@ -16,10 +18,10 @@
 <body class="bg01 font05">
     <header id="header">
         <h1><a href="https://ehcjswo.github.io/web2023/index.html">Javascript parallax Effect01</a></h1>
-        <p>패럴랙스 이펙트 : 나타나기</p>
+        <p>패럴랙스 이펙트 : 메뉴 이동</p>
         <ul>
             <li><a href="gsap01.html">1</a></li>
-            <li class="active"><a href="gsap02.html">2</a></li>
+            <li><a href="gsap02.html">2</a></li>
             <li><a href="gsap03.html">3</a></li>
             <li><a href="gsap04.html">4</a></li>
             <li><a href="gsap05.html">5</a></li>
@@ -27,100 +29,113 @@
             <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
             <li><a href="gsap09.html">9</a></li>
-            <li><a href="gsap10.html">10</a></li>
+            <li class="active"><a href="gsap10.html">10</a></li>
         </ul>
     </header>
     <!-- //header-->
+    <nav class="parallax__nav">
+        <ul>
+            <li class="active"><a href="#section1">메뉴1</a></li>
+            <li><a href="#section2">메뉴2</a></li>
+            <li><a href="#section3">메뉴3</a></li>
+            <li><a href="#section4">메뉴4</a></li>
+            <li><a href="#section5">메뉴5</a></li>
+            <li><a href="#section6">메뉴6</a></li>
+            <li><a href="#section7">메뉴7</a></li>
+            <li><a href="#section8">메뉴8</a></li>
+            <li><a href="#section9">메뉴9</a></li>
+        </ul>
+    </nav>
 
     <main id="main">
         <div id="parallax__wrap">
             <section id="section1" class="parallax__item">
                 <span class="parallax__item__num">01</span>
                 <h2 class="parallax__item__title">Section1</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_BTT">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">행운의 여신은 용기 있는 자를 좋아한다.</p>
+                <p class="parallax__item__desc gsap_reveal" data-delay="0.3">행운의 여신은 용기 있는 자를 좋아한다.</p>
             </section>
             <!-- //section1 -->
 
             <section id="section2" class="parallax__item">
                 <span class="parallax__item__num">02</span>
                 <h2 class="parallax__item__title">Section2</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_TTB">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">꿈이 없다면 아무 일도 일어나지 않는다.</p>
+                <p class="parallax__item__desc gsap_reveal reveal_LTR" data-delay="0.3">꿈이 없다면 아무 일도 일어나지 않는다.</p>
             </section>
             <!-- //section2 -->
 
             <section id="section3" class="parallax__item">
                 <span class="parallax__item__num">03</span>
                 <h2 class="parallax__item__title">Section3</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_BTT">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">지나간 일로 미래를 설계할 수는 없다.</p>
+                <p class="parallax__item__desc gsap_reveal" data-delay="0.3">지나간 일로 미래를 설계할 수는 없다.</p>
             </section>
             <!-- //section3 -->
 
             <section id="section4" class="parallax__item">
                 <span class="parallax__item__num">04</span>
                 <h2 class="parallax__item__title">Section4</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_TTB">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">준비하지 않은 자는 기회가 와도 소용없다.</p>
+                <p class="parallax__item__desc gsap_reveal reveal_LTR" data-delay="0.3">준비하지 않은 자는 기회가 와도 소용없다.</p>
             </section>
             <!-- //section4 -->
             
             <section id="section5" class="parallax__item">
                 <span class="parallax__item__num">05</span>
                 <h2 class="parallax__item__title">Section5</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_BTT">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">노력에 집착하라. 숙명적인 노력을.</p>
+                <p class="parallax__item__desc gsap_reveal" data-delay="0.3">노력에 집착하라. 숙명적인 노력을.</p>
             </section>
             <!-- //section5 -->
             
             <section id="section6" class="parallax__item">
                 <span class="parallax__item__num">06</span>
                 <h2 class="parallax__item__title">Section6</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_TTB">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">내일이란 오늘의 다른 이름일 뿐</p>
+                <p class="parallax__item__desc gsap_reveal reveal_LTR" data-delay="0.3">내일이란 오늘의 다른 이름일 뿐</p>
             </section>
             <!-- //section6 -->
             
             <section id="section7" class="parallax__item">
                 <span class="parallax__item__num">07</span>
                 <h2 class="parallax__item__title">Section7</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_BTT">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">불가능한 일을 해보는 것은 신나는 일이다.</p>
+                <p class="parallax__item__desc gsap_reveal" data-delay="0.3">불가능한 일을 해보는 것은 신나는 일이다.</p>
             </section>
             <!-- //section7 -->
             
             <section id="section8" class="parallax__item">
                 <span class="parallax__item__num">08</span>
                 <h2 class="parallax__item__title">Section8</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_TTB">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">당신이 포기할 때, 나는 시작한다.</p>
+                <p class="parallax__item__desc gsap_reveal reveal_LTR" data-delay="0.3">당신이 포기할 때, 나는 시작한다.</p>
             </section>
             <!-- //section8 -->
             
             <section id="section9" class="parallax__item">
                 <span class="parallax__item__num">09</span>
                 <h2 class="parallax__item__title">Section9</h2>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap gsap_reveal reveal_BTT">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc gsap_secse">나이가 성숙을 보장하지는 않는다.</p>
+                <p class="parallax__item__desc gsap_reveal" data-delay="0.3">나이가 성숙을 보장하지는 않는다.</p>
             </section>
             <!-- //section9 -->
             
@@ -136,35 +151,41 @@
     <!-- //footer-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     
     <script>
-        // gsap.to(".gsap_secse", {
-        //     duration: 1,
-        //     yPercent: -100,
-        //     scrollTrigger: {
-        //         trigger: "#section2",
-        //         start: "top 50%",
-        //         end: "bottom 0%",
-        //         scrub: true, 
-        //         markers: true
-        //     }
-        // })
+        let links = gsap.utils.toArray(".parallax__nav ul li a");
+        let links2 = gsap.utils.toArray(".parallax__nav ul li");
+        
 
-        gsap.utils.toArray(".gsap_secse").forEach(function(item){
-            gsap.to(item, {
-            duration: 1,
-            yPercent: -100,
-            scrollTrigger: {
-                trigger: item,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true, 
-                markers: true
-            }
-        })
+        links.forEach(e => {
+            let element = document.querySelector(e.getAttribute("href"));
+
+            let startLink = ScrollTrigger.create({
+                trigger : element,
+                start: "top top"
+            });
+
+            ScrollTrigger.create({
+                trigger: element,
+                start: "top center",
+                end: "bottom center",
+                onToggle: self => self.isActive && setActive(e),
+            });
+
+            e.addEventListener("click", a => {
+                a.preventDefault();
+                gsap.to(window, {duration: 0.5, scrollTo: startLink.start, overwrite: "auto"})
+            })
         });
+
+        function setActive(link){
+            const parentElement = link.parentElement;
+            links.forEach(link => link.parentElement.classList.remove("active"));
+            parentElement.classList.add("active");
+        }
+
     </script>
 </body>
 </html>

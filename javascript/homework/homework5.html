@@ -63,11 +63,9 @@
         }
         .line2 {
             position: absolute;
-            width: 1%;
-            max-width: 3px;
             height: 29vw;
             top: 14.9%;
-            left: 21.67%;
+            left: 22%;
             background-position: 30%;
             /* transform: rotate(150deg); */
         }
@@ -76,7 +74,7 @@
             height: 30vw;
             position: absolute;
             top: 50%;
-            left: 21%;
+            left: 21.4%;
             transform:  translate(-50%, -50%);
             /* stroke-dasharray: 252px;    
             stroke-dashoffset: 200;  */
@@ -84,23 +82,49 @@
             stroke-dashoffset: 100; 
 
         }
+        .moving-circle2 {
+            width: 30vw;
+            height: 30vw;
+            position: absolute;
+            top: 50%;
+            left: 78.6%;
+            transform:  translate(-50%, -50%) rotate(180deg);
+            /* stroke-dasharray: 252px;    
+            stroke-dashoffset: 200;  */
+            stroke-dasharray: 500px;    
+            stroke-dashoffset: 500; 
+
+        }
         .line_HL {
             position: absolute;
-            width: 1%;
+            /* width: 1%; */
             max-width: 3px;
             height: 28.1vw;
             /* min-height: 400px; */
             top: 15%;
-            left: 49.5%;
+            left: 50%;
         }
         .line_HR {
             position: absolute;
-            width: 1%;
+            /* width: 1%; */
             max-width: 3px;
             height: 28.1vw;
             /* min-height: 400px; */
             top: 15%;
-            left: 76%;
+            left: 78%;
+        }
+        .lineX_L {
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(60deg);
+        }
+        .lineX_R {
+            position: absolute;
+            left: 100.5%;
+            top: 50%;
+            height:auto;
+            transform: translate(-50%, -50%) rotate(600deg);
         }
         
 
@@ -110,19 +134,30 @@
     <div id="lines">
         <div class="line1"></div>
         <div class="center">
-            <svg class="line2" viewBox="0 0 2 552" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 552L1.00002 -4.37113e-08" stroke="white" stroke-width="2"/>
+            <svg class="line2" height="4746" viewBox="0 0 2 522" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
             </svg>
             <svg class="moving-circle" width="800" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="white"/>
             </svg>
-            <svg class="line_HL" viewBox="0 0 2 552" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 552L1.00002 -4.37113e-08" stroke="white" stroke-width="2"/>
+            <svg class="moving-circle2" width="800" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="white"/>
             </svg>
-            <svg class="line_HR" viewBox="0 0 2 552" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 552L1.00002 -4.37113e-08" stroke="white" stroke-width="2"/>
+            <svg class="line_HL" height="4746" viewBox="0 0 2 522" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
+            </svg>
+            <svg class="line_HR" height="4746" viewBox="0 0 2 522" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
             </svg>
         </div>   
+        <svg class="lineX_L" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
+        </svg>
+        <svg class="lineX_R" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
+        </svg>
+            
+            
     </div>
     <!-- <div id="lines">
         <div class="line1"></div>
@@ -142,7 +177,10 @@
         const line2 = document.querySelector(".line2");
         const lineHL = document.querySelector(".line_HL");
         const lineHR = document.querySelector(".line_HR");
+        const lineXL = document.querySelector(".lineX_L");
+        const lineXR = document.querySelector(".lineX_R");
         const movingCircle = document.querySelector(".moving-circle");
+        const movingCircle2 = document.querySelector(".moving-circle2");
 
 
         // 초기 상태 설정
@@ -150,14 +188,20 @@
         gsap.set(line2, {  backgroundColor: "white", height:0 });
         gsap.set(lineHL, {  backgroundColor: "white", height:0 });
         gsap.set(lineHR, {  backgroundColor: "white", height:0 });
+        gsap.set(lineXL, { height:"0%" });
+        gsap.set(lineXR, {height:"0%"});
         gsap.set(movingCircle, {   opacity:0 });
+        // gsap.set(movingCircle2, {   opacity:0 });
 
         // 선 그리기
-        gsap.to(line1, { delay:1.5,duration: 0.5, width: "100%", ease: "power4.in"});
-        gsap.to(line2, { delay:0.2,duration: 1,height:"28.1vw",  ease: "power4.inOut"});
-        gsap.to(lineHL, { delay:0.3,duration: 1,height:"28.1vw",  ease: "power4.inOut"});
-        gsap.to(lineHR, { delay:0.4                                                ,duration: 1,height:"28.1vw",  ease: "power4.inOut"});
-        gsap.to(movingCircle, {delay:1,duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -374})
+        gsap.to(line1, { delay:1, duration: 0.5, width: "100%", ease: "power4.in"});
+        gsap.to(line2, { delay:0.2, duration: 1, height:"28.1vw",  ease: "power4.inOut"});
+        gsap.to(lineHL, { delay:0.3, duration: 1, height:"28.1vw",  ease: "power4.inOut"});
+        gsap.to(lineHR, { delay:0.4, duration: 1, height:"28.1vw",  ease: "power4.inOut"});
+        gsap.to(lineXL, { delay:0.5, duration: 2, height:"300%",  ease: "power4.inOut"});
+        gsap.to(lineXR, { delay:1.3, duration: 1, height:"400%",  ease: "power4.Out"});
+        gsap.to(movingCircle, {delay:2, duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -374})
+        gsap.to(movingCircle2, {delay:2, duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -500})
 
 
     
