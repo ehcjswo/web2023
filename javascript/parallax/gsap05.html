@@ -307,7 +307,7 @@
         const ani6 = gsap.timeline();
         ani6.from(box6_1, {x:-500, y:100, duration:1}, "a")
             .from(box6_1, {x:500, y:-100, duration:1})
-            .to(box6_1, {x:-50, y:00})
+            .to(box6_1, {x:-50, y:0})
             
 
         ani6.from(box6_2, {y:-100, duration:1}, "a")
@@ -330,24 +330,24 @@
         });
 
         const ani7 = gsap.timeline();
-        ani7.from(box7_1, {x:00, y:100, duration:1, rotation:300}, "a")
-        ani7.to(box7_1, {x:0, y:00},"b")
+        ani7.from(box7_1, {x:0, y:100, duration:1, rotation:300}, "a")
+        ani7.to(box7_1, {x:0, y:0},"b")
             
 
-        ani7.from(box7_2, {x:00,y:-100, duration:1, opacity:0}, "a")
-        ani7.to(box7_2, {x:0, y:00},"b")
+        ani7.from(box7_2, {x:0,y:-100, duration:1, opacity:0}, "a")
+        ani7.to(box7_2, {x:0, y:0},"b")
 
-        ani7.from(box7_3, {x:00,y:100, duration:1, scale:0 }, "a")
+        ani7.from(box7_3, {x:0,y:100, duration:1, scale:0 }, "a")
         ani7.to(box7_3, {x:0, y:0},"b")
 
-        ani7.from(box7_4, {x:00, y:-500, duration:1}, "a")
-        ani7.to(box7_4, {x:0, y:00},"b")
+        ani7.from(box7_4, {x:0, y:-500, duration:1}, "a")
+        ani7.to(box7_4, {x:0, y:0},"b")
             
 
-        ani7.from(box7_5, {x:00,y:100, duration:1,opacity:0}, "a")
+        ani7.from(box7_5, {x:0,y:100, duration:1,opacity:0}, "a")
         ani7.to(box7_5, {x:0, y:0},"b")
 
-        ani7.from(box7_6, {x:000,y:-100, duration:1,rotation:-300}, "a")
+        ani7.from(box7_6, {x:0,y:-100, duration:1,rotation:-300}, "a")
         ani7.to(box7_6, {x:0, y:0},"b")
         
         ScrollTrigger.create({
@@ -362,28 +362,28 @@
         });
 
         const ani8 = gsap.timeline();
-        ani8.to(box8_1, {x:200, y:000,duration:5}, "a")
+        ani8.to(box8_1, {x:200, y:0,duration:5}, "a")
         ani8.to(box8_1, {x:300, y:300,duration:5},"b")
-        ani8.to(box8_1, {x:500, y:000,duration:5},"c")
+        ani8.to(box8_1, {x:500, y:0,duration:5},"c")
         ani8.to(box8_1, {x:200, y:-300,duration:5},"d")
-        ani8.to(box8_1, {x:200, y:00,duration:5},"e")
-        ani8.to(box8_1, {x:0, y:00,duration:5},"f")
+        ani8.to(box8_1, {x:200, y:0,duration:5},"e")
+        ani8.to(box8_1, {x:0, y:0,duration:5},"f")
         
             
 
-        ani8.to(box8_2, {x:00,y:00,duration:5}, "a")
+        ani8.to(box8_2, {x:0,y:0,duration:5}, "a")
         ani8.to(box8_2, {x:100, y:300,delay:0.2,duration:5},"b")
-        ani8.to(box8_2, {x:300, y:000,delay:0.2,duration:5},"c")
-        ani8.to(box8_2, {x:00, y:-300,delay:0.2,duration:5},"d")
-        ani8.to(box8_2, {x:00, y:00,delay:0.2,duration:5},"e")
-        ani8.to(box8_2, {x:00, y:00,delay:0.2,duration:5},"f")
+        ani8.to(box8_2, {x:300, y:0,delay:0.2,duration:5},"c")
+        ani8.to(box8_2, {x:0, y:-300,delay:0.2,duration:5},"d")
+        ani8.to(box8_2, {x:0, y:0,delay:0.2,duration:5},"e")
+        ani8.to(box8_2, {x:0, y:0,delay:0.2,duration:5},"f")
 
-        ani8.to(box8_3, {x:-200,y:00,duration:5}, "a")
+        ani8.to(box8_3, {x:-200,y:0,duration:5}, "a")
         ani8.to(box8_3, {x:-100, y:300,delay:0.4,duration:5},"b")
-        ani8.to(box8_3, {x:100, y:000,delay:0.4,duration:5},"c")
+        ani8.to(box8_3, {x:100, y:0,delay:0.4,duration:5},"c")
         ani8.to(box8_3, {x:-200, y:-300,delay:0.4,duration:5},"d")
-        ani8.to(box8_3, {x:-200, y:00,delay:0.4,duration:5},"e")
-        ani8.to(box8_3, {x:00, y:00,delay:0.4,duration:5},"f")
+        ani8.to(box8_3, {x:-200, y:0,delay:0.4,duration:5},"e")
+        ani8.to(box8_3, {x:0, y:0,delay:0.4,duration:5},"f")
         
         ScrollTrigger.create({
             animation: ani8,
