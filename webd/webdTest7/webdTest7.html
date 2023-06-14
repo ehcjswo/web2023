@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로그래머스</title>
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -92,11 +93,89 @@
                     </div>
                 </div>
                 <div class="silder_wrap">
-                    <div class="slider_inner">
-                        <a href="#"><div class="slider"></div></a>
-                        <a href="#"><div class="slider"></div></a>
-                        <a href="#"><div class="slider"></div></a>
-                        <a href="#"><div class="slider"></div></a>
+                    <!-- <a href="#"><div class="slider"></div></a>
+                    <a href="#"><div class="slider"></div></a>
+                    <a href="#"><div class="slider"></div></a>
+                    <a href="#"><div class="slider"></div></a> -->
+                    <div id="test-slide" class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide s1" style="background: linear-gradient(231.73deg, #031E4B 0%, #031E4B 100%);">
+                                <div class="slider">
+                                    <div class="desc">
+                                        <div class="box">
+                                            현대모비스
+                                        </div>
+                                        <h3>23년 현대모비스<br>알고리즘 경진대회</h3>
+                                        <p>총 상금 1억 6천만원<br>
+                                        참가접수:5.26(금)~6.23(금)</p>
+                                    </div>
+                                    <div class="slider_img">
+                                        <img src="https://asset.programmers.co.kr/image/origin/production/banner/166637/58af7b59-1e70-4a5a-8b7d-626230f6583b.png" alt="현대모비스_메인배너">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide s2" style="background: #2DD297;">
+                                <div class="slider">
+                                    <div class="desc">
+                                        <div class="box">
+                                            데브매칭
+                                        </div>
+                                        <h3>Dev-Matching<br>웹 프론트엔드 개발자</h3>
+                                        <p>접수 마감:6.15.(목)<br>
+                                        테스트:6.17.(토)</p>
+                                    </div>
+                                    <div class="slider_img">
+                                        <img src="https://asset.programmers.co.kr/image/origin/production/banner/166719/08131bdf-178f-45ce-bce3-0c7702c436f0.png" alt="FE 개발자(상-2) 데브매칭 이미지">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide s3" style="background: #2DD297;">
+                                <div class="slider">
+                                    <div class="desc">
+                                        <div class="box">
+                                            내일배움코스
+                                        </div>
+                                        <h3>수강 완료하면 무료인<br>국비지원 강의 모음</h3>
+                                        <p>100% 온라인 교육을 원하는 난이도로 공부하세요!</p>
+                                    </div>
+                                    <div class="slider_img">
+                                        <img src="	https://grepp-programmers.s3.amazonaws.com/production/file_resource/3435/PRGMS_Main-Banner_KDC_1440x552_.png" alt="내일배움코스 이미지">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide s4" style="background: #1D1D1B;">
+                                <div class="slider">
+                                    <div class="desc">
+                                        <div class="box">
+                                            무료특강
+                                        </div>
+                                        <h3>온라인 라이브로 듣는<br>최신 기술 트렌드</h3>
+                                        <p>인공지능,자율주행,데이터 엔지니어링,시스템 소프트웨어<br>
+                                        분야의 실무자를 직접 만날 수 있어요!</p>
+                                    </div>
+                                    <div class="slider_img">
+                                        <img src="https://grepp-programmers.s3.amazonaws.com/production/file_resource/3400/PRGMS_Main-Banner_KDC_1440x552___1_.png" alt="데브코스 미리보기 메인 이미지">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide s5" style="background: #432F94;">
+                                <div class="slider">
+                                    <div class="desc">
+                                        <div class="box">
+                                            기획전
+                                        </div>
+                                        <h3>프로그래머스<br>인기 강의 TOP13</h3>
+                                        <p>선배 개발자의 노하우를 내 것으로 만들어요!</p>
+                                    </div>
+                                    <div class="slider_img">
+                                        <img src="https://grepp-programmers.s3.amazonaws.com/production/file_resource/3533/2306_banner__1_.png" alt="데브코스 미리보기 메인 이미지">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-num"><span>0 </span> | <p>05</p></div>
+                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
                 <div class="lecture">
@@ -200,6 +279,100 @@
                         </div>
                     </div>
                 </div>
+                <div class="program2">
+                    <div class="program_right_svg">
+                        <h3 class="h3mb"><span>다른 개발자</span>들이 많이 지원한 포지션</h3>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="XFteHAoEX_O2i2sztwAI"><path d="M9 16.34l4.58-4.59L9 7.16l1.41-1.41 6 6-6 6z" fill-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="program2_inner">
+                        <div class="program2_box b1">
+                            <div class="program2_box_top">
+                                <img alt="블루펫 로고" data-src="https://grepp-programmers.s3.amazonaws.com/production/company/logo/6294/logo.png" data-srcset="" class="" src="https://grepp-programmers.s3.amazonaws.com/production/company/logo/6294/logo.png" srcset="">
+                                <div class="desc">
+                                    <span>상시 채용</span>
+                                    <h3>프론트엔드 개발자</h3>
+                                    <p>블루펫</p>
+                                </div>
+                            </div>
+                            <div class="program2_box_bottom">
+                                <div class="left">
+                                    <div>
+                                        <p>경력</p>
+                                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="pY422BjfwqK3WqXBw2Wi"><path fill="#fff" fill-opacity=".01" d="M0 0h20v20H0z"></path><path d="M2.722 13.944v-9h14.556v9H2.722z" stroke="#98A8B9"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.778 14.444h4.444l1.111 3.334H6.666l1.112-3.334z" fill="#98A8B9"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.444 16.866c0-.11.09-.2.2-.2h10.711c.11 0 .2.09.2.2v.712a.2.2 0 01-.2.2H4.645a.2.2 0 01-.2-.2v-.712z" fill="#98A8B9"></path></svg>
+
+                                    </div>
+                                    <span>신입가능</span>
+                                </div>
+                                <div class="line"></div>
+                                <div class="right">
+                                    <div>
+                                        <p>위치</p>
+                                        <svg viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="pY422BjfwqK3WqXBw2Wi"><path d="M11.247 11.857s1.864-2.06 1.864-4.446c0-3.419-2.736-6.189-6.111-6.189-3.375 0-6.111 2.77-6.111 6.189 0 2.386 1.864 4.446 1.864 4.446l4.11 4.857a.178.178 0 00.274 0l4.11-4.857v0z" stroke="#98A8B9" stroke-miterlimit="10"></path><path d="M9.778 7.333a2.778 2.778 0 10-5.556 0 2.778 2.778 0 005.556 0z" stroke="#98A8B9" stroke-miterlimit="10"></path></svg>
+
+                                    </div>
+                                    <span>서울 금천구</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program2_box b2">
+                            <div class="program2_box_top">
+                                <img alt="히비스 로고" data-src="https://grepp-programmers.s3.amazonaws.com/production/company/logo/2806/Artboard-squre.png" data-srcset="" class="" src="https://grepp-programmers.s3.amazonaws.com/production/company/logo/2806/Artboard-squre.png" srcset="">
+                                <div class="desc">
+                                    <span>상시 채용</span>
+                                    <h3>플랫폼 서비스 개발 팀원</h3>
+                                    <p>히비스</p>
+                                </div>
+                            </div>
+                            <div class="program2_box_bottom">
+                                <div class="left">
+                                    <div>
+                                        <p>경력</p>
+                                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="pY422BjfwqK3WqXBw2Wi"><path fill="#fff" fill-opacity=".01" d="M0 0h20v20H0z"></path><path d="M2.722 13.944v-9h14.556v9H2.722z" stroke="#98A8B9"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.778 14.444h4.444l1.111 3.334H6.666l1.112-3.334z" fill="#98A8B9"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.444 16.866c0-.11.09-.2.2-.2h10.711c.11 0 .2.09.2.2v.712a.2.2 0 01-.2.2H4.645a.2.2 0 01-.2-.2v-.712z" fill="#98A8B9"></path></svg>
+
+                                    </div>
+                                    <span>신입가능</span>
+                                </div>
+                                <div class="line"></div>
+                                <div class="right">
+                                    <div>
+                                        <p>위치</p>
+                                        <svg viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="pY422BjfwqK3WqXBw2Wi"><path d="M11.247 11.857s1.864-2.06 1.864-4.446c0-3.419-2.736-6.189-6.111-6.189-3.375 0-6.111 2.77-6.111 6.189 0 2.386 1.864 4.446 1.864 4.446l4.11 4.857a.178.178 0 00.274 0l4.11-4.857v0z" stroke="#98A8B9" stroke-miterlimit="10"></path><path d="M9.778 7.333a2.778 2.778 0 10-5.556 0 2.778 2.778 0 005.556 0z" stroke="#98A8B9" stroke-miterlimit="10"></path></svg>
+
+                                    </div>
+                                    <span>서울시 강동구</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program2_box b3">
+                            <div class="program2_box_top">
+                                <img alt="블루펫 로고" data-src="https://grepp-programmers.s3.amazonaws.com/production/company/logo/6294/logo.png" data-srcset="" class="" src="https://grepp-programmers.s3.amazonaws.com/production/company/logo/6294/logo.png" srcset="">
+                                <div class="desc">
+                                    <span>상시 채용</span>
+                                    <h3>이러닝 웹 솔루션 개발자</h3>
+                                    <p>Xinics</p>
+                                </div>
+                            </div>
+                            <div class="program2_box_bottom">
+                                <div class="left">
+                                    <div>
+                                        <p>경력</p>
+                                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="pY422BjfwqK3WqXBw2Wi"><path fill="#fff" fill-opacity=".01" d="M0 0h20v20H0z"></path><path d="M2.722 13.944v-9h14.556v9H2.722z" stroke="#98A8B9"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.778 14.444h4.444l1.111 3.334H6.666l1.112-3.334z" fill="#98A8B9"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.444 16.866c0-.11.09-.2.2-.2h10.711c.11 0 .2.09.2.2v.712a.2.2 0 01-.2.2H4.645a.2.2 0 01-.2-.2v-.712z" fill="#98A8B9"></path></svg>
+                                    </div>
+                                    <span>신입가능</span>
+                                </div>
+                                <div class="line"></div>
+                                <div class="right">
+                                    <div>
+                                        <p>위치</p>
+                                        <svg viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="pY422BjfwqK3WqXBw2Wi"><path d="M11.247 11.857s1.864-2.06 1.864-4.446c0-3.419-2.736-6.189-6.111-6.189-3.375 0-6.111 2.77-6.111 6.189 0 2.386 1.864 4.446 1.864 4.446l4.11 4.857a.178.178 0 00.274 0l4.11-4.857v0z" stroke="#98A8B9" stroke-miterlimit="10"></path><path d="M9.778 7.333a2.778 2.778 0 10-5.556 0 2.778 2.778 0 005.556 0z" stroke="#98A8B9" stroke-miterlimit="10"></path></svg>
+
+                                    </div>
+                                    <span>서울특별시 구로구</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="position">
                     <div class="program_right_svg">
                         <h3 class="h3mb">내가 지원한 포지션</h3>
@@ -283,6 +456,45 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    
+    <script>
+        let appendNumber = 600;
+        let prependNumber = 1;
+
+        const slide = new Swiper('#test-slide', {
+            spaceBetween: 30,    // 슬라이드 사이 여백
+
+            slidesPerView : '1', // 한 슬라이드에 보여줄 갯수
+            centeredSlides: true,    //센터모드
+            autoplay: {     //자동슬라이드 (false-비활성화)
+            delay: 2500, // 시간 설정
+            disableOnInteraction: false, // false-스와이프 후 자동 재생
+            },
+            watchOverflow : false,
+            loop : true,   // 슬라이드 반복 여부
+
+            loopAdditionalSlides : 1,
+
+            
+
+            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+            pagination: { // 호출(pager) 여부
+                el: ".swiper-pagination", //버튼을 담을 태그 설정
+                clickable: true, // 버튼 클릭 여부
+            },
+            navigation: {   // 버튼
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            on: {
+                activeIndexChange:function(){
+                    const cldx = this.realIndex +1;
+                    document.querySelector('.swiper-button-num span').innerHTML = "0"+cldx;
+                }
+            }
+        });
+
+  
+    </script>
 </body>
 </html>
