@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: #161615;
+            
+        }
+        #lines {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .line1 {
+            position: absolute;
+            width: 0%;
+            height: 0.5%;
+            top: 50%;
+            /* transform: rotate(150deg); */
+        }
+        .center {
+            position: relative;
+            width: 50vw;
+            height: 80vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* background-color: #fff; */
+        }
+        .center::after {
+            content: '';
+            color: #fff;
+            position: absolute;
+            height: 500px;
+            width: 1px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* background-color: red; */
+        }
+        .line2 {
+            position: absolute;
+            /* height: 29vh; */
+            top: 50%;
+            left: 35%;
+            transform: translate(-50%, -55%);
+            stroke-dasharray: 2000;    
+            stroke-dashoffset: 2000;
+        }
+        .line2_full {
+            position: absolute;
+            /* height: 29vh; */
+            top: 50%;
+            left: 35%;
+            transform: translate(-50%, -55%);
+            stroke-dasharray: 1500;    
+            stroke-dashoffset: 1500;
+        }
+        .line3 {
+            position: absolute;
+            /* height: 29vh; */
+            top: 50%;
+            left: 65%;
+            transform: translate(-50%, -55%);
+            stroke-dasharray: 3400;    
+            stroke-dashoffset: 3400;
+        }
+        .line3_full {
+            position: absolute;
+            /* height: 29vh; */
+            top: 50%;
+            left: 65%;
+            transform: translate(-50%, -55%);
+            stroke-dasharray: 1500;    
+            stroke-dashoffset: 1500;
+        }
+        .moving-circle {
+            width: 30vw;
+            height: 30vw;
+            position: absolute;
+            top: 50%;
+            left: 21.4%;
+            transform:  translate(-50%, -50%);
+            /* stroke-dasharray: 252px;    
+            stroke-dashoffset: 200;  */
+            stroke-dasharray: 251.7px;    
+            stroke-dashoffset: 100;
+        }
+        .moving-circle2 {
+            width: 30vw;
+            height: 30vw;
+            position: absolute;
+            top: 50%;
+            left: 78.6%;
+            transform:  translate(-50%, -50%) rotate(180deg);
+            /* stroke-dasharray: 252px;    
+            stroke-dashoffset: 200;  */
+            stroke-dasharray: 500px;    
+            stroke-dashoffset: 500; 
+
+        }
+        .line_HL {
+            position: absolute;
+            /* width: 1%; */
+            /* max-width: 3px; */
+            height: 28.1vw;
+            /* min-height: 400px; */
+            top: 15%;
+            left: 50%;
+        }
+        .line_HR {
+            position: absolute;
+            /* width: 1%; */
+            /* max-width: 3px; */
+            height: 28.1vw;
+            /* min-height: 400px; */
+            top: 15%;
+            left: 78%;
+        }
+        .lineX_L {
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(60deg);
+        }
+        .lineX_R {
+            position: absolute;
+            left: 100.5%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(600deg);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="lines">
+        <!-- <svg class="line1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="-122" y1="0.5" x2="2142" y2="0.5" stroke="#EFEFEA"/>
+        </svg> -->
+        <div class="center">
+            <svg class="line2" width="334" height="702" viewBox="0 0 334 702" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path stroke="#ffffff" d="M111 101V100H110V101H111ZM111 601H110V602H111V601ZM1 2H169V1L1 1V2ZM169 2C223.494 2 264.185 16.6169 291.268 45.6817L292 45C264.416 15.3981 223.84 1 169 1V2ZM291.268 45.6817C318.369 74.7654 332 117.482 332 174H333C333 117.185 319.566 74.5829 292 45L291.268 45.6817ZM332 174V528H333V174H332ZM332 528C332 584.518 318.369 627.235 291.268 656.318L292 657C319.566 627.417 333 584.815 333 528H332ZM291.268 656.318C264.185 685.383 223.494 700 169 700L169 701C223.84 701 264.416 686.602 292 657L291.268 656.318ZM169 700H1V701H169L169 700ZM2 701V1H1V701H2ZM167 602C185.205 602 199.18 596.598 208.753 585.659L208 585C198.906 595.394 184.795 601 167 601V602ZM208.73 585.684C218.986 574.744 224 557.1 224 533L223 533C223 556.9 217.744 574.607 208 585L208.73 585.684ZM224 533V169L223 169V533L224 533ZM224 169C224 144.9 219.756 126.44 209.5 115.5L208.5 116.5C218.244 126.893 223 145.1 223 169L224 169ZM209.5 115.5C199.927 104.561 185.205 100 167 100L167 101C184.795 101 199.406 106.107 208.5 116.5L209.5 115.5ZM167 100H111V101L167 101L167 100ZM110 101V601H111V101H110ZM111 602H167V601H111V602Z"/>
+            </svg>                                
+            <svg class="line2_full" width="332" height="700" viewBox="0 0 332 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.13249e-06 -4.76837e-05H168C222.667 -4.76837e-05 263.667 14.6666 291 44C318.333 73.3333 332 116.333 332 173V527C332 583.667 318.333 626.667 291 656C263.667 685.333 222.667 700 168 700H1.13249e-06V-4.76837e-05ZM166 600C184 600 197.667 594.667 207 584C217 573.333 222 556 222 532V168C222 144 217 126.667 207 116C197.667 105.333 184 100 166 100H110V600H166Z" fill="white"/>
+            </svg>
+                
+            <svg class="line3" width="338" height="700" viewBox="0 0 338 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_212_146)">
+                <path stroke="#ffffff" d="M110 285H109V286H110V285ZM110 385L111 385L109 385H110ZM0 1H110V2.26498e-06H0.999999V1H0ZM109 2.26498e-06V285H110V2.26498e-06H109ZM110 286L228 285L227 284L228 284L110 285V286ZM228 285L229 2.26498e-06L227 0V285H228ZM228 1H338L337 1L338 2.26498e-06H228V1ZM337 2.26498e-06V700V699L338 700V0.0196912L337 2.26498e-06ZM338 699H227.039L228 700H338V699ZM228 700V385H227V700H228ZM228 385L111 385L110.997 386H110H228V385ZM109 385V700H110L111 385L109 385ZM110 699H0L1 699L0 700H109V699L110 699ZM0.999999 700V2.26498e-06H0V700H0.999999Z"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_212_146">
+                <rect width="338" height="700" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+ 
+            <svg class="line3_full" width="338" height="700" viewBox="0 0 338 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.13249e-06 -4.76837e-05H110V285H228V-4.76837e-05H338V700H228V385H110V700H1.13249e-06V-4.76837e-05Z" fill="white"/>
+            </svg>   
+                
+        </div>   
+        <!-- <svg class="lineX_L" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
+        </svg>
+        <svg class="lineX_R" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
+        </svg> -->
+            
+            
+    </div>
+    <!-- <div id="lines">
+        <div class="line1"></div>
+        <div class="center">
+            <div class="line2"></div>
+            <svg class="moving-circle" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="white"/>
+            </svg>
+        </div>   
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+
+    <script>
+        const line1 = document.querySelector(".line1");
+        const line2 = document.querySelector(".line2");
+        const line2_full = document.querySelector(".line2_full");
+        const line3 = document.querySelector(".line3");
+        const line3_full = document.querySelector(".line3_full");
+        const lineHL = document.querySelector(".line_HL");
+        const lineHR = document.querySelector(".line_HR");
+        const lineXL = document.querySelector(".lineX_L");
+        const lineXR = document.querySelector(".lineX_R");
+        const movingCircle = document.querySelector(".moving-circle");
+        const movingCircle2 = document.querySelector(".moving-circle2");
+        
+
+        // 초기 상태 설정
+        gsap.set(line1, { width: 0, backgroundColor: "EFEFEA",height:"1", top:"47.5%", left: 0 });
+        gsap.set(line2, {height:"28.1vw"});
+        gsap.set(line2_full, {height:"28.1vw", opacity:0});
+        gsap.set(line3, {height:"28.1vw"});
+        gsap.set(line3_full, {height:"28.1vw", opacity:0});
+        gsap.set(lineHL, {  backgroundColor: "EFEFEA",width:"50", height:0 });
+        gsap.set(lineHR, {  backgroundColor: "EFEFEA",width:"50", height:0 });
+        gsap.set(lineXL, { height:"0%" });
+        gsap.set(lineXR, {height:"0%"});
+        gsap.set(movingCircle, {   opacity:0 });
+        // gsap.set(movingCircle2, {   opacity:0 });
+        
+        // 선 그리기
+        gsap.to(line1, { delay:1, duration: 0.5, width: "100%", ease: "power4.in"});
+        // gsap.to(line2, { delay:0.2, duration: 1, height:"28.1vw",  ease: "power4.inOut"});
+        gsap.to(line2, { delay:0.2, duration: 2,  ease: "power4.inOut", strokeDashoffset: 0});
+        gsap.to(line2, { delay:2, duration: 1, opacity:0,  ease: "power4.inOut"});
+        gsap.to(line2_full, { delay:1.2, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
+        gsap.to(line3, { delay:0.2, duration: 2,height:"28.1vw",  ease: "power4.inOut", strokeDashoffset: 0});
+        gsap.to(line3, { delay:2, duration: 1, opacity:0,height:"28.1vw",  ease: "power4.inOut", strokeDashoffset: 0});
+        gsap.to(line3_full, { delay:1.2, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
+        gsap.to(lineHL, { delay:0, duration: 1, height:"28.1vw",  ease: "power4.Out"});
+        gsap.to(lineHR, { delay:0, duration: 1, height:"28.1vw",  ease: "power1.Out"});
+        gsap.to(lineXL, { delay:0.5, duration: 1.5, height:"200%",  ease: "power3.InOut"});
+        gsap.to(lineXR, { delay:1.3, duration: 1, height:"400%",  ease: "power4.Out"});
+        gsap.to(movingCircle, {delay:2, duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -374})
+        gsap.to(movingCircle2, {delay:2, duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -500})
+        
+        
+    
+                
+    </script>
+
+</body>
+</html>
