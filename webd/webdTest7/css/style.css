@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 *{
     padding: 0;
@@ -682,17 +683,18 @@ img {
 }
 .program2_box_bottom {
     display: flex;
-    padding-left: 50px;
     height: 60px;
     flex-shrink: 0;
     align-items: center;
     justify-content: space-evenly;
 }
 .left {
-    padding-right: 30px;
+    width: 50%;
+    text-align: center;
 }
 .left > div {
     display: flex;
+    justify-content: center;
     /* justify-content: space-between; */
 }
 .left p {
