@@ -64,8 +64,6 @@
             top: 50%;
             left: 35%;
             transform: translate(-50%, -55%);
-            stroke-dasharray: 1500;    
-            stroke-dashoffset: 1500;
         }
         .line3 {
             position: absolute;
@@ -97,19 +95,6 @@
             stroke-dasharray: 251.7px;    
             stroke-dashoffset: 100;
         }
-        .moving-circle2 {
-            width: 30vw;
-            height: 30vw;
-            position: absolute;
-            top: 50%;
-            left: 78.6%;
-            transform:  translate(-50%, -50%) rotate(180deg);
-            /* stroke-dasharray: 252px;    
-            stroke-dashoffset: 200;  */
-            stroke-dasharray: 500px;    
-            stroke-dashoffset: 500; 
-
-        }
         .line_HL {
             position: absolute;
             /* width: 1%; */
@@ -130,15 +115,22 @@
         }
         .lineX_L {
             position: absolute;
-            left: 0%;
-            top: 50%;
-            transform: translate(-50%, -50%) rotate(60deg);
+            left: 50%;
+            top: 0%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .lineX_L2 {
+            position: absolute;
+            height: 400%;
+            left: 50%;
+            top: 0%;
+            /* transform: rotate(45deg); */
         }
         .lineX_R {
             position: absolute;
-            left: 100.5%;
-            top: 50%;
-            transform: translate(-50%, -50%) rotate(600deg);
+            left: 25%;
+            top: 0%;
+            transform: translate(-50%, -50%) rotate(-45deg);
         }
         
 
@@ -173,12 +165,15 @@
             </svg>   
                 
         </div>   
-        <!-- <svg class="lineX_L" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="lineX_L" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
+        </svg>
+        <svg class="lineX_L2" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
         </svg>
         <svg class="lineX_R" height="4746" viewBox="0 0 1 4746" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="0.5" y1="2.18557e-08" x2="0.499793" y2="4746" stroke="#EFEFEA"/>
-        </svg> -->
+        </svg>
             
             
     </div>
@@ -204,6 +199,7 @@
         const lineHL = document.querySelector(".line_HL");
         const lineHR = document.querySelector(".line_HR");
         const lineXL = document.querySelector(".lineX_L");
+        const lineXL2 = document.querySelector(".lineX_L2");
         const lineXR = document.querySelector(".lineX_R");
         const movingCircle = document.querySelector(".moving-circle");
         const movingCircle2 = document.querySelector(".moving-circle2");
@@ -218,6 +214,7 @@
         gsap.set(lineHL, {  backgroundColor: "EFEFEA",width:"50", height:0 });
         gsap.set(lineHR, {  backgroundColor: "EFEFEA",width:"50", height:0 });
         gsap.set(lineXL, { height:"0%" });
+        gsap.set(lineXL2, { autoAlpha:0 });
         gsap.set(lineXR, {height:"0%"});
         gsap.set(movingCircle, {   opacity:0 });
         // gsap.set(movingCircle2, {   opacity:0 });
@@ -225,18 +222,19 @@
         // 선 그리기
         gsap.to(line1, { delay:1, duration: 0.5, width: "100%", ease: "power4.in"});
         // gsap.to(line2, { delay:0.2, duration: 1, height:"28.1vw",  ease: "power4.inOut"});
-        gsap.to(line2, { delay:0.2, duration: 2,  ease: "power4.inOut", strokeDashoffset: 0});
-        gsap.to(line2, { delay:2, duration: 1, opacity:0,  ease: "power4.inOut"});
+        // gsap.to(line2, { delay:0.2, duration: 2,  ease: "power4.inOut", strokeDashoffset: 1500});
+        gsap.to(line2, { delay:0.2, duration: 3,  ease: "power4.inOut", strokeDashoffset: 0});
+        // gsap.to(line2, { delay:2, duration: 1, opacity:0,  ease: "power4.inOut"});
         gsap.to(line2_full, { delay:1.2, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
-        gsap.to(line3, { delay:0.2, duration: 2,height:"28.1vw",  ease: "power4.inOut", strokeDashoffset: 0});
+        // gsap.to(line3, { delay:0.2, duration: 2,height:"28.1vw",  ease: "power4.inOut", strokeDashoffset: 1800});
+        gsap.to(line3, { delay:0.2, duration: 3,height:"28.1vw",  ease: "power4.inOut", strokeDashoffset: 0});
         gsap.to(line3, { delay:2, duration: 1, opacity:0,height:"28.1vw",  ease: "power4.inOut", strokeDashoffset: 0});
         gsap.to(line3_full, { delay:1.2, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
         gsap.to(lineHL, { delay:0, duration: 1, height:"28.1vw",  ease: "power4.Out"});
         gsap.to(lineHR, { delay:0, duration: 1, height:"28.1vw",  ease: "power1.Out"});
         gsap.to(lineXL, { delay:0.5, duration: 1.5, height:"200%",  ease: "power3.InOut"});
+        gsap.to(lineXL2, { delay:0.5, duration: 3.5, autoAlpha:1, stagger:{amount:1, from:"start"}, ease: "power3.InOut", });
         gsap.to(lineXR, { delay:1.3, duration: 1, height:"400%",  ease: "power4.Out"});
-        gsap.to(movingCircle, {delay:2, duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -374})
-        gsap.to(movingCircle2, {delay:2, duration: 1.5,opacity:1, ease:"Power2.easeOut", strokeDashoffset: -500})
         
         
     

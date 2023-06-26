@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: #161615;
+            
+        }
+        #lines {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .c-line.is-horizontal {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: auto;
+            transform: translateY(-50%);
+        }
+        .c-line,
+        ._line {
+            stroke-width: 1;
+            fill: none;
+            stroke: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="lines">
+        <!-- <svg class="line1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="-122" y1="0.5" x2="2142" y2="0.5" stroke="#EFEFEA"/>
+        </svg> -->
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1920" viewBox="0 0 1920 1920" class="c-line js-svg is-horizontal">
+            <g transform="translate(0 420)" class="_line">
+                <line x2="1500" y2="1500" class="_l1"></line> 
+                <line x2="1740" y2="1740" transform="translate(0 -240)" class="_l2"></line> 
+                <line x2="1860" y2="1860" transform="translate(0 -360)" class="_l3"></line> 
+                <line x2="1920" y2="1920" transform="translate(0 -420)" class="_l4"></line> 
+                <line x2="1500" y2="1500" transform="translate(420 -420)" class="_l5"></line> 
+                <line x1="1500" y2="1500" transform="translate(0 -420)" class="_l6"></line> 
+                <line x1="1920" y2="1920" transform="translate(0 -420)" class="_l7"></line> 
+                <line x1="1860" y2="1860" transform="translate(60 -360)" class="_l8"></line> 
+                <line x1="1740" y2="1740" transform="translate(180 -240)" class="_l9"></line> 
+                <line x1="1500" y2="1500" transform="translate(420)" class="_l10"></line> 
+                <line x2="1920" transform="translate(0 540)" class="_l11"></line> 
+                <line y2="1920" transform="translate(960 -420)" class="_l12"></line> 
+                <g transform="translate(960 116) rotate(45)" class="._circle">
+                    <circle cx="300" cy="300" r="300" class="_c1"></circle>
+                </g> 
+            </g>
+        </svg>    
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+
+    <script>
+        const l1 = document.querySelector("._l1");
+        const l2 = document.querySelector("._l2");
+        const l3 = document.querySelector("._l3");
+        const l4 = document.querySelector("._l4");
+        const l5 = document.querySelector("._l5");
+        const l6 = document.querySelector("._l6");
+        const l7 = document.querySelector("._l7");
+        
+
+        // 초기 상태 설정
+        // gsap.to(l1, {attr: {
+        //     transform: 'translate(1500,800)'
+        // },
+        // })
+        // gsap.set(l2, {autoAlpha:0})
+        // gsap.set(l3, {x1:"0", y2:"0"})
+        // gsap.set(l4, {x1:"0", y2:"0"})
+        // gsap.set(l5, {x1:"0", y2:"0"})
+        // gsap.set(l6, {x1:"0", y2:"0"})
+        // gsap.set(movingCircle2, {   opacity:0 });
+        
+        // 선 그리기
+        // gsap.to(l1, 2, {x2:"0", y2:"0"})
+        // gsap.to(l2, {x1:"0", y2:"0"})
+        // gsap.to(l3, {x1:"0", y2:"0"})
+        // gsap.to(l4, {x1:"0", y2:"0"})
+        // gsap.to(l5, {x1:"0", y2:"0"})
+        // gsap.to(l6, {x1:"0", y2:"0"})
+       
+
+        
+        
+    
+                
+    </script>
+
+</body>
+</html>

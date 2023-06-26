@@ -3,6 +3,8 @@
 const menu = document.querySelectorAll(".menu > ul > li");
 const submenu = document.querySelectorAll(".submenu");
 
+
+
 menu.forEach((e,i) => {
     e.addEventListener("mouseover", () => {
         submenu[i].style.display = "block";
@@ -19,7 +21,9 @@ const sliderWrap = document.querySelector(".slider__wrap");
 const slider = document.querySelectorAll(".slider");
 
 let sliderClone = sliderWrap.firstElementChild.cloneNode(true);
-sliderWrap.appendChild(sliderClone);
+sliderWrap.appendChild(sliderClone)
+
+// 
 let sliderindex = 0;
 let sliderLnegth = slider.length;
 
@@ -37,3 +41,28 @@ setInterval(()=>{
         sliderindex = 0;
     }
 },3000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let sliderClone = sliderWrap.firstElementChild.cloneNode(true);
+// sliderWrap.appendChild(sliderClone);
