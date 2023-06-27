@@ -12,21 +12,33 @@
         }
         body {
             background: #161615;
+            overflow: hidden;
             
         }
         #lines {
+            position: relative;
+            min-width: 880px;
             width: 100%;
             height: 100vh;
-            position: relative;
-            overflow: hidden;
         }
+        ._line line {
 
+        }
+        .loadLine {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
         .c-line.is-horizontal {
             position: absolute;
-            top: 50%;
-            left: 0;
             width: 100%;
             height: auto;
+            top: 50%;
+            left: 0%;
             transform: translateY(-50%);
         }
         .c-line,
@@ -40,9 +52,6 @@
 </head>
 <body>
     <div id="lines">
-        <!-- <svg class="line1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="-122" y1="0.5" x2="2142" y2="0.5" stroke="#EFEFEA"/>
-        </svg> -->
         <div class="loadLine">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1920" viewBox="0 0 1920 1920" class="c-line js-svg is-horizontal">
                 <g transform="translate(0 420)" class="_line">
@@ -51,24 +60,25 @@
                     <line x2="1860" y2="1860" transform="translate(0 -360)" class="_l3"></line> 
                     <line x2="1920" y2="1920" transform="translate(0 -420)" class="_l4"></line> 
                     <line x2="1500" y2="1500" transform="translate(420 -420)" class="_l5"></line> 
-                    <line x1="1500" y2="1500" transform="translate(0 -420)" class="_l6"></line> 
+                    <line x1="1500" y2="1500" transform="translate(0 -420)" class="_l6"></line>
                     <line x1="1920" y2="1920" transform="translate(0 -420)" class="_l7"></line> 
                     <line x1="1860" y2="1860" transform="translate(60 -360)" class="_l8"></line> 
                     <line x1="1740" y2="1740" transform="translate(180 -240)" class="_l9"></line> 
                     <line x1="1500" y2="1500" transform="translate(420)" class="_l10"></line> 
                     <line x2="1920" transform="translate(0 540)" class="_l11"></line> 
                     <line y2="1920" transform="translate(960 -420)" class="_l12"></line> 
-                    <!-- <g transform="translate(960 116) rotate(45)" class="._circle">
+                    <g transform="translate(960 116) rotate(45)" class="._circle">
                         <circle cx="300" cy="300" r="300" class="_c1"></circle>
-                    </g>  -->
+                    </g> 
                 </g>
             </svg>    
-        </div>
+        </div> 
     </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/DrawSVGPlugin.min.js"></script>
+
 
     <script>
         const l1 = document.querySelector("._l1");
@@ -78,33 +88,51 @@
         const l5 = document.querySelector("._l5");
         const l6 = document.querySelector("._l6");
         const l7 = document.querySelector("._l7");
-        
+        const l8 = document.querySelector("._l8");
+        const l9 = document.querySelector("._l9");
+        const l10 = document.querySelector("._l10");
+        const l11 = document.querySelector("._l11");
+        const l12 = document.querySelector("._l12");
+        const circle = document.querySelector("._c1");
 
         // 초기 상태 설정
-        // gsap.to(l1, {attr: {
-        //     transform: 'translate(1500,800)'
-        // },
-        // })
-        // gsap.set(l2, {autoAlpha:0})
-        // gsap.set(l3, {attr: {x2: 0, y2: 0}})
-        // gsap.set(l4, {x1:"0", y2:"0"})
-        // gsap.set(l5, {x1:"0", y2:"0"})
-        // gsap.set(l6, {x1:"0", y2:"0"})
-        // gsap.set(movingCircle2, {   opacity:0 });
+        gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
+        gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
+        gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
         
         // 선 그리기
-        // gsap.to(l1, 2, {x2:"0", y2:"0"})
-        // gsap.to(l2, {x1:"0", y2:"0"})
-        gsap.to(l3, {attr: {x2: 1860, y2: 1860}});
-        // gsap.to(l4, {x1:"0", y2:"0"})
-        // gsap.to(l5, {x1:"0", y2:"0"})
-        // gsap.to(l6, {x1:"0", y2:"0"})
-       
+        gsap.to(l10, 0.4, {attr: {x1: 0, x2: 1500, y1: 1500}});
+        gsap.to(l7, 0.3, {attr: {x1: 0, x2: 1920, y1: 1920}, delay:0.08}); 
+        gsap.to(l6, 0.2, {attr: {x1: 0, x2:1500, y1:1500},delay:0.16}) 
 
+        // <g transform="translate(960 116) rotate(45)" class="._circle">
+        //     <circle cx="300" cy="300" r="300" class="_c1"></circle>
+        // </g> 
         
-        
-    
-                
+        // 초기 상태 설정
+        gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l5, {attr: {x2: 0, y2: 0}});
+        gsap.set(l8, {attr: {x2: 1860, y2: 0}});
+        gsap.set(l9, {attr: {x2: 1740, y2: 0}});
+        gsap.set(l11, {attr: {x1:0, x2:0}});
+        gsap.set(l12, {attr: {y1:0, y2:0}});
+        gsap.set(circle, {autoAlpha:0});
+
+        // 선 그리기
+        gsap.to(l1, 0.2, {attr: {x2:1500, y2:1500}, delay:0.8});
+        gsap.to(l2, {attr: {x2:1740, y2:1740}, delay:1.05});
+        gsap.to(l3, {attr: {x2:1860, y2:1860}, delay:1.1});
+        gsap.to(l4, 0.3, {attr: {x2:1920, y2:1920}, delay:0.85});
+        gsap.to(l5, 0.4, {attr: {x2:1500, y2:1500}, delay:0.92});
+        gsap.to(l8, {attr: {x1:0, x2:1860, y1:1860}, delay:1.0});
+        gsap.to(l9, {attr: {x1:0, x2:1740, y1:1740}, delay:1.2});
+        gsap.to(l11, {attr: {x1:0, x2:1920}, delay:1.15});
+        gsap.to(l12, {attr: {y1:0, y2:1920}, delay:1.1});
+        gsap.to(circle, {autoAlpha:1, delay:1.25});
+     
     </script>
 
 </body>
