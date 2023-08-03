@@ -221,10 +221,11 @@ padding: 8px 12px;
 	/* margin-top: 80px; */
 	/* top: 40px; */
 	padding: 20px;
-	background: rgba(255,255,255,0.6);
+	background: rgba(16, 16, 16, 0.9);
 	text-align: center;
 	position: relative;
 	pointer-events: none;
+	color: #fff;
 }
 .twitter-share-button{
 	top: 4px;
